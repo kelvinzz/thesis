@@ -1,0 +1,250 @@
+\chapter{Analytic representation of \Gthree}\label{chapter:analytic_representation}
+
+
+
+\section{A fourth-order differential re-expression of \Gthree}\label{section:4thorder}
+
+
+%Lastly, We introduce a theorem expressing our crucial hypothesis \Gthree \  in a fourth-order differential form, which is %the main result in Appendix \ref{A:4thorder}.
+
+In our convexity argument, hypothesis \Gthree\ plays a crucial role. In this chapter, we 
+localize this hypothesis using differential calculus.    Inspired by and strongly connected with Trudinger's theory of generalized prescribed Jacobian equations, this form is analogous to the non-negative cross-curvature condition (B3) 
+of Figalli-Kim-McCann \cite{FigalliKimMcCann11}, a fourth order condition in the spirit of the Ma-Trudinger-Wang \cite{MaTrudingerWang05}. For another formulation, see e.g.\ \cite{GuillenKitagawa15}.
+\medskip
+
+%The resulting expression
+%shows it to be a direct analog of the non-negative cross-curvature (B3) from \cite{FigalliKimMcCann11},
+%which in turn was inspired by \cite{MaTrudingerWang05}. 
+
+Apart from the assumptions of Section \ref{section:Hypotheses}, we shall need the non-degeneracy
+condition assumed in Section \ref{section:concavity}:
+\begin{itemize}
+	\item[\Gsix] $G\in C^2(cl(X\times Y \times Z)
+	)$, and $D_{\bar{x},\bar{y}}(\bar{G})(x,-1,y,z)$ has full rank, for each $(x,y,z)\in cl(X\times Y\times Z)$. 
+\end{itemize}
+For this and next chapter only, we assume the dimensions of spaces $X$ and $Y$ are equal, i.e. $m=n$,
+so that the matrix mentioned in \Gsix\ becomes square.
+We shall also need to extend the twist and convex range hypotheses \Gone\ and \Gtwo\  
+to the function $H$ in place of $G$. This is equivalent to assuming:
+
+\begin{itemize}
+	\item[\Gseven] For each $(y, z)\in cl( Y \times Z)$ the map $x \in X \longmapsto \frac{G_y}{G_z}(\cdot, y,z)$ is one-to-one;
+	\item[\Geight] its range $X_{(y,z)} := \frac{G_y}{G_z}(X,y,z) \subset \R^n$ is convex.
+\end{itemize}
+
+%The proof of the following theorem is relegated to an appendix:
+We can now state:
+\medskip
+
+\begin{theorem}\label{theorem:4thorder}
+	Assume \Gzero-\Gtwo\ and \Gfour-\Geight. If, in addition, $G\in C^4(cl(X\times Y \times Z)
+	)$,  then the following statements are equivalent:
+	\begin{enumerate}[(i)]
+		\item \Gthree.
+		
+		\item 	 For any given  $x_0, x_1\in X$, any curve $(y_t, z_t) \in cl( Y \times Z)$ connecting $(y_0,z_0)$ and $(y_1, z_1)$, we have 
+		\begin{equation*}
+		\frac{\partial^2}{\partial s^2 }\Biggl(\frac1{G_z(x_s, y_t, z_t)}\frac{\partial^2}{\partial t^2} G(x_s,y_t,z_t) \Biggr)\Bigg|_{t=t_0}\le 0,
+		\end{equation*}
+		whenever  { $s\in [0,1] \longmapsto \frac{G_y}{G_z}(x_s, y_{t_0}, z_{t_0})$} forms an affinely parametrized line segment for some $t_0 \in [0,1]$.
+		
+		
+		\item For any given curve $x_s\in X$ connecting $x_0$ and $x_1$,  any $(y_0, z_0),  (y_1, z_1) \in cl( Y \times Z) $, we have 
+		\begin{equation*}
+		\frac{\partial^2}{\partial s^2 }\Biggl(\frac{1}{G_z(x_s, y_t, z_t)}\frac{\partial^2}{\partial t^2} G(x_s,y_t,z_t) \Biggr)\Bigg|_{s=s_0}\le 0,
+		\end{equation*}
+		whenever $t\in [0,1] \longmapsto (G_x, G)(x_{s_0}, y_t, z_t)$  forms an affinely parametrized line segment for some $s_0\in [0,1]$.
+		
+	\end{enumerate} 
+\end{theorem}
+
+Its proof and embelleshments are relegated to an appendix:
+
+
+%%      ---------------------------------------------------------------------
+%%      ------------------------- APPENDIX (OPTIONAL) -----------------------
+%%      ---------------------------------------------------------------------
+
+%%      If you have one appendix, uncomment the line \appendix and add
+%%      a \section{ *** APPENDIX TITLE ***}. If you have more than
+%%      one, uncomment the line \appendices and add a \section{ ***
+%%      APPENDIX TITLE ***} command for each appendix title.
+
+%\appendix
+%\appendices
+
+%%      Type body of appendix/-ices here.
+
+\section{Proof and variations on Theorem \ref{theorem:4thorder}}\label{A:4thorder}
+
+
+
+
+\begin{proof}[Proof of Theorem \ref{theorem:4thorder}]
+	$\mathrm{(i)}\Rightarrow \mathrm{(ii)}.$ Suppose for some $t_0 \in [0,1]$, $s \in [0,1] \longmapsto \frac{G_y}{G_z}(x_s, y_{t_0}, z_{t_0})$ forms an affinely parametrized line segment.
+	
+	For any fixed $s_0\in [0,1]$, consider $x_{s_0}\in X$, there is a $G$-segment $(x_{s_0}, y_t^{s_0},$ $ z_t^{s_0})$ passing through $(x_{s_0}, y_{t_0}, z_{t_0})$ at $t=t_0$ with the same tangent vector as $(x_{s_0}, y_t, z_t)$ at $t=t_0$, i.e., there exists
+	another curve $(y_t^{s_0}, z_t^{s_0}) \in cl( Y \times Z)$, such that $(y_t^{s_0},z_t^{s_0})\mid _{t=t_0} = (y_t,z_t)\mid _{t=t_0}$,  $(\dot{y_t}^{s_0},\dot{z_t}^{s_0})\mid _{t=t_0} \parallel (\dot{y}_t,\dot{z}_t)\mid _{t=t_0}$, and $(G_x, G)(x_{s_0},y_t^{s_0},z_t^{s_0}) = (1-t)(G_x, G)(x_{s_0},y_0^{s_0},z_0^{s_0})+t (G_x, G)(x_{s_0},y_1^{s_0},z_1^{s_0})$. 
+	
+	Computing the fourth mixed derivative yields
+	\begin{flalign*}
+	&\frac{\partial^2}{\partial s^2 }\Biggl(\frac{1}{G_z(x_s, y_t, z_t)}\frac{\partial^2}{\partial t^2} G(x_s,y_t,z_t) \Biggr)\\
+	=&\frac{\partial^2}{\partial s^2}\Biggl(\frac{1}{G_z}\Biggr) \frac{\partial^2}{\partial t^2} G + 2 \frac{\partial}{\partial s} \Biggl(\frac{1}{G_z}\Biggr) \frac{\partial^3}{\partial s \partial t^2} G + \frac{1}{G_z} \frac{\partial^4}{\partial s^2 \partial t^2} G  \\
+	=& [-(G_z)^{-2}G_{i,z} \ddot{x_s}^{i} - (G_z)^{-2} G_{ij,z}\dot{x_s}^i \dot{x_s}^j+ 2(G_z)^{-3} G_{i,z} G_{j,z} \dot{x_s}^i \dot{x_s}^j]\cdot [G_{,k}\ddot{y_t}^{k}+G_z\ddot{z}_t+G_{,kl}\dot{y_t}^k \dot{y_t}^l\\
+	&\hspace{0.5cm} + 2G_{,kz} \dot{y_t}^k \dot{z}_t +G_{zz} (\dot{z}_t)^2]\\
+	&+ 2[-(G_z)^{-2}G_{i,z}\dot{x_s}^i]\cdot[G_{j,k}\dot{x_s}^j\ddot{y_t}^{k}+G_{j,z}\dot{x_s}^j\ddot{z}_t+G_{j,kl}\dot{x_s}^j\dot{y_t}^k \dot{y_t}^l + 2G_{j,kz}\dot{x_s}^j \dot{y_t}^k \dot{z}_t +G_{j,zz} \dot{x_s}^j(\dot{z}_t)^2]\\
+	&+(G_z)^{-1}[G_{i,k}\ddot{x_s}^i\ddot{y_t}^{k} +G_{ij,k}\dot{x_s}^i\dot{x_s}^j\ddot{y_t}^{k} +G_{i,z}\ddot{x_s}^i\ddot{z}_t +G_{ij,z}\dot{x_s}^i\dot{x_s}^j\ddot{z}_t  +G_{i,kl}\ddot{x_s}^i\dot{y_t}^k \dot{y_t}^l +G_{ij,kl}\dot{x_s}^i\dot{x_s}^j\dot{y_t}^k \dot{y_t}^l \\
+	&\hspace{0.5cm} +2G_{i,kz}\ddot{x_s}^i\dot{y_t}^k\dot{z}_t 
+	 +2G_{ij,kz}\dot{x_s}^i\dot{x_s}^j\dot{y_t}^k\dot{z}_t +G_{i,zz}\ddot{x_s}^i(\dot{z}_t)^2 +G_{ij,zz}\dot{x_s}^i\dot{x_s}^j(\dot{z}_t)^2]\\ 
+	=& [((G_z)^{-1}G_{i,k}-(G_z)^{-2}G_{i,z}G_{,k})\ddot{x_s}^i +((G_z)^{-1}G_{ij,k}- (G_z)^{-2} G_{,k}G_{ij,z} -2(G_z)^{-2}G_{i,z}G_{j,k} \\
+		& \hspace{0.5cm}   +2(G_z)^{-3}G_{,k}G_{i,z} G_{j,z}) \dot{x_s}^i \dot{x_s}^j]\ddot{y_t}^k \\
+		&+ [(G_z)^{-1}G_{i,kl}-(G_z)^{-2}G_{i,z}G_{,kl}]\ddot{x_s}^i\dot{y_t}^k \dot{y_t}^l \\
+		&+ [(G_z)^{-1}G_{ij,kl}-(G_z)^{-2} G_{ij,z}G_{,kl}+ 2(G_z)^{-3} G_{i,z} G_{j,z}G_{,kl} -2(G_z)^{-2}G_{i,z}G_{j,kl}]\dot{x_s}^i \dot{x_s}^j\dot{y_t}^k \dot{y_t}^l\\
+		&+[2(G_z)^{-1}G_{i,kz}-2(G_z)^{-2}G_{i,z}G_{,kz}] \ddot{x_s}^{i}\dot{y_t}^k\dot{z}_t\\
+		&+[2(G_z)^{-1}G_{ij,kz}-2(G_z)^{-2} G_{ij,z}G_{,kz}+ 4(G_z)^{-3}G_{i,z}G_{j,z}G_{,kz}-4(G_z)^{-2}G_{i,z}G_{j,kz}]\dot{x_s}^i\dot{x_s}^j\dot{y_t}^k\dot{z}_t\\
+			&+[(G_z)^{-1}G_{i,zz}-(G_z)^{-2}G_{i,z}G_{zz}] \ddot{x_s}^{i}(\dot{z}_t)^2 \\
+			&+[(G_z)^{-1}G_{ij,zz} -(G_z)^{-2} G_{ij,z}G_{zz} +2(G_z)^{-3} G_{i,z} G_{j,z}G_{zz} -2(G_z)^{-2}G_{i,z}G_{j,zz}]\dot{x_s}^i \dot{x_s}^j(\dot{z}_t)^2.
+	\end{flalign*}
+
+	
+	The coefficient of $\ddot{y_t}^k$ vanishes when this expression is evaluated at $t =  t_0$, due to the assumption that $s \in [0,1] \longmapsto \frac{G_y}{G_z}(x_s, y_{t_0}, z_{t_0})$ forms an affinely parametrized line segment, which implies
+	\begin{flalign*}
+	0=~& \frac{\partial^2}{\partial s^2} \frac{G_y}{G_z}(x_s, y_{t_0}, z_{t_0})\\
+	=~&[((G_z)^{-1}G_{i,y}-(G_z)^{-2}G_{i,z}G_{,y})\ddot{x}^i +((G_z)^{-1}G_{ij,y}- (G_z)^{-2} G_{,y}G_{ij,z} \\
+	&\hspace{0.5cm}-2(G_z)^{-2}G_{i,z}G_{j,y}  +2(G_z)^{-3}G_{,y}G_{i,z} G_{j,z}) \dot{x}^i \dot{x}^j], \mbox{ for all } s\in [0,1].
+	\end{flalign*}
+	
+	Since $(\dot{y_t}^{s_0},\dot{z_t}^{s_0})|_{t=t_0} \parallel (\dot{y}_t,\dot{z}_t)|_{t=t_0}$, there exists some constant $C_1>0$, such that $(\dot{y}_t,\dot{z}_t)|_{t=t_0} =C_1(\dot{y_t}^{s_0},\dot{z_t}^{s_0})|_{t=t_0} $. Moreover, since  $ (y_t,z_t)\mid _{t=t_0}=(y_t^{s_0},z_t^{s_0})\mid _{t=t_0} $, we have
+	\begin{flalign*}
+	&\frac{\partial^2}{\partial s^2 }\Biggl(\frac{1}{G_z(x_s, y_t, z_t)}\frac{\partial^2}{\partial t^2} G(x_s,y_t,z_t) \Biggr) \Bigg|_{t=t_0} \\
+	=~& C_1^2	\frac{\partial^2}{\partial s^2 }\Biggl(\frac{1}{G_z(x_s, y_t^{s_0}, z_t^{s_0})}\frac{\partial^2}{\partial t^2} G(x_s,y_t^{s_0},z_t^{s_0}) \Biggr) \Bigg|_{t=t_0} .
+	\end{flalign*}
+	Denote $g(s):=\frac{\partial^2}{\partial t^2}|_{t=t_0} G(x_s,y_t^{s_0},z_t^{s_0})$, for $s\in[0,1]$. Since $(x_{s_0},y_t^{s_0},z_t^{s_0})$ is a $G$-segment, by \Gthree, we have $g(s) \ge 0$, for all $s \in [0,1]$.
+	By definition of $(y_t^{s_0},z_t^{s_0})$, it is clear that $g(s_0) =0$.  The first- and second-order
+	conditions for an interior minimum then give $g'(s_0) =0 \le g''(s_0)$; (in fact $g'(s_0)=0$ also follows
+	directly from the definition of a $G$-segment).
+	
+	By the assumption \Gfour,  we have $G_z <0$, thus, 
+	\begin{flalign*}
+	~&\frac{\partial^2}{\partial s^2 }\Biggl(\frac{1}{G_z(x_s, y_t, z_t)}\frac{\partial^2}{\partial t^2} G(x_s,y_t,z_t) \Biggr) \Bigg|_{(s,t)=(s_0,t_0)}\\
+	=~& C_1^2 	\frac{\partial^2}{\partial s^2 }\Biggl(\frac{1}{G_z(x_s, y_t^{s_0}, z_t^{s_0})}\frac{\partial^2}{\partial t^2} G(x_s,y_t^{s_0},z_t^{s_0}) \Biggr) \Bigg|_{(s,t)=(s_0,t_0)} \\
+	=~&C_1^2\frac{\partial^2}{\partial s^2}\Bigg|_{(s,t)=(s_0,t_0)} \Biggl(\frac{1}{G_z}(x_s,y_t^{s_0},z_t^{s_0})\Biggr) g(s_0)\\
+	~&+ 2C_1^2 \frac{\partial}{\partial s}\Bigg|_{(s,t)=(s_0,t_0)} \Biggl(\frac{1}{G_z(x_s,y_t^{s_0},z_t^{s_0})}\Biggr) g'(s_0) + \frac{C_1^2}{G_z(x_s,y_t^{s_0},z_t^{s_0})} g''(s_0)  \\
+	\le ~& 0.
+	\end{flalign*}
+	
+	$\mathrm{(ii)}\Rightarrow \mathrm{(i)}.$ For any fixed $x_0 \in X$ and $G$-segment $(x_0, y_t, z_t)$,  we need to show $\frac{\partial^2}{\partial t^2}G(x_1, y_t, z_t) \ge 0$,  for all $t \in [0,1]$ and $x_1 \in X$.
+	
+	For any fixed $t_0 \in [0,1]$ and $x_1 \in X$, define $x_s$ as the solution $\hat{x}$ to the equation
+	\begin{equation}
+	\frac{G_y}{G_z}(\hat{x}, y_{t_0},z_{t_0}) = (1-s) \frac{G_y}{G_z}(x_0, y_{t_0},z_{t_0}) +s \frac{G_y}{G_z}(x_1, y_{t_0},z_{t_0}).
+	\end{equation}
+	
+	By \Gseven\ and \Geight, $x_s$ is uniquely determined for each $s\in (0,1)$. In addition, $x_0$ and $x_1$ satisfy the above equation for $s =0$ and $s=1$, respectively.  
+	
+	Define $g(s):=
+	\frac{1}{G_z(x_s,y_t,z_t)}\frac{\partial^2}{\partial t^2}G(x_s, y_t, z_t)
+	\Big|_{t=t_0}$ for $s\in [0,1]$.
+	
+	Then $g(0) =0 = g'(0)$ from the two conditions defining a $G$-segment. 
+	
+	In our setting,  $s\in [0,1] \longmapsto \frac{G_y}{G_z}(x_s, y_{t_0}, z_{t_0})$ forms an affinely parametrized line segment, thus
+	$0\ge \frac{\partial^2}{\partial s^2 }\Bigl(\frac{1}{G_z(x_s, y_t, z_t)}\frac{\partial^2}{\partial t^2} G(x_s,y_t,z_t) \Bigr)\Big|_{t=t_0} = g''(s)$ for all $ s \in [0,1]$ by hypothesis $\mathrm{(ii)}$.
+	
+	Hence $g$ is concave in $[0,1]$, and $g(0)=0$ is a critical point, thus $g(1)\le 0$. Since $G_z<0$ this implies $\frac{\partial^2}{\partial t^2}\Big|_{t=t_0}G(x_1, y_t, z_t) \ge 0$ for any $t_0 \in [0,1]$ and $x_1 \in X$,
+	as desired.
+	\medskip
+	
+	$\mathrm{(i)}\Rightarrow \mathrm{(iii)}.$
+	For any fixed $s_0\in [0,1]$, suppose $t\in [0,1] \longmapsto (G_x, G)(x_{s_0}, y_t,$ $ z_t)$  forms an affinely parametrized line segment. For any fixed $t_0 \in [0,1]$, define $g(s):=\Big(\frac{1}{G_z(x_s,y_t,z_t)}\frac{\partial^2}{\partial t^2}G(x_s, y_t, z_t)\Big)\Big|_{t=t_0}$, for all $s \in [0,1]$. By \Gthree-\Gfour, we know $g(s)\le 0$, for all $s\in [0,1]$. By the definition of $(y_t, z_t)$, we have $g(s_0)=g'(s_0) =0$. Thus $g''(s_0)\le 0$.
+	\medskip
+	
+	$\mathrm{(iii)}\Rightarrow \mathrm{(i)}.$ For any fixed $x_0 \in X$, suppose $(x_0, y_t^{0}, z_t^{0})$ is a $G$-segment, then we need to show $\frac{\partial^2}{\partial t^2}G(x_1, y_t^{0}, z_t^{0}) \ge 0$,  for all $t \in [0,1], x_1 \in X$.
+	
+	For any fixed $t_0 \in [0,1]$, $x_1 \in X$, define $x_s$ as the solution $\hat{x}$ of equation
+	\begin{equation*}
+	\frac{G_y}{G_z}(\hat{x}, y_{t_0}^{0},z_{t_0}^{0}) = (1-s) \frac{G_y}{G_z}(x_0, y_{t_0}^{0},z_{t_0}^{0}) +s \frac{G_y}{G_z}(x_1, y_{t_0}^{0},z_{t_0}^{0}).
+	\end{equation*}
+	
+	By \Gseven\ and \Geight, $x_s$ is uniquely determined for each $s\in (0,1)$. In addition, $x_0$ and $x_1$ satisfy the above equation for $s =0$ and $s=1$ respectively. 
+	
+	Define $g(s):=\frac{1}{G_z(x_s,y_t^{0},z_t^{0})}\frac{\partial^2}{\partial t^2}G(x_s, y_t^{0}, z_t^{0})\Big|_{t=t_0}$, for $s\in [0,1]$.
+	
+	Then $g(0) =g'(0)  =0 $ by the two conditions defining a $G$-segment. 
+	
+	
+	For any fixed $s_0 \in [0,1]$, there is a $G$-segment $(x_{s_0}, y_t^{s_0}, z_t^{s_0})$ passing through $(x_{s_0}, y_{t_0}^{0}, z_{t_0}^{0})$ at $t=t_0$ with the same tangent vector as $(x_{s_0}, y_t^{0}, z_t^{0})$ at $t=t_0$, i.e., there exists 
+	another curve $(y_t^{s_0}, z_t^{s_0}) \in cl( Y \times Z)$ and some constant $C_2>0$, such that $(y_t^{s_0},z_t^{s_0})\mid _{t=t_0} = (y_t^{0},z_t^{0})\mid _{t=t_0}$,  $(\dot{y_t}^{s_0},\dot{z_t}^{s_0})\mid _{t=t_0} = \frac{1}{C_2} (\dot{y}_t^{0},\dot{z}_t^{0})\mid _{t=t_0}  $, and $(G_x, G)(x_{s_0},y_t^{s_0},z_t^{s_0}) = (1-t)(G_x, G)(x_{s_0},y_0^{s_0},z_0^{s_0})+t (G_x, G)(x_{s_0},y_1^{s_0},z_1^{s_0})$. 
+	
+	Computing the mixed fourth derivative yields
+	\begin{flalign*}
+	&\frac{\partial^2}{\partial s^2 }\Biggl(\frac{1}{G_z(x_s, y_t^{0}, z_t^{0})}\frac{\partial^2}{\partial t^2} G(x_s,y_t^{0},z_t^{0}) \Biggr) \Bigg|_{(s,t)=(s_0, t_0)} \\
+	=& C_2^2	\frac{\partial^2}{\partial s^2 }\Biggl(\frac{1}{G_z(x_s, y_t^{s_0}, z_t^{s_0})}\frac{\partial^2}{\partial t^2} G(x_s,y_t^{s_0},z_t^{s_0}) \Biggr) \Bigg|_{(s,t)=(s_0, t_0)} ,
+	\end{flalign*}
+	where the equality is derived from the condition that $s \in [0,1] \longmapsto \frac{G_y}{G_z}(x_s, y_{t_0},$ $ z_{t_0})$ forms an affinely parametrized line segment,  $(y_t^{s_0},z_t^{s_0})\mid _{t=t_0} = (y_t,z_t)\mid _{t=t_0}$ and $ (\dot{y}_t^{0},\dot{z}_t^{0})\mid _{t=t_0} = C_2(\dot{y_t}^{s_0},\dot{z_t}^{s_0})\mid _{t=t_0} $. Moreover, the latter expression is non-positive by assumption $\mathrm{(iii)}$.
+	
+	Thus $g''(s_0)\le 0$ for all $s_0 \in [0,1]$. Since $g$ is concave in $[0,1]$, and $g(0)=0$ is a critical point, we have $g(1)\le 0$. Thus $G_z<0$ implies $\frac{\partial^2}{\partial t^2}\Big|_{t=t_0}G(x_1, y_t^{0}, z_t^{0}) \ge 0$ for all $t_0 \in [0,1]$ and $x_1 \in X$, as desired. 
+\end{proof}
+
+
+For strictly concavity of the profit functional, one might need a strict version of hypothesis \Gthree:
+
+\Gthree$_{s}$ For each $x,x_0 \in X$ and $x\ne x_0$, assume $t \in [0,1] \longmapsto G(x, y_t, z_t)$ is strictly convex along all $G$-segments $(x_0, y_t, z_t)$ defined in (\ref{$G$-segment}).
+\medskip
+
+\begin{remark}\label{(C5)_s and (C5)_u}
+	Strict inequality in $\mathrm{(ii)}$ [or $\mathrm{(iii)}$] implies \Gthree$_{s}$ but the reverse is not necessarily true, i.e. \Gthree$_{s}$ is intermediate in strength between \Gthree\ and strict inequality version of $\mathrm{(ii)}$ [or $\mathrm{(iii)}$]. Besides, strict inequality versions of $\mathrm{(ii)}$ and $\mathrm{(iii)}$ are equivalent, and denoted by $\Gthree_{u}$.
+	
+	Note inequality \eqref{foc} below and its strict and uniform versions \Gthree$_{s}$ and \Gthree$_{u}$
+	precisely generalize of the analogous hypotheses $(B3)$, $(B3)_{s}$ and $(B3)_{u}$ from the quasilinear case 
+	\cite{FigalliKimMcCann11}.
+\end{remark}
+\begin{proof}
+	We only show strict inequality of $\mathrm{(ii)}$ implies that of $\mathrm{(iii)}$ here, since the other direction is similar.
+	
+	For any fixed $s_0\in [0,1]$, suppose $t\in [0,1] \longmapsto (G_x, G)(x_{s_0}, y_t, z_t)$  forms an affinely parametrized line segment. For any fixed $t_0 \in [0,1]$, define ${x}_s^{t_0}$ as a solution to the equation
+	$\frac{G_y}{G_z}({x}_{s}^{t_0}, y_{t_0},z_{t_0})$ $= (1-s) \frac{G_y}{G_z}({x}_{0}^{t_0}, y_{t_0},z_{t_0}) +s \frac{G_y}{G_z}({x}_{1}^{t_0}, y_{t_0},z_{t_0})$, with initial conditions ${x}_s^{t_0} |_{s=s_0}= x_{s_0}$ and $\dot{x}_s^{t_0}|_{s=s_0} = C_1 $ $\cdot \dot{x}_s|_{s=s_0}$, for some constant $C_1 >0$.	
+	Thus, by strict inequality of $\mathrm{(ii)}$, we have 
+	\begin{flalign*}
+	0>~&\frac{\partial^2}{\partial s^2 }\Big(\frac1{G_z(x_s^{t_0}, y_t, z_t)}\frac{\partial^2}{\partial t^2} G(x_s^{t_0},y_t,z_t) \Big)\Big|_{(s,t)=(s_0, t_0)}\hspace{1.38cm}\\
+	=~& \frac{\partial^2}{\partial s^2 }\Big(\frac1{G_z(x_s^{t_0}, y_t, z_t)}\Big)\frac{\partial^2}{\partial t^2} G(x_s^{t_0},y_t,z_t) \Big|_{(s,t)=(s_0, t_0)}\\
+	~&+ \frac{\partial}{\partial s }\Big(\frac1{G_z(x_s^{t_0}, y_t, z_t)}\Big)\frac{\partial^3}{\partial s \partial t^2} G(x_s^{t_0},y_t,z_t) \Big|_{(s,t)=(s_0, t_0)}\\
+	~&+ \frac1{G_z(x_s^{t_0}, y_t, z_t)}\frac{\partial^4}{\partial s^2 \partial t^2} G(x_s^{t_0},y_t,z_t) \Big|_{(s,t)=(s_0, t_0)}\\
+	=~& 
+	-\frac{G_{x,z}(x_s^{t_0},y_t,z_t)}{G_z^2(x_s^{t_0}, y_t, z_t)}\frac{\partial^2}{\partial t^2} G_x(x_s^{t_0},y_t,z_t) (\dot{x}_s^{t_0})^2 \Big|_{(s,t)=(s_0, t_0)}\\
+	~&+ \frac1{G_z(x_s^{t_0}, y_t, z_t)}\frac{\partial^2}{\partial t^2} G_{xx}(x_s^{t_0},y_t,z_t)(\dot{x}_s^{t_0})^2  \Big|_{(s,t)=(s_0, t_0)}\\
+	=~&C_1^2\Big[-\frac{G_{x,z}(x_{s},y_t,z_t)}{G_z^2(x_{s}, y_t, z_t)}\frac{\partial^2}{\partial t^2} G_x(x_{s},y_t,z_t) (\dot{x}_s)^2 \Big|_{(s,t)=(s_0, t_0)}\\
+	~&+ \frac1{G_z(x_{s}, y_t, z_t)}\frac{\partial^2}{\partial t^2} G_{xx}(x_{s},y_t,z_t)(\dot{x}_s)^2  \Big|_{(s,t)=(s_0, t_0)}\Big]\\
+	=~&C_1^2\frac{\partial^2}{\partial s^2 }\Big(\frac1{G_z(x_s, y_t, z_t)}\frac{\partial^2}{\partial t^2} G(x_s,y_t,z_t) \Big)\Big|_{(s,t)=(s_0, t_0)}.
+	\end{flalign*}
+	Here we use the initial condition ${x}_s^{t_0} |_{s=s_0}= x_{s_0}$ and $\dot{x}_s^{t_0}|_{s=s_0} = C_1 \dot{x}_s|_{s=s_0}$.  Besides, since $(x_{s_0}, y_t, z_t)$ forms a $G$-segment, therefore we have 
+	\begin{flalign*}
+	\frac{\partial^2}{\partial t^2} G(x_s^{t_0},y_t,z_t) \Big|_{(s,t)=(s_0, t_0)}=\frac{\partial^2}{\partial t^2} G(x_s,y_t,z_t) \Big|_{(s,t)=(s_0, t_0)}=0,
+	\end{flalign*}
+	\begin{flalign*}
+	\text{ and } \frac{\partial^2}{\partial t^2} G_x(x_s^{t_0},y_t,z_t) \Big|_{(s,t)=(s_0, t_0)}=\frac{\partial^2}{\partial t^2} G_x(x_s,y_t,z_t) \Big|_{(s,t)=(s_0, t_0)}=0.
+	\end{flalign*}
+	
+	From the above inequality and $C_1 >0$, one has 
+	\begin{equation*}
+	\frac{\partial^2}{\partial s^2 }\Big(\frac1{G_z(x_s, y_t, z_t)}\frac{\partial^2}{\partial t^2} G(x_s,y_t,z_t) \Big)\Big|_{(s,t)=(s_0, t_0)}<0,
+	\end{equation*} 
+	whenever $\dot{x_s}|_{s=s_0}$ and $(\dot{y_t},\dot{z}_t)|_{t=t_0}$ are nonzero. Since this inequality holds for each fixed $t_0 \in [0,1]$, the strict version of  $\mathrm{(iii)}$ is proved.
+\end{proof}
+
+Combining $\mathrm{(ii)}$ and $\mathrm{(iii)}$, one can conclude they are also equivalent to the following statement $\mathrm{(iv)}$.
+
+
+\begin{corollary}\label{FourthOrder4}
+	Assuming \Gzero-\Gtwo, \Gfour-\Geight\ and $G\in C^4(cl(X\times Y \times Z)
+	)$,  then \Gthree\ is equivalent to the following statement:\\
+	$\mathrm{(iv)}$. For any given curve $x_s\in X$ connecting $x_0$ and $x_1$,  and any curve $(y_t, z_t) \in cl( Y \times Z)$ connecting $(y_0,z_0)$ and $(y_1, z_1)$, we have 
+	\begin{equation}\label{foc}
+	\frac{\partial^2}{\partial s^2 }\Biggl(\frac{1}{G_z(x_s, y_t, z_t)}\frac{\partial^2}{\partial t^2} G(x_s,y_t,z_t) \Biggr)\Bigg|_{(s,t) = (s_0,t_0)}\le 0,
+	\end{equation}
+	whenever either of the two curves $t\in [0,1] \longmapsto (G_x, G)(x_{s_0}, y_t, z_t)$ and  $s\in [0,1] \longmapsto \frac{G_y}{G_z}(x_s, y_{t_0}, z_{t_0})$ forms an affinely parametrized line segment.
+\end{corollary}	
+
+
+
+

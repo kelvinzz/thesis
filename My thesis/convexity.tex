@@ -1,0 +1,552 @@
+\chapter{Convexity}\label{chapter:convexity}
+
+
+%%\begin{abstract}
+%%A monopolist wishes to maximize her profits by finding an optimal price policy. 
+%%After she announces a menu of products and prices, each agent $x$ will choose to buy that product $y(x)$ which maximizes his own utility, if positive. 
+%%The principal's profits are the sum of the net earnings produced by each product sold.  
+%%These are determined by the costs of production and the distribution of products sold, which in turn are based on the distribution of anonymous agents and the choices they make in response to the principal's price menu. 
+%%In this paper, we provide a necessary and sufficient condition for the convexity or concavity of the principal's (bilevel) optimization problem, assuming each agent's disutility is a strictly increasing but not necessarily affine (i.e.\ quasilinear) function of the price paid. 
+%%Concavity when present, makes the problem more amenable to computational and theoretical analysis; it is key to obtaining uniqueness and stability results for the principal's strategy in particular. 
+%%Even in the quasilinear case, our analysis goes beyond previous work by addressing convexity as well as concavity, by establishing conditions which are not only sufficient but necessary, and by requiring fewer hypotheses on the agents' preferences.
+%%\end{abstract}
+
+
+
+\section{Introduction}\label{secttion:intro}
+
+In this chapter, we will show concavity and uniqueness results of the principal's problem, under the settings in section \ref{section:Hypotheses}.
+\medskip
+%Most of hypotheses we need in this chapter is listed in section \ref{section:Hypotheses}. 
+
+In section \ref{section:concavity}, we will first rewrite the principal's problem as \eqref{eqn:principalFinal}, then state the equivalent condition to convexity of the functional domain $\mathcal{U}_\nul$. Then we will show a variety of necessary and sufficient conditions for concavity (and convexity) of the principal's problem, and the resulting uniqueness of her optimal strategy.  
+
+\medskip
+
+
+%
+%Section \ref{section:4thorder} gives a differential criterion for the crucial hypotheses --- \Gthree\ of the next section --- clarifying its relation to that of Figalli, Kim \& McCann \cite{FigalliKimMcCann11}, and the Ma-Trudinger-Wang criteria for regularity of optimal maps \cite{MaTrudingerWang05} which inspired it. 
+
+
+In section \ref{section:privateInformation},  we assume the monopolist's utility does not depend on the agent's private information, which in certain circumstances allows us to provide a necessary and sufficient condition for concavity of her profit functional.
+\medskip
+
+
+
+\medskip
+
+
+\section{Concavity and Convexity Results}\label{section:concavity}
+The advantage of the reformulation from Section \ref{section:ExistenceBounded} is to make the principal's objective $\pmb \Pi$ 
+depend on a scalar function $u$ instead of a vector field $y$.
+By \Gone, the optimal choice $y(x)$ of   Lebesgue almost every agent $x\in X$
+is uniquely determined by $u$.  Recall that $\bar{y}_G(x, u(x), Du(x))$ is the unique solution $(y,z)$ of the system ($\ref{EqnInverse}$), for any $x\in \dom Du$. 
+Then the principal's problem $(P_3)$ can be rewritten as maximizing a functional 
+depending only on the agents' indirect utility $u$:
+\begin{equation}\label{eqn:principalFinal}
+	(P_4) \ \ \ \ \ \  \max\limits_{ u\ge u_\nul \atop \text{$u$ is $G$-convex}} \pmb\Pi(u) := \max\limits_{u \ge u_\nul \atop \text{$u$ is $G$-convex}} \int_X \pi(x, \bar{y}_G(x, u(x), Du(x)))  d \mu(x) .
+\end{equation}
+
+
+Define $\mathcal{U}:=\{u:X\longrightarrow \R \mid  u \text{ is } G\text{-convex}\}$
+and $\mathcal{U}_{\emptyset}:=\{u \in \mathcal{U}\mid  u\ge u_{\emptyset}\}$. 
+Then the problem becomes to maximize $\pmb\Pi$ on $\mathcal{U}_\nul$. 
+In this section, we give conditions under which the function space $\mathcal{U}_\nul$ 
+is convex and the functional $\pmb\Pi$ is concave, often strictly.
+Uniqueness and stability of the principal's maximizing strategy follow from strict concavity as in \cite{FigalliKimMcCann11}. We also provide conditions under which $\pmb\Pi$ is convex. In this situation, the maximizers of $\pmb\Pi$ may not be unique, but are attained at extreme points of 
+$\mathcal{U}_{\emptyset}$. (Recall that $u \in \mathcal{U}$ is called {\em extreme} if 
+$u$ does not lie at the midpoint of any segment in $\mathcal{U}$.)
+\medskip
+
+
+\begin{theorem}[$G$-convex functions form a convex set]\label{convex set}
+	If $G: cl(X\times Y\times Z) \longrightarrow \R$ satisfies \Gzero-\Gtwo, then \Gthree\ becomes necessary and sufficient for the convexity of the set $\mathcal{U}$.
+\end{theorem}
+\begin{proof}
+	Assuming \Gzero-\Gtwo, for any $u_0, u_1 \in \mathcal{U}$, define $u_t(x) := (1-t)u_0(x)+tu_1(x)$, $t\in (0,1)$. We want to show $u_t$ is $G$-convex as well, for each $t\in (0,1)$. 
+	
+	For any fixed $x_0 \in X$, since $u_0, u_1$ are $G$-convex, there exist $(y_0,z_0),$ $ (y_1, z_1) \in cl( Y \times Z)$, such that $u_0(x_0)= G(x_0, y_0,z_0)$, $u_1(x_0)=G(x_0,y_1,z_1)$, $u_0(x)\ge G(x,y_0,z_0)$ and $u_1(x)\ge G(x,y_1,z_1)$, for all $ x\in X$. 
+	
+	Denote $(x_0, y_t, z_t)$ the $G$-segment connecting $(x_0, y_0, z_0)$ and $(x_0, y_1, z_1)$. Then $u_t(x_0) = (1-t)u_0(x_0)+tu_1(x_0)=(1-t) G(x_0, y_0,z_0)+ tG(x_0,y_1,z_1) = G(x_0,y_t, z_t)$, where the last equality comes from ($\ref{$G$-segment}$). 
+	
+	In order to prove $u_t$ is $G$-convex, it remains to show $u_t(x)\ge  G(x,y_t,z_t)$, for all $x\in X$. 
+	
+	By \Gthree, $G(x, y_t, z_t)$ is convex in $t$, i.e., $G(x,y_t,z_t)\le (1-t)G(x, y_0,z_0)+tG(x, y_1, z_1)$. So, $u_t(x)=$ $  (1-t)u_0(x)+tu_1(x) \ge (1-t) G(x,y_0,z_0)+tG(x, y_1, z_1)\ge G(x, y_t, z_t)$, for each $x \in X$. By definition, $u_t$ is $G$-convex, i.e., $u_t\in \mathcal{U}$, for all $t \in (0,1)$. Thus, $\mathcal{U}$ is convex.
+	
+	Conversely, assume $\mathcal{U}$ is convex. For any fixed $x_0 \in X$, $(y_t,z_t) \in cl( Y \times Z)$ with $(x_0, y_t, z_t)$ being a $G$-segment, we would like to show $G(x,y_t, z_t) \le (1-t)G(x,y_0,z_0)+tG(x,y_1, z_1)$, for any $x\in X$.
+	
+
+	
+	Define $u_i(x) := G(x, y_i, z_i)$, for $i=0,1$. Then by definition of $G$-convexity, $u_0, u_1 \in \mathcal{U}$. Denote $u_t:= (1-t)u_0+tu_1$, for all $t\in (0,1)$. Since $\mathcal{U}$ is a convex set, $u_t$ is also $G$-convex. For this $x_0$ and each $t\in (0,1)$, there exists $(\tilde{y}_t, \tilde{z}_t) \in cl( Y \times Z)$, such that $u_t(x)\ge G(x, \tilde{y}_t, \tilde{z}_t)$, for all $x\in X$, and equality holds at $x_0$. Thus, $Du_t(x_0) = D_x G(x_0, \tilde{y}_t, \tilde{z}_t)$.
+	
+	Since $(x_0, y_t, z_t)$ is a $G$-segment, from $(\ref{$G$-segment})$, we know $D_x G(x_0, y_t, z_t) = (1-t) D_x G(x_0, y_0, z_0) +t D_x G(x_0, y_1, z_1) = (1-t) Du_0(x_0) +t Du_1(x_0) = Du_t(x_0)$. Thus, by \Gone,  $(\tilde{y}_t , \tilde{z_t}) = (y_t, z_t)$, for each $t\in (0,1)$. Therefore, $(1-t)G(x,y_0,z_0)+tG(x,y_1, z_1) = u_t \ge G(x, \tilde{y}_t, \tilde{z}_t) = G(x, y_t, z_t)$, for all $x\in X$, i.e., $G(x, y_t, z_t)$ is convex in $t$ along any $G$-segment $(x_0, y_t, z_t)$.
+\end{proof}
+
+
+
+The following theorem provides a sufficient and necessary condition for the functional $\pmb \Pi(u)$ to be concave. It reveals the relationship between linear interpolations on the function space $\mathcal{U}$ and G-segments on the underlying type space $cl( Y \times Z)$.\medskip
+
+\begin{theorem}[Concavity of the principal's objective]\label{maintheorem}
+	If $G$ and $\pi: cl(X\times Y\times Z) \longrightarrow \R$ satisfy \Gzero-\Gfive, the following statements are equivalent:
+	
+	$(i)$ $t\in[0,1] \longmapsto \pi(x, y_t ,z_t)$ is concave along all G-segments $(x, y_t, z_t)$;
+	
+	$(ii)$ $\pmb \Pi(u)$ is concave in $\mathcal{U}$ for all $\mu\ll \mathcal{L}^m$. 
+\end{theorem}
+
+\begin{proof}
+	$(i)\Rightarrow (ii).$ For any $u_0, u_1 \in \mathcal{U}$, $t\in (0,1)$, define $u_t = (1-t)u_0+tu_1$. We want to prove $\pmb \Pi(u_t) \ge (1-t) \pmb \Pi(u_0) + t\pmb \Pi(u_1)$, for any $\mu\ll \mathcal{L}^m$.
+	
+	Equations $(\ref{EqnInverse})$ implies that there exist $y_0, y_1: \dom Du \longrightarrow cl(Y)$ and $z_0, z_1: \dom Du \longrightarrow cl(Z)$ such that
+	\begin{flalign}\label{Eqn:u_01}
+	\begin{split}
+	(G_x, G) (x, y_0(x), z_0(x)) &= (Du_0, u_0)(x),\\
+	(G_x, G) (x, y_1(x), z_1(x)) &= (Du_1, u_1)(x).
+	\end{split}
+	\end{flalign}
+	For each $x\in \dom Du$, $(y_0(x), z_0(x)), (y_1(x), z_1(x)) \in cl( Y \times Z)$, let $t\in [0,1] \longmapsto (x, y_t(x), z_t(x))$ be the $G$-segment connecting $(x, y_0(x), z_0(x))$ and $(x, y_1(x), z_1(x))$. Combining $(\ref{Eqn:u_01})$ and  $(\ref{$G$-segment})$, we have 
+	\begin{equation}\label{EqnG-segments}
+	(G_x, G) (x, y_t(x), z_t(x)) = (Du_t, u_t)(x).
+	\end{equation}
+	Thus, by concavity of $\pi$ on $G$-segments, for every $t \in [0,1]$,
+	\begin{align*}
+	\pmb \Pi (u_t)&= \int_X \pi(x, y_t(x), z_t(x))  d \mu (x)\\
+	&\ge \int_X (1-t)\pi(x, y_0(x), z_0(x)) +t\pi(x, y_1(x), z_1(x))    d\mu (x)\\
+	&=(1-t)\pmb \Pi (u_0)+ t \pmb \Pi(u_1).
+	\end{align*}
+	Thus, $\pmb \Pi $ is concave in $\mathcal{U}$.
+	
+	$(ii)\Rightarrow (i).$ To derive a contradiction, assume $(i)$ fails.  Then there exists a $G$-segment $(x_0, y_t(x_0), z_t(x_0))$ and $t_0\in (0,1)$ such that 
+	\begin{equation*}
+		\pi(x_0, y_{t_0}(x_0), z_{t_0}(x_0)) <  (1-t_0)\pi(x_0, y_0(x_0),z_0(x_0))+ t_0 \pi(x_0, y_1(x_0), z_1(x_0)).
+	\end{equation*}
+	Let $u_0(x) := G(x, y_0(x_0), z_0(x_0))$, $u_1(x):= G(x, y_1(x_0), z_1(x_0))$ and $u_{t_0} = (1-t_0)u_0 +t_0 u _1$. Then $u_0, u_1, u_{t_0} \in \mathcal{U}$.  From $(\ref{Eqn:u_01})$ we know, $y_i(x)\equiv y_i(x_0)$, $z_i(x)\equiv z_i(x_0)$, for $i=0,1$.  Let $t\in [0,1] \longmapsto (x, y_t(x), z_t(x))$ be the $G$-segment connecting $(x, y_0(x), z_0(x))$ and $(x, y_1(x), z_1(x))$. And combining $(\ref{EqnInverse})$ and $(\ref{$G$-segment})$, we have
+	\begin{flalign*}
+	(G_x, G) (x, y_0(x_0), z_0(x_0)) &= (Du_0, u_0)(x),\\
+	(G_x, G) (x, y_1(x_0), z_1(x_0)) &= (Du_1, u_1)(x).\\
+	(G_x, G) (x, y_{t_0}(x), z_{t_0}(x)) &= (Du_{t_0}, u_{t_0})(x).
+	\end{flalign*}
+	
+	Since $\pi$, $y_{t_0}$ and $z_{t_0}$ are continuous, there exists $\varepsilon >0$, such that for all $x\in B_{\varepsilon}(x_0)$, one has
+	\begin{flalign*}
+	\pi(x, y_{t_0}(x), z_{t_0}(x)) < (1-t_0)\pi(x, y_0(x_0),z_0(x_0))  + t_0 \pi(x, y_1(x_0), z_1(x_0)).
+	\end{flalign*} 
+	Here we use $B_{\varepsilon}(x_0)$ denote the open ball in $\R^m$ centered at $x_0$ with radius $\varepsilon$.
+	Take $d\mu = d\mathcal{L}^m
+	\mid _{B_{\varepsilon} (x_0)}/{\mathcal{L}^m} 
+	(B_{\varepsilon}(x_0))$ to be uniform measure on $B_\varepsilon(x_0)$. 
+	Thus, 
+	\begin{align*}
+	\pmb \Pi (u_{t_0}) &= \int_X \pi(x, y_{t_0}(x), z_{t_0}(x)) d\mu(x)\\
+	&<  \int_X    (1-t_0)\pi(x, y_0(x_0),z_0(x_0))  + t_0 \pi(x, y_1(x_0), z_1(x_0))     d\mu(x)\\
+	&=(1-t_0)\pmb \Pi(u_0)+ t_0 \pmb \Pi(u_1).
+	\end{align*}
+	This contradicts the concavity of $\pmb \Pi$.
+\end{proof}
+
+A similar proof shows the following result. Corollary $\ref{Cor:concave}$ implies that concavity of the principal's profit is equivalent to concavity of principal's utility along qualified $G$-segments. Moreover, Theorem~\ref{convex set} and Corollary $\ref{Cor:concave}$ together imply that the principal's profit $\pmb \Pi$ is a concave functional on a convex space, under assumptions \Gzero-\Gfive, $\mu\ll \mathcal{L}^m$, and $(i)'$ below. 
+\medskip
+
+\begin{corollary}\label{Cor:concave}
+	If $G$ and $\pi$ satisfy \Gzero-\Gfive,  the following are equivalent:
+	
+	$(i)'$ $t\in[0,1] \longmapsto \pi(x, y_t(x) ,z_t(x))$ is concave  along all G-segments $(x, y_t(x), z_t(x))$ whose 
+	endpoints satisfy $\min\{G(x, y_0(x), z_0(x)),G(x,y_1(x),$
+	$z_1(x))\} \ge u_{\emptyset}(x)$;
+	
+	$(ii)'$ $\pmb \Pi(u)$ is concave in $\mathcal{U}_{\emptyset}$  for all $\mu\ll \mathcal{L}^m$. 
+\end{corollary}
+
+
+
+
+To obtain uniqueness and stability of optimizers requires a stronger form of convexity.
+Recall that a function $f$ defined on a convex subset of a normed space 
+is said to be strictly convex if $f((1-t)x + ty)>(1-t) f(x) + tf(y)$ 
+whenever $0<t<1$ and $x\ne y$. It is said to be (2-)uniformly concave, if there exists    
+$\lambda>0$, such that for any $x, y$ in the domain of $f$ and $t\in [0,1]$, the following inequality holds.
+\begin{flalign*}
+f((1-t)x+ty) -(1-t)f(x) - t f(y) \ge t(1-t)\lambda||x-y||^2.
+\end{flalign*}
+For such strengthenings,  it is necessary to view indirect utilities $u \in \mathcal U$ 
+as equivalence classes
+of functions which differ only on sets of $\mu$ measure zero.  More precisely, it is natural to adopt 
+the Sobolev norm
+\begin{equation*}
+	\|u\|^2_{W^{1,2}(X,d\mu)} := \int_X( |u|^2 + |Du|^2) d\mu(x)	
+\end{equation*}
+on $\mathcal{U}$ and $\mathcal{U}_{\emptyset}$. We then have the following results:
+\medskip
+
+\begin{corollary}\label{Cor:strictconcave}
+	Let $\pi$ and $G$ satisfy \Gzero-\Gfive. If 
+	
+	$(iii)$  $t\in[0,1] \longmapsto \pi(x, y_t ,z_t)$ is strictly concave along all G-segments $(x, y_t, z_t)$, then  
+	
+	$(iv)$ $\pmb \Pi(u)$ is strictly concave in $\mathcal{U} \subset W^{1,2}(X,d\mu)$  for all $\mu\ll \mathcal{L}^m$. If 	
+	
+	$(iii)'$ $t\in[0,1] \longmapsto \pi(x, y_t(x) ,z_t(x))$ is strictly concave along all G-segments $(x, y_t(x), z_t(x))$ whose 
+	endpoints satisfy $\min\{G(x, y_0(x), z_0(x)),$ $G(x,$ $y_1(x), z_1(x))\} \ge u_{\emptyset}(x)$, then 
+	
+	$(iv)'$ $\pmb \Pi(u)$ is strictly concave in $\mathcal{U}_{\emptyset} \subset W^{1,2}(X,d\mu)$ for all $\mu\ll \mathcal{L}^m$. 
+\end{corollary}
+
+In addition, Theorem $\ref{convex set}$ and Corollary $\ref{Cor:strictconcave}$ together imply strict concavity of principal's profit on a convex space, which guarantees a unique solution to the monopolist's problem.\medskip
+
+
+Define $\bar{G}(\bar{x}, \bar{y})=\bar{G}(x,x_0, y,z) := x_0 G(x, y,z)$, where $\bar{x}=(x, x_0)$, $\bar{y}=(y,z)$ and $x_0\in X_0$, where $X_0 \subset (-\infty, 0)$ is an open bounded interval containing $-1$. {Hereafter, except in chapter \ref{chapter:analytic_representation}, we use $x_0$ to denote a number in $X_0$.} For further applications, we need the following non-degeneracy assumption. \medskip
+
+\begin{itemize}
+	\item[\Gsix] $G\in C^2(cl(X\times Y \times Z)
+	)$, and $D_{\bar{x},\bar{y}}(\bar{G})(x,-1,y,z)$ has full rank, for each $(x,y,z)\in cl(X\times Y\times Z)$. 
+\end{itemize}
+
+Since \Gone\ implies $m \ge n$,  full rank means $D_{\bar{x},\bar{y}}(\bar{G})(x,-1,y,z)$ has rank $n+1$.
+\medskip
+
+
+\begin{theorem}[Uniform concavity of the principal's objective]\label{maintheorem2}
+	Assume $G\in  C^{2}(cl(X\times Y\times Z))$ satisfies \Gzero-{\Gsix}. In case $\bar{z}=+\infty$, assume the homeomorphisms of \Gone\ are uniformly bi-Lipschitz. Then the following statements are equivalent:
+	
+	$(v)$ Uniform concavity of $\pi$ along G-segments, i.e., there exists $\lambda>0$, for any $G$-segment $(x, y_t, z_t)$, and any $t\in [0,1]$, 
+	\begin{flalign}\label{uniformconvavity}
+	\begin{split}
+	&\pi(x, y_t(x), z_t(x)) - (1-t)\pi(x, y_0(x), z_0(x)) - t\pi(x, y_1(x), z_1(x)) \\
+	\ge & t(1-t)\lambda||(y_1(x)-y_0(x),z_1(x)-z_0(x))||^2_{\R^{n+1}}
+	\end{split}
+	\end{flalign} 
+	
+	$(vi)$ $\pmb \Pi(u)$ is uniformly concave in $\mathcal{U} \subset W^{1,2}(X,d\mu)$,  uniformly for all $\mu\ll \mathcal{L}^m$. 
+\end{theorem}
+
+\begin{proof}
+	$(v)\Rightarrow (vi).$ With the same notation as last proof, we want to prove there exists  
+	$\tilde{\lambda}>0$, such that $\pmb \Pi(u_t) - (1-t) \pmb \Pi(u_0) - t\pmb \Pi(u_1)\ge t(1-t)\tilde{\lambda}||u_1-u_0||^2_{W^{1,2}(X,d\mu)}$, for any $\mu\ll \mathcal{L}^m$, $u_0, u_1 \in \mathcal{U}$ and $t\in (0,1)$. 
+	
+	Similar to last proof, we have (\ref{Eqn:u_01}) and (\ref{EqnG-segments}). Denote $\Lip(G_x,G)$ the uniform Lipschitz constant of the map $(x,y,z)\in X\times Y\times Z \longmapsto (G_x,G)(x,y,z)$.
+
+	Thus by uniform concavity of $\pi$ on $G$-segments, there exists  
+	$\lambda>0$, such that for every $t \in [0,1]$,
+	\begin{align*}
+	&\pmb \Pi (u_t)-(1-t)\pmb \Pi (u_0)- t \pmb \Pi(u_1)\\
+	&= \int_X \pi(x, y_t(x), z_t(x)) - (1-t)\pi(x, y_0(x), z_0(x)) - t\pi(x, y_1(x), z_1(x)) d \mu (x)\\
+	\end{align*}
+	\begin{align*}
+	&\ge \int_{X} t(1-t)\lambda||(y_1(x)-y_0(x),z_1(x)-z_0(x))||^2_{\R^{n+1}} d\mu (x)\\
+	&\ge \int_{X} t(1-t)\lambda||(Du_1(x)-Du_0(x),u_1(x)-u_0(x))||^2_{\R^{n+1}}/{\Lip}^2(G_x,G) d\mu (x)\\
+	&= t(1-t)\frac{\lambda}{\Lip^2(G_x,G)} ||u_1-u_0||_{W^{1,2}(X,d\mu)}.
+	\end{align*}
+	Thus, $\pmb \Pi $ is uniformly concave in $\mathcal{U}$, with $\tilde{\lambda} = \frac{\lambda}{\Lip^2(G_x,G)} >0$.
+	
+	$(vi)\Rightarrow (v).$ To derive a contradiction, assume $(v)$ fails.  Then for any $\lambda>0$, there exists a $G$-segment $(x^0, y_t(x^0), z_t(x^0))$, and some $\tau \in (0,1)$, such that $\pi(x^0, y_{\tau}(x^0), z_{\tau}(x^0)) -  (1-\tau)\pi(x^0, y_{0}(x^0),z_{0}(x^0))-\tau \pi(x^0, y_{1}(x^0), z_{1}(x^0)) < \tau (1-\tau)\lambda ||(y_{1}(x^0)-y_{0}(x^0), z_{1}(x^0)-z_{0}(x^0))||^2_{\R^{n+1}}$.
+	
+	Take $u_0(x) := G(x, y_{0}(x^0), z_{0}(x^0))$, $u_1(x):= G(x, y_{1}(x^0), z_{1}(x^0))$ and for $t\in (0,1)$, assign $u_{t} := (1-t)u_0 +t u _1$. Then $ u_{t} \in \mathcal{U}$, for $t \in [0,1]$.  From $(\ref{Eqn:u_01})$ we know, $y_i(x)\equiv y_i(x^0)$, $z_i(x)\equiv z_i(x^0)$, for $i=0,1$.  Let $t\in [0,1] \longmapsto (x, y_t(x), z_t(x))$ be the $G$-segment connecting $(x, y_0(x), z_0(x))$ and $(x, y_1(x), z_1(x))$. And combining $(\ref{EqnInverse})$ and $(\ref{$G$-segment})$, we have
+	\begin{flalign*}
+	(G_x, G) (x, y_{0}(x^0), z_{0}(x^0)) &= (Du_0, u_0)(x),\\
+	(G_x, G) (x, y_{1}(x^0), z_{1}(x^0)) &= (Du_1, u_1)(x).\\
+	(G_x, G) (x, y_{t}(x), z_{t}(x)) &= (Du_{t}, u_{t})(x).
+	\end{flalign*}
+	
+	Since $\pi$, $y_{\tau}$ and $z_{\tau}$ are continuous, there exists $\varepsilon >0$, such that for all  $x\in B_{\varepsilon}(x^0)$,
+	\begin{flalign*}
+	&\pi(x, y_{\tau}(x), z_{\tau}(x)) -  (1-\tau)\pi(x, y_{0}(x^0),z_{0}(x^0))-\tau \pi(x, y_{1}(x^0), z_{1}(x^0)) \\
+	&< \tau (1-\tau)\lambda||(y_{1}(x^0)-y_{0}(x^0), z_{1}(x^0)-z_{0}(x^0))||^2_{\R^{n+1}}.
+	\end{flalign*} 
+	Here we use $B_{\varepsilon}(x^0)$ denote the open ball in $\R^m$ centered at $x^0$ with radius $\varepsilon$.
+	Take $d\mu = d\mathcal{L}^m
+	\mid _{B_{\varepsilon} (x^0)}/\mathcal{L}^m
+	(B_{\varepsilon}(x^0))$ to be uniform measure on $B_\varepsilon(x^0)$. 
+	By \Gsix,   the map $\bar{y}_G:(x,p,q)\longmapsto(y,z)$, which solves equation (\ref{EqnInverse}), is uniformly Lipschitz on $X\times \R \times\R^m$. Denote  $\Lip(\bar{y}_G)$ its Lipschitz constant.
+	
+	Thus for such $\tau$, $u_0$, $u_1$ and $\mu$, we have
+	\begin{flalign*}
+	&\pmb \Pi (u_{\tau})- (1-\tau)\pmb \Pi(u_0)- \tau \pmb \Pi(u_1)\\
+		&= \int_X \pi(x, y_{\tau}(x), z_{\tau}(x)) -  (1-\tau)\pi(x, y_{0}(x^0),z_{0}(x^0)) -\tau \pi(x, y_{1}(x^0), z_{1}(x^0)) d\mu(x)
+	\end{flalign*}
+	\begin{flalign*}		
+	&<  \int_X    \tau(1-\tau)\lambda ||(y_{1}-y_{0}, z_{1}-z_{0})||^2_{\R^{n+1}} d\mu(x)\\
+	&\le \tau(1-\tau)\lambda {\Lip}^2(\bar{y}_G)||u_1-u_0||^2_{W^{1,2}(X,d\mu)}.\hspace{6cm}
+	\end{flalign*}
+	This contradicts the uniform concavity of $\pmb \Pi$.
+\end{proof}
+
+A similar argument implies the following equivalence. Theorem $\ref{convex set}$ and Corollary $\ref{Cor:concave2}$ together imply that the principal's profit $\pmb \Pi$ is a uniformly concave functional on a convex space, under assumptions \Gzero-\Gsix, $\mu\ll \mathcal{L}^m$, and $(v)'$.  
+
+
+
+\begin{corollary}\label{Cor:concave2}
+	Under the same assumptions as in Theorem \ref{maintheorem2},  the following are equivalent:
+	
+	$(v)'$ Uniform concavity of $\pi$  (in the sense of equation (\ref{uniformconvavity})) along G-segments $(x, y_t(x), z_t(x))$ whose 
+	endpoints satisfy $\min\{G(x, y_0(x), z_0(x)), G(x,$ $y_1(x),z_1(x))\} \ge u_{\emptyset}(x)$;
+	
+	$(vi)'$ $\pmb \Pi(u)$ is uniformly concave  in $\mathcal{U}_{\emptyset} \subset W^{1,2}(X,d\mu)$   uniformly
+	for all $\mu\ll \mathcal{L}^m$. 
+\end{corollary}
+
+The preceding concavity results also have convexity analogs. Unlike strict concavity, strict convexity does not
+imply uniqueness of the principal's profit-maximizing strategy, though it suggests it should only be attained at 
+extreme points of the strategy space $\mathcal U$,  where extreme point needs to be interpreted appropriately.
+\medskip
+
+
+\begin{remark}[Convexity of principal's objective]\label{remarkmaintheorem1}
+	If $\pi$ and $G$ satisfy \Gzero-\Gfive,  the equivalences 
+	$(i) \Leftrightarrow (ii)$ and $(i)' \Leftrightarrow (ii)'$ and implications $(iii) \Rightarrow (iv)$ and $(iii)' \Rightarrow (iv)'$ remain true when all occurences of concavity are replaced by convexity.
+	Similarly,  the equivalences $(v) \Leftrightarrow (vi)$ and $(v)' \Leftrightarrow (vi)'$ remain true when both
+	occurences of uniform concavity are replaced by uniform convexity in Theorem \ref{maintheorem2}. 
+\end{remark}
+\medskip
+
+
+
+
+
+Assuming \Gsix, we denote $(\bar{G}_{\bar{x}, \bar{y}})^{-1}$ the left inverse of $D_{\bar{x},\bar{y}}(\bar{G})(x,x_0,y,z)$.
+We will use Einstein notation for simplifying expressions including summations of vectors, matrices, and general tensors for higher order derivatives. There are essentially three rules of Einstein summation notation, namely: 1. repeated indices are implicitly summed over; 2. each index can appear at most twice in any term; 3.~both sides of an equation must contain the same non-repeated indices. For example, $a_{ij}v_i =\sum_{i}a_{ij}v_i$, $a_{ij}b^{kj}v_k=\sum_{j}\sum_{k}a_{ij}b^{kj}v_k$. We also use comma to separate subscripts: the subscripts before comma represent derivatives with respect to first variable and those after comma represent derivatives with respect to second variable. For instance, for $b=b(x,y)$, $b_{,kl}$ represents second derivatives with respect of $y$ only. And for $G=G(x,y,z)$, where $z\in \R$, $G_{i,jz}$ denotes third order derivatives with respect of $x$, $y$ and $z$, instead of using another comma to separate subscripts corresponding to $y$ and $z$. Starting from now, for subscripts, we use $i,k,j,l, \alpha, \beta$ denoting integers  from either $\{1,...,m\}$ or $\{ 1,..., n\}$, and $\bar{i},\bar{k},\bar{j},\bar{l}$ denoting augmented indices from $\{1,...,m+1\}$ or $ \{1, ..., n+1\}$. For instance, $\pi_{i,}$ denotes first order derivative with respect to $x$ only, $\pi_{,\bar{k}\bar{j}}$ represents Hessian matrix with respect to $\bar{y}$ only, and $\bar{G}_{\bar{i},\bar{k}\bar{j}}$ denotes a third order derivative tensor which can be viewed as taking $\bar{x}$-derivative of $\bar{G}_{,\bar{k}\bar{j}}$.
+\medskip
+
+The following remark reformulates concavity of $\pi$ on $G$-segments using non-positive definiteness of a matrix. This equivalent form provides a simple method to verify concavity condition stated in Theorem $\ref{maintheorem}$. We will apply this matrix form to establish Corollary $\ref{bar{G}^*-Concavity}$ and Example $\ref{general example1} - \ref{general example3}$.\medskip
+
+\begin{lemma}[Characterizing concavity of principal's profit in the smooth case]\label{LemmaProfitConcavity}
+	When $G \in C^3(cl(X\times Y \times Z))$ satisfies \Gzero-\Gsix \ and  $\pi \in C^2(cl(X\times Y \times Z))$, then differentiating $\pi$ along an arbitrary $G$-segment $t \in[0,1] \longrightarrow (x,y_t,z_t)$ yields
+	\begin{equation}\label{pi second}
+	\frac{d^2}{dt^2} \pi(x, y_t, z_t) = (\pi_{,\bar{k}\bar{j}}- \pi_{,\bar{l}} \bar{G}^{\bar i,\bar l}\bar{G}_{\bar{i},\bar{k}\bar{j}}) \dot {\bar y}^{\bar k} \dot {\bar y}^{\bar j}
+	\end{equation}
+	where $\bar{G}^{\bar i,\bar l}$ denotes the left inverse of the matrix $\bar{G}_{\bar{i}, \bar{k} }$
+	and $\dot {\bar y}^{\bar k} = (\frac{d}{dt})\bar y^{\bar k}_t$.
+	Thus $(i)$ in Theorem $\ref{maintheorem}$  is equivalent to non-positive  definiteness of the quadratic form 
+	$\pi_{,\bar{k}\bar{j}}- \pi_{,\bar{l}} \bar{G}^{\bar i,\bar l}\bar{G}_{\bar{i},\bar{k}\bar{j}}$
+	on $T_{\bar y}  (Y\times Z) = \R^{n+1}$, { for each  $(x, \bar y) \in X \times Y \times Z$.} Similarly, Theorem \ref{maintheorem2} $(v)$ is equivalent to uniform negative definiteness of the same form.
+\end{lemma}	
+
+\begin{proof}%[Proof of Lemma \ref{LemmaProfitConcavity}]
+	For any G-segments $(x, y_t, z_t)$ satisfying equation (\ref{EqnG-segments}) and $\pi \in C^2(cl(X\times Y \times Z)
+	)$,
+	$t\in[0,1] \longmapsto \pi(x, y_t ,z_t)$ is concave [uniformly concave] if and only if $\frac{d^2}{dt^2} \pi(x, y_t, z_t)\le  0$ $[\le -\lambda ||(\dot{y}_t,\dot{z}_t)||^2_{\R^{n+1}}<0]$, for all $t \in [0,1]$.
+	
+	On the one hand, since $\frac{d}{dt}\pi(x, y_t, z_t) = \pi_{,\bar{k}} \dot{\bar y}^{\bar{k}}$, taking another derivative with respect of $t$ gives 
+	\begin{equation}\label{EqnSecondDiffProfit}
+	\frac{d^2}{dt^2} \pi(x, y_t, z_t) = 
+	\pi_{,\bar{k}\bar{j}}\dot{\bar y}^{\bar{k}} \dot{\bar y}^{\bar{j}}+ \pi_{,\bar{l}}\ddot {\bar y}^{\bar{l}}.
+	\end{equation}
+	On the other hand, taking second derivative with respect of t at both sides of equation (\ref{EqnG-segments}), which is equivalent to $\bar{G}_{\bar{i},}(x, x_0, y_t(x), z_t(x)) = (x_0Du_t, u_t)(x)$, for some fixed $x_0\in X_0$, implies
+	\begin{equation}\label{EqnSecondDiffbar{G}}
+	\bar{G}_{\bar{i},\bar{k}\bar{j}}\dot{\bar y}^{\bar{k}} \dot {\bar y}^{\bar{j}}+\bar{G}_{\bar{i},\bar{k}} \ddot{\bar y}^{\bar{k}} =0 
+	\end{equation}
+	
+	Combining equations (\ref{EqnSecondDiffProfit}) with (\ref{EqnSecondDiffbar{G}}) yields
+	\eqref{pi second}.
+	For $x \in X$, there is a $G$-segment with any given tangent direction through $\bar y = (y,z) \in Y \times Z$.
+	Thus, the non-positivity  of $\frac{d^2}{dt^2} \pi(x, y_t, z_t)$ along all G-segments $(x, y_t, z_t)$ is equivalent to non-positive  definiteness of the matrix $(\pi_{,\bar{k}\bar{j}}- \pi_{,\bar{l}} \bar{G}^{\bar i,\bar l}\bar{G}_{\bar{i},\bar{k}\bar{j}})$ on $T_{\bar y} (Y\times Z)=\R^{n+1}$.
+	
+	In addition, the uniform concavity of $\pi(x, y_t, z_t)$ along all G-segments $(x, y_t, z_t)$ is equivalent to uniform negative definiteness of $(\pi_{,\bar{k}\bar{j}}- \pi_{,\bar{l}} \bar{G}^{\bar i,\bar l}\bar{G}_{\bar{i},\bar{k}\bar{j}})$ on $\R^{n+1}$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+\section{Concavity of principal's objective when her utility does not depend directly on agents' private types:  
+	A sharper, more local result} 
+\label{section:privateInformation}
+
+
+In this section, we reveal a necessary and sufficient condition  for the concavity of principal's maximization problem, not for some specific examples in chapter \ref{chapter:examples}, but for many other private-value circumstances, where principal's utility only directly depends on the products sold and their selling prices, but not the buyer's type. 
+\medskip
+
+
+	Before we state the results, we need the following definition, which is a generalized Legendre transform 
+	(see Moreau \cite{Moreau70}, Kutateladze-Rubinov \cite{KutateladzeRubinov72}, Elster-Nehse \cite{ElsterNehse74}, Balder \cite{Balder77}, Dolecki-Kurcyusz \cite{DoleckiKurcyusz78}, Gangbo-McCann\cite{GangboMcCann96}, Singer\cite{Singer97}, Rubinov\cite{Rubinov00a, Rubinov00b}, and Mart\'inez-Legaz \cite{MartinezLegaz05} 
+	for more references).  
+	\medskip
+	
+	
+	
+	\begin{definition}[$\bar{G}$-concavity, $\bar{G}^*$-concavity]\label{(-bar{G})-convexity}
+		A function $\phi: cl(X \times X_0) \longrightarrow \R$ is called $\bar{G}$-concave if $\phi = (\phi^{\bar{G}^*})^{\bar{G}}$ and a function $\psi: cl( Y \times Z) \longrightarrow \R$ is called $\bar{G}^*$-concave if $\psi = (\psi^{\bar{G}})^{\bar{G}^*}$, where 
+		\begin{equation}\label{(-bar{G})-transform}
+		\begin{split}
+		\psi^{\bar{G}}(\bar{x})&~=\min_{\bar{y} \in cl( Y \times Z)} \bar{G}(\bar{x},\bar{y}) - \psi(\bar{y}),\\ \text{ and } \phi^{\bar{G}^*}(\bar{y})&~= \min_{\bar{x} \in cl(X \times X_0)} \bar{G}(\bar{x}, \bar{y}) - \phi(\bar{x}).
+		\end{split}
+		\end{equation}
+		We say $\psi$ is strictly $\bar{G}^*$-concave, if in addition $\psi^{\bar G} \in C^1(X\times X_0)$. 
+	\end{definition}
+	
+	Note that,  apart from an overall sign and the extra variables,
+	Definition \ref{(-bar{G})-convexity} coincides with a quasilinear version $G(\bar{x},\bar{y},z) = \bar{G}(\bar{x},\bar{y})-z$ of
+	Definition \ref{defn:GConvexity}.
+	\medskip
+	
+	
+	The following corollary characterizes the concavity of principal's profit when her utility on one hand is not influenced by the agents' identity, and on the other hand has adequate generality to  encompass a
+	tangled nonlinear relationship between products and selling prices. It generalizes the convexity result in Figalli-Kim-McCann \cite{FigalliKimMcCann11}, where $G(x,y,z) = b(x,y)-z$ and $\pi(x,y,z) = z-a(y)$. 
+	\medskip
+	
+	
+	\begin{corollary}[Concavity of principal's objective with her utility not depending on agents' types]\label{bar{G}^*-Concavity}
+		If $G \in C^3(cl(X\times Y \times Z)
+		)$ satisfies \Gzero-\Gsix,  $\pi \in C^2( cl( Y \times Z)
+		)$ is $\bar{G}^*$-concave and $\mu\ll \mathcal{L}^m$, then $\pmb \Pi$ is concave. 
+	\end{corollary}
+	
+	\begin{proof}%[Proof of Corollary \ref{bar{G}^*-Concavity}]
+		According to Lemma \ref{LemmaProfitConcavity}, for concavity, we only need to show non-positive definiteness of $(\pi_{\bar{k}\bar{j}}- \pi_{\bar{l}} \bar{G}^{\bar i,\bar l}\bar{G}_{\bar{i},\bar{k}\bar{j}})$ on $\R^{n+1}$, i.e., for any $\bar{x} = (x,x_0) \in X \times X_0$,  $\bar{y} \in Y\times Z$ and $\xi \in \R^{n+1} $, $\big(\pi_{\bar{k}\bar{j}}(\bar{y})- \pi_{\bar{l}}(\bar{y}) \bar{G}^{\bar i,\bar l}(\bar{x}, \bar{y})\bar{G}_{\bar{i},\bar{k}\bar{j}}(\bar{x}, \bar{y})\big)\xi^{\bar{k}}\xi^{\bar{j}} \le 0$.
+		
+		For any fixed $\bar{x} = (x, x_0) \in X \times X_0$, $\bar{y} \in Y\times Z$, $\xi \in \R^{n+1}$, there exist $\delta >0$ and $t \in (-\delta, \delta) \longmapsto \bar{y}_t \in Y\times Z$, such that $\bar{y}_t|_{t=0} =\bar{y}$,  $\dot{\bar{y}}|_{t=0} = \xi$ and $\frac{d^2}{dt^2} \bar{G}_{\bar{i}, }(\bar{x}, \bar{y}_t) = 0$. Thus, 
+		\begin{equation}\label{EqnSecondDiffbar{G}2}
+		0 = \frac{d^2}{dt^2}\bigg|_{t=0}\bar{G}_{\bar{i},}(\bar{x}, \bar{y}_t) = \bar{G}_{\bar{i}, \bar{k}\bar{j}}(\bar{x}, \bar{y}) \xi^{\bar{k}}\xi^{\bar{j}} + \bar{G}_{\bar{i}, \bar{k}}(\bar{x}, \bar{y}) (\ddot{\bar{y}}_t)^{\bar{k}}\Big|_{t=0}.
+		\end{equation}
+		Since $\pi$ is $\bar{G}^*$-concave, we have $\pi(\bar{y}) =\min_{\tilde{x} \in cl(X \times X_0)} \bar{G}(\tilde{x}, \bar{y}) - \phi(\tilde{x})$, for some $\bar{G}$-concave function $\phi$. Since $cl(X \times X_0)$ is compact, for this $\bar{y}$, there exists ${\bar{x}}^* = ({x}^*, {x_0}^*) \in cl(X \times X_0)$, such that 
+		$\pi_{\bar{l}}(\bar{y}) = \bar{G}_{,\bar{l}}({\bar{x}}^*, \bar{y})$ for each $\bar{l} = 1, 2,..., n+1$ and $\pi_{\bar{k}\bar{j}}(\bar{y})\xi^{\bar{k}}\xi^{\bar{j}} \le \bar{G}_{,\bar{k}\bar{j}}({\bar{x}^*}, \bar{y})\xi^{\bar{k}}\xi^{\bar{j}}$  for each $\xi \in \R^{n+1}$. 
+		Combined with (\ref{EqnSecondDiffbar{G}2}) this yields
+		\begin{align*}\label{Eqn:proofcor}
+		\begin{split}
+		&\big(\pi_{\bar{k}\bar{j}}(\bar{y})- \pi_{\bar{l}}(\bar{y}) \bar{G}^{\bar i,\bar l}(\bar{x}, \bar{y})\bar{G}_{\bar{i},\bar{k}\bar{j}}(\bar{x}, \bar{y})\big)\xi^{\bar{k}}\xi^{\bar{j}} \\
+		&\le
+		\big(\bar{G}_{,\bar{k}\bar{j}}({\bar{x}}^*, \bar{y})- \bar{G}_{,\bar{l}}({\bar{x}}^*, \bar{y})\bar{G}^{\bar i,\bar l}(\bar{x}, \bar{y})\bar{G}_{\bar{i},\bar{k}\bar{j}}(\bar{x}, \bar{y})\big)\xi^{\bar{k}}\xi^{\bar{j}} \\
+		&= \bar{G}_{,\bar{k}\bar{j}}({\bar{x}}^*, \bar{y})\xi^{\bar{k}}\xi^{\bar{j}}+ \bar{G}_{,\bar{l}}({\bar{x}}^*, \bar{y})\cdot (\ddot{\bar{y}}_t)^{\bar{l}}\big|_{t=0}\\
+		\end{split}
+		\end{align*}
+		\begin{align*}
+		\begin{split}
+		& = \frac{d^2}{dt^2}\bigg|_{t=0} \bar{G}({\bar{x}}^*, \bar{y}_t) \hspace{5.33cm}\\
+		& = {x_0}^* \cdot\frac{d^2}{dt^2}\bigg|_{t=0} G({x}^*, \bar{y}_t) \\
+		&\le 0.
+		\end{split}
+		\end{align*}
+		The last inequality comes from ${x_0}^* \le 0$ and \Gthree.
+	\end{proof}
+	
+The following proposition shows a version of sufficient and necessary condition to concavity in corollary \ref{bar{G}^*-Concavity}.\medskip
+
+
+\begin{proposition}[Concavity of principal's objective when her payoff is independent of agents' types]\label{bar{G}^*-Concavity2}
+	Suppose $G \in C^3(cl(X\times Y \times Z)
+	)$ satisfies \Gzero-\Gsix,  $\pi \in C^2( cl( Y \times Z)
+	)$, and assume there exists a set $J\subset cl(X)$ such that for each $\bar{y}\in Y\times Z$, $ 0\in ( \pi_{\bar{y}}+G_{\bar{y}})(cl(J), \bar{y})$.  Then the following statements are equivalent:
+	
+	\begin{enumerate}[(i)]
+		\item \text{\rm local ${\bar G}^*$-concavity of} $\pi$: i.e. $\pi_{\bar{y}\bar{y}}(\bar{y}) + G_{\bar{y}\bar{y}}(x, \bar{y})$ is non-positive definite whenever
+		$(x, \bar{y}) \in cl(J)\times Y \times Z$ satisfies $\pi_{\bar{y}}(\bar{y})+ G_{\bar{y}}(x, \bar{y})=0$;
+		\item $\pmb \Pi$ is concave on $\mathcal{U}$ for all $\mu\ll \mathcal{L}^m$.
+	\end{enumerate}
+\end{proposition}
+
+
+\begin{remark}
+	The sufficient condition, i.e., existence of $J \subset cl(X)$(, such that for each  $\bar{y}\in Y\times Z$, $ 0\in ( \pi_{\bar{y}}+G_{\bar{y}})(cl(J), \bar{y})$), make the statement more general than taking some specific subset of $cl(X)$ instead. In particular, if $J=cl(X)$, this condition is equivalent to: for each $\bar{y} \in Y\times Z$, there exists $x \in cl(X)$, such that $( \pi_{\bar{y}}+G_{\bar{y}})(x, \bar{y}) = 0$. One of its economic interpretations is that for each product-price type, there exists a customer type, such that his marginal disutility, the gradient with respect to product type (e.g., quality, quantity, etc.) and price type, coincides with the marginal utility of the monopolist. 
+\end{remark}
+
+\begin{proof}[Proof of Proposition \ref{bar{G}^*-Concavity2}]
+	$(i)\Rightarrow (ii).$ Similar to the proof of Corollary \ref{bar{G}^*-Concavity}, we only need to show non-positive definiteness of $(\pi_{\bar{k}\bar{j}}- \pi_{\bar{l}} \bar{G}^{\bar i,\bar l}\bar{G}_{\bar{i},\bar{k}\bar{j}})$, i.e., for any $\bar{x} = (x,x_0) \in X \times X_0$,  $\bar{y} \in Y\times Z$ and $\xi \in \R^{n+1} $, $\big(\pi_{\bar{k}\bar{j}}(\bar{y})- \pi_{\bar{l}}(\bar{y}) \bar{G}^{\bar i,\bar l}(\bar{x}, \bar{y})\bar{G}_{\bar{i},\bar{k}\bar{j}}(\bar{x}, \bar{y})\big)\xi^{\bar{k}}\xi^{\bar{j}} \le 0$.
+	
+	For any fixed $\bar{x} = (x, x_0) \in X \times X_0$, $\bar{y} \in Y\times Z$, $\xi \in \R^{n+1}$, there exist $\delta >0$ and a curve $t \in (-\delta, \delta) \longmapsto \bar{y}_t \in Y\times Z$, such that $\bar{y}_t|_{t=0} =\bar{y}$,  $\dot{\bar{y}}_t|_{t=0} = \xi$ and $\frac{d^2}{dt^2} \bar{G}_{\bar{i}, }(\bar{x}, \bar{y}_t) = 0$. Thus, 
+	\begin{equation}\label{EqnSecondDiffbar{G}3}
+	0 = \frac{d^2}{dt^2}\bigg|_{t=0}\bar{G}_{\bar{i},}(\bar{x}, \bar{y}_t) = \bar{G}_{\bar{i}, \bar{k}\bar{j}}(\bar{x}, \bar{y}) \xi^{\bar{k}}\xi^{\bar{j}} + \bar{G}_{\bar{i}, \bar{k}}(\bar{x}, \bar{y})\cdot (\ddot{\bar{y}}_t)^{\bar{k}}\big|_{t=0}
+	\end{equation}
+	For this $\bar{y}$, since $0\in (\pi_{\bar{y}}+G_{\bar{y}})(cl(J), \bar{y})$, there exists $x^*\in cl(J)$, such that $( \pi_{\bar{y}}+G_{\bar{y}})(x^*, \bar{y})=0$. By property $(i)$, one has $(\pi_{\bar{y}\bar{y}}(\bar{y}) + G_{\bar{y}\bar{y}}(x^*, \bar{y}))\xi^{\bar{k}}\xi^{\bar{j}} \le 0$.
+	Let $\bar{x}^* =(x^*,-1)$, then $\pi_{\bar{l}}(\bar{y}) = \bar{G}_{,\bar{l}}({\bar{x}}^*, \bar{y})$  and $\pi_{\bar{k}\bar{j}}(\bar{y})\xi^{\bar{k}}\xi^{\bar{j}} \le \bar{G}_{,\bar{k}\bar{j}}({\bar{x}^*}, \bar{y})\xi^{\bar{k}}\xi^{\bar{j}}$, for each $\bar{l} = 1, 2,..., n+1$. Thus, combining (\ref{EqnSecondDiffbar{G}3}) and \Gthree, we have 
+	\begin{flalign}\label{Eqn:proofcor2}
+	\begin{split}
+		&\big(\pi_{\bar{k}\bar{j}}(\bar{y})- \pi_{\bar{l}}(\bar{y}) \bar{G}^{\bar i,\bar l}(\bar{x}, \bar{y})\bar{G}_{\bar{i},\bar{k}\bar{j}}(\bar{x}, \bar{y})\big)\xi^{\bar{k}}\xi^{\bar{j}} \\
+		&\le
+		\big(\bar{G}_{,\bar{k}\bar{j}}({\bar{x}}^*, \bar{y})- \bar{G}_{,\bar{l}}({\bar{x}}^*, \bar{y})\bar{G}^{\bar i,\bar l}(\bar{x}, \bar{y})\bar{G}_{\bar{i},\bar{k}\bar{j}}(\bar{x}, \bar{y})\big)\xi^{\bar{k}}\xi^{\bar{j}} \\
+		&= \bar{G}_{,\bar{k}\bar{j}}({\bar{x}}^*, \bar{y})\xi^{\bar{k}}\xi^{\bar{j}}+ \bar{G}_{,\bar{l}}({\bar{x}}^*, \bar{y})\cdot (\ddot{\bar{y}}_t)^{\bar{l}}\big|_{t=0}\\
+		& = \frac{d^2}{dt^2}\bigg|_{t=0} \bar{G}({\bar{x}}^*, \bar{y}_t)\\
+		& = - \frac{d^2}{dt^2}\bigg|_{t=0} G({x}^*, \bar{y}_t)\\
+		&\le 0.
+	\end{split}
+	\end{flalign}
+	
+	
+	$(ii)\Rightarrow (i).$  
+	For any $(x,\bar{y}) \in cl(J)\times {Y} \times {Z}$, satisfying $\pi_{\bar{y}}(\bar{y}) +  G_{\bar{y}}(x, \bar{y})=0$, we would like to show  $(\pi_{\bar{k}\bar{j}}(\bar{y}) + {G}_{,\bar{k}\bar{j}}({x}, \bar{y}))\xi^{\bar{k}}\xi^{\bar{j}} \le 0$, for any $\xi\in \R^{n+1}$. Let $\bar{x} = (x, -1)$, there exist $\delta >0$ and a curve $t \in (-\delta, \delta) \longmapsto \bar{y}_t \in Y\times Z$, such that $\bar{y}_t|_{t=0} =\bar{y}$,  $\dot{\bar{y}}_t|_{t=0} = \xi$ and $\frac{d^2}{dt^2} \bar{G}_{\bar{i}, }(\bar{x}, \bar{y}_t) = 0$. Thus, equation \eqref{EqnSecondDiffbar{G}3} holds.
+	
+	
+	
+	Since $\pmb \Pi$ is concave, by Theorem $\ref{maintheorem}$ and Lemma  $\ref{LemmaProfitConcavity}$ as well as equation \eqref{EqnSecondDiffbar{G}3}, we have 
+	\begin{flalign*}
+	0 \ge& \big(\pi_{\bar{k}\bar{j}}(\bar{y})- \pi_{\bar{l}}(\bar{y}) \bar{G}^{\bar i,\bar l}(\bar{x}, \bar{y})\bar{G}_{\bar{i},\bar{k}\bar{j}}(\bar{x}, \bar{y})\big)\xi^{\bar{k}}\xi^{\bar{j}} \\
+	=& \big(\pi_{\bar{k}\bar{j}}(\bar{y}) - \bar{G}_{,\bar{k}\bar{j}}({\bar{x}}, \bar{y}) + \bar{G}_{,\bar{k}\bar{j}}({\bar{x}}, \bar{y})-  \bar{G}_{,\bar{l}}({\bar{x}}, \bar{y})\bar{G}^{\bar i,\bar l}(\bar{x}, \bar{y})\bar{G}_{\bar{i},\bar{k}\bar{j}}(\bar{x}, \bar{y})\big)\xi^{\bar{k}}\xi^{\bar{j}} \\
+	=& \big(\pi_{\bar{k}\bar{j}}(\bar{y}) - \bar{G}_{,\bar{k}\bar{j}}({\bar{x}}, \bar{y})\big)\xi^{\bar{k}}\xi^{\bar{j}} + \frac{d^2}{dt^2}\bigg|_{t=0} \bar{G}(\bar{x}, \bar{y}_t)\\
+	=&\big(\pi_{\bar{k}\bar{j}}(\bar{y}) - \bar{G}_{,\bar{k}\bar{j}}({\bar{x}}, \bar{y})\big)\xi^{\bar{k}}\xi^{\bar{j}} \\
+	=& (\pi_{\bar{k}\bar{j}}(\bar{y}) + {G}_{,\bar{k}\bar{j}}({x}, \bar{y}))\xi^{\bar{k}}\xi^{\bar{j}},
+	\end{flalign*}
+	which completes the proof.
+\end{proof}
+
+
+The following remark provides an equivalent condition for  uniform concavity of principal's maximization problem. Its proof is very similar to that of the above proposition.
+\medskip
+
+\begin{remark}\label{R:B2}
+	In addition to the hypotheses of Proposition \ref{bar{G}^*-Concavity2}, when
+	$\bar{z}=+\infty$ assume the homeomorphisms of \Gone\ are uniformly bi-Lipschitz. Then
+	the following statements are equivalent:
+	\begin{enumerate}[(i)]
+		\item $\pi_{\bar{y}\bar{y}}(\bar{y}) + G_{\bar{y}\bar{y}}(x, \bar{y})$ is  uniformly negative definite 
+		for all $(x, \bar{y}) \in cl(J)\times Y \times Z$ such that $\pi_{\bar{y}}(\bar{y}) + G_{\bar{y}}(x, \bar{y})=0$;
+		\item $\pmb \Pi$ is uniformly concave  on $\mathcal{U} \subset W^{1,2}(X,d\mu)$, uniformly for all $\mu\ll \mathcal{L}^m$.
+	\end{enumerate}
+\end{remark}
+
+
+
+When $m=n$, $G(x,y,z)= b(x,y)-z \in C^3(cl(X\times Y \times Z)
+)$ satisfies \Gzero-\Geight,  and $\pi(y,z)=z-a(y) \in C^2( cl( Y \times Z)
+)$, then Corollary \ref{bar{G}^*-Concavity} shows $b^*$-convexity of $a$ is a sufficient condition for
+concavity of $\pmb \Pi$  for all $\mu\ll \mathcal{L}^m$. One may wonder under what hypotheses it would become a necessary condition as well. From Theorem A.1 in \cite{KimMcCann10}, under the same assumptions as above, the manufacturing cost $a$ is $b^*$-convex if and only if it satisfies the following local $b^*$-convexity hypothesis: $D^2a(y)\ge D^2_{yy}b(x,y)$ whenever $Da(y) = D_{y}b(x,y)$. 
+\medskip
+
+Combined with Proposition \ref{bar{G}^*-Concavity2}, we have the following corollary.
+\medskip
+
+\begin{corollary}
+	Adopting the terminology of Figalli-Kim-McCann \cite{FigalliKimMcCann11},  i.e. (B0)-(B3), $G(x,y,z) = b(x,y)- z \in C^3(cl(X\times Y \times Z)$ and 
+	$\pi(x,y,z) = z -a(y) \in C^2( cl( Y \times Z)$, then $a(y)$ is $b^*$-convex if  and only if $\mathbf \Pi$ is concave on $\mathcal U$ and for every $y \in Y$, there exists $x \in cl(X)$ such that $Da(y) = D_y b(x,y)$.
+\end{corollary}
+
+\begin{proof}
+	Assume $a$ is $b^*$-convex, by definition, there exists a function  $a^*: cl(X) \rightarrow \R$, such that for any $y\in Y$, $a(y) = \max_{x\in cl(X)} b(x,y) - a^*(x)$. Therefore, for any $y_0 \in Y$, there exists $x_0 \in cl(X)$, such that $a(y) \ge b(x_0,y) - a^*(x_0)$ for all $y \in Y$, with equality holds at $y = y_0$. This implies, $Da(y_0) = D_y b(x_0, y_0)$. Taking $J=cl(X)$ and applying Proposition \ref{bar{G}^*-Concavity2}, we have concavity of $\mathbf \Pi$, since local $b^*$-convexity of $a$ is automatically satisfied by a $b^*$-convex function $a$. 
+	
+	On the other hand, assuming $\mathbf \Pi$ is concave on $\mathcal U$ and for every $y \in Y$, there exists $x \in cl(X)$ such that $Da(y) = D_y b(x,y)$, Proposition \ref{bar{G}^*-Concavity2} implies local $b^*$-convexity of $a$. Together with Theorem A.1 in \cite{KimMcCann10}, we know $a$ is $b^*$-convex.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

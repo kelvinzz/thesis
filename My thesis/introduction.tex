@@ -1,0 +1,207 @@
+\chapter{Introduciton}\label{chapter: introduction}
+
+\section{Problem Formulation}
+
+As one of the central problems in microeconomic theory, the {\em principal-agent framework} characterizes the type of non-competitive decision-making problems which involve aligning incentives so that one set of parties (the agents) finds it beneficial to act in the interests of another (the principal) despite holding private information.
+It arises in a variety of different contexts. 
+{ Besides nonlinear pricing \cite{Armstrong96,MussaRosen78,Spence80,Wilson93}, economists also use this framework to model many different types of transactions, including tax policy \cite{GuesnerieLaffont78,Mirrlees71,Rochet85}, contract theory \cite{QuinziiRochet85}, regulation of monopolies \cite{BaronMyerson82}, product line design \cite{RochetChone98}, labour market signaling \cite{Spence74}, public utilities \cite{Roberts79}, and mechanism design \cite{
+KadanRenySwinkels11, MaskinRiley84, McAfeeMcMillan88, MonteiroPage98, Myerson81, Vohra11}. Many of these share the same mathematical model. }
+In this thesis, we use nonlinear pricing to motivate the discussion,  in spite of the fact that our conclusions may be equally pertinent to many other areas of application. Besides, we only consider the case where both agent types and product attributes are continuous.\medskip
+
+Consider the problem for a multiproduct monopolist who sells indivisible products to a population of consumers, who each buy at most one unit. Assume there is neither cooperation, nor competition between agents. Additionally, assume the monopolist is able to produce enough of each product such that there are neither product supply shortages {nor economies of scale}. Taking into account participation constraints and incentive compatibility, the monopolist would like to find the optimal menu of prices to maximize its total profit.\medskip
+
+Suppose the monopolist wants to maximize her profits by selecting the dependence of the price $v(y)$ on each type  $y \in cl(Y)$ of product sold. An agent of type $x \in X$ will choose to buy that product which maximizes his benefit 
+\begin{equation}\label{1}
+u (x) := \max_{y \in cl(Y)} G(x, y, v(y)),
+\end{equation}
+where $(x, y, z)\in X \times cl(Y)\times \R \longmapsto G(x,y,z) \in \R$, is the given direct utility function for agent type $x$ to choose product type $y$ at price $z$, and $X,Y$ are open and bounded subsets in $\R^m$ and $\R^n$ ($m \ge n$), respectively,
+with closures $cl(X)$ and $cl(Y)$.\medskip
+
+After agents, whose distribution $d \mu(x)$ is known to the monopolist, have chosen their favorite items to buy, the monopolist calculates her profit to be given by the functional 
+\begin{equation}\label{profit}
+\Pi(v, y):=\int_{X} \pi(x,y(x),v(y(x))) d\mu(x),
+\end{equation}
+where $y(x)$ denotes the product type $y$ which agent type $x$ chooses to buy (and which maximizes \eqref{1}), $v(y(x))$ denotes the selling price of type $y(x)$ and $\pi \in C^0(cl(X\times Y)\times \R)$ denotes the principal's net profit of selling product type $y \in cl(Y)$ to agent type $x \in X$ at price $z \in \R$. 
+The monopolist wants to maximize her net profit among all lower semicontinuous pricing policies. \medskip
+
+
+
+
+The following is a table of notation:
+
+\begin{minipage}{\linewidth}
+	\bigskip
+	\RaggedRight 
+	\captionof{table}{Notation} \label{tab:title} 
+	\begin{tabularx}{6in}{ C{0.88in} l l}\toprule[1.5pt]
+		Mathematical Expression & {Economic Meaning}  & \\ 
+		\midrule[0.5pt]
+		$x$  & {agent type}  &\\
+		$y$  & {product type} &\\
+		$X \subset \R^m$  & {(open, bounded) domain of agent types} &\\
+		$cl(Y) \subset \R^n$  & {domain of product types, closure of $Y$} &\\
+		$v(y)$  & {selling price of product type $y$ (we use $p(y)$ in Chapter \ref{chapter:existence} instead)}&\\
+		$v(y_\nul) \le z_\nul$ & {price normalization of the outside option $y_\nul \in cl(Y)$}&\\ 
+		$u(x)$  & {indirect utility of agent type $x$}&\\
+		$\dom Du$ & {points in $X$ where $u$ is differentiable} &\\ 
+		$G(x,y,z)$ & {direct utility of buying product $y$ at price $z$ for agent $x$ }&\\
+		$H(x,y,u)$ & \multicolumn{2}{p{12.1cm}}{\raggedright {price at which $y$ brings $x$ value $u$, so that $H(x,y,G(x,y,z))=z$}} \\
+		$\pi(x,y,z)$  & \multicolumn{2}{p{12.1cm}}{the principal's profit for selling product $y$ to agent $x$ at price $z$ }\\
+		$d\mu(x)$ & \multicolumn{2}{p{12.1cm}}{Borel probability measure giving the distribution of agent types on $X$}\\
+		$\mu  \ll {\mathcal L}^m$ & \multicolumn{2}{p{12.1cm}}{$\mu$ vanishes on each subset of $\R^m$ having zero Lebesgue volume ${\mathcal L}^m$} \\
+		$\Pi(v,y)$ & \multicolumn{2}{p{12.1cm}}{monopolist's profit facing agents' responses $y(\cdot)$ to her chosen price policy $v(\cdot)$} \\	
+		${\pmb\Pi}(u)$ & \multicolumn{2}{p{12.9cm}}{monopolist's profit, viewed instead as a function of agents' indirect utilities $u(\cdot)$ } \\
+		\bottomrule[1.25pt]
+		\end {tabularx}\par
+		\bigskip
+	\end{minipage}
+\medskip
+
+%One may consider this model as a bilevel optimization. After a monopolist publishes its price menu, each consumer maximizes his utility through the purchase of at most one product. The monopolist maximizes aggregate profits based on consumers' choices, knowing only the statistical distribution of consumer types.\medskip
+
+In economic models, 
+incentive compatibility is  needed to ensure that all the agents report their preferences truthfully. 
+According to the revelation principle (such as \cite{Myerson79}), this costs no generality.
+Decisions made by monopolist according to the information collected from agents then lead 
+to the expected market reaction (as in \cite{Carlier01,RochetChone98}).  
+Individual rationality
+is required to ensure full participation, so that each agent will choose to play,  possibly by accepting the outside option. And individual agents accept to contract only if the benefits they earn are no less than their outside option. We model this by assuming the existence of a distinguished point $y_\nul \in cl(Y)$ which represents the outside option, and whose price cannot exceed some fixed value $z_\nul \in \R$ beyond the monopolist's control. This removes any incentive for the monopolist to raise the prices of other options too high. (We can choose normalizations such as $\pi(x,y_\nul,z_\nul)=0=G(x,y_\nul,z_\nul)$ and $(y_\nul,z_\nul)=(0,0)$, or not, as we wish.)\medskip
+
+\begin{definition}[Incentive compatible and individually rational]
+	A measurable map $x \in X \longmapsto (y(x),z(x)) \in cl(Y \times Z)$ of agents to (product, price) pairs
+	is called {\em incentive compatible} if and only if $G(x,y(x),z(x)) \ge G(x, y(x'), z(x'))$ for all $(x,x')\in X^2$.
+	Such a map offers agent $x$ no incentive to pretend to be $x'$.
+	It is called {\em individually rational} if and only if $G(x,y(x),z(x)) \ge G(x,y_\nul,z_\nul)$ for all $x \in X$,
+	meaning no individual $x$ strictly prefers the outside option $(y_\nul,z_\nul)$ to his assignment $(y(x),z(x))$.
+\end{definition}
+
+\begin{proposition}
+	Then principal's program can be described as follows:
+	\begin{equation*}
+	(P_0)
+	\begin{cases}
+	\sup \Pi(v,y)=\int_{X} \pi(x, y(x), v(y(x))) d\mu(x)\quad \text{among}\\ 
+	x \in X \longmapsto (y(x),v(y(x))) \text{  incentive compatible,  individually rational,}\\ 
+	{ \text{and}\ v:cl(Y)\longrightarrow cl (Z)\  \text{lower semicontinuous with}\ v(y_\nul) \le z_\nul}. 
+	\end{cases}
+	\end{equation*}
+\end{proposition}
+
+\medskip
+
+
+\section{Background}
+The thesis study a general version of a multidimensional nonlinear pricing model,  which is a natural extension of the models studied by Mussa-Rosen \cite{MussaRosen78}, %Roberts \cite{Roberts79}, 
+Mirrlees \cite{Mirrlees71},	Spence \cite{Spence74, Spence80}, Myerson \cite{Myerson81}, Baron-Myerson \cite{BaronMyerson82}, Maskin-Riley \cite{MaskinRiley84}, Wilson \cite{Wilson93}, Rochet-Chon$\acute{e}$ \cite{RochetChone98}, Monteiro-Page \cite{MonteiroPage98} and  Carlier~\cite{Carlier01}. A major distinction lies in whether the private type is one-dimensional (such as \cite{MussaRosen78, MaskinRiley84}), or multidimensional (such as \cite{QuinziiRochet85, RochetChone98,MonteiroPage98, Carlier01}). Another distinction is whether preferences are quasilinear on price (such as \cite{Armstrong96, Carlier01}) or fully nonlinear (such as \cite{NoldekeSamuelson15p, McCannZhang17}), especially for multidimensional models.  
+	\medskip
+
+
+
+	For the quasilinear case, where the utility $G(x,y,z)$ depends linearly on its third variable, and net profit $\pi(x,y,z)=z-a(y)$ represents difference of selling price $z$ and manufacturing cost $a$ of product type $y$, theories of existence \cite{Basov05,RochetStole03,Carlier01,MonteiroPage98}, uniqueness 
+	\cite{CarlierLachand-Robert01,FigalliKimMcCann11,MussaRosen78,RochetChone98} 
+	and robustness \cite{Basov05,FigalliKimMcCann11} have been well studied.
+\medskip
+
+When parameterization of preferences is linear in agent types and price, where $ cl(X) = cl(Y) = [0,\infty)^n$, $G(x,y,z) = \langle x,y \rangle -z$,  %$a(y) = \langle y,y\rangle /2$, 
+and $(y_\nul,z_\nul)=(0,0)$, Rochet and Chon$\acute{e}$ (1998, \cite{RochetChone98}) not only obtain existence results but also partially characterize optimal solutions and expound their economic interpretations, %the solution for optimality with economic interpretations, 
+given that monopolist profits can be characterized by {the aggregate difference between selling prices and quadratic manufacturing costs.} Here $\langle\ ,\ \rangle$ denotes the Euclidean inner product.\medskip
+
+More generally, Carlier (\cite{Carlier01}) proves existence results for general quasilinear utility  $G(x,y,z) = b(x,y)- z$ , where agent type and product type are not necessarily of the same dimension and monopolist profit equals selling price minus some linear manufacturing cost.\medskip
+
+Figalli-Kim-McCann \cite{FigalliKimMcCann11} reveals the equivalence of function space convexity to the non-negative fourth order cross-curvature condition, and conditions of functional concavity, where uniqueness and stability of the monopolist's maximizing strategy follow from strict concavity.\medskip
+
+%{\color{red} 
+%Warning:	Add more reference in this background section.
+%\color{blue}	
+% see also Mirrlees \cite{Mirrlees71}, Spence \cite{Spence74}, Monteiro and Page \cite{MonteiroPage98}. }
+
+
+\section{Motivation}
+
+Starting from celebrated work of Nobel Laureates Mirrlees \cite{Mirrlees71} and Spence \cite{Spence74}, there are two main types of generalizations. One generalization is in terms of dimension, from 1-dimensional to multi-dimensional. The other generalization is in utility functional form, from quasilinear to non-quasilinear.\medskip
+
+The generalization of quasilinear to nonlinear preferences has many potential applications. For example, the benefit function $G(x,y,v(y))=b(x,y) -v^2(y)$ models agents who are more sensitive to higher prices, while another function $G(x,y,v(y))=b(x,y)-v^{\frac{1}{2}}(y)$ models agents who are less sensitive to higher prices, and utility $G(x,y,v(y))=b(x,y) -f(x, v(y))$ describes the scenario when different agents might have different sensitivities to the same price. See Wilson~\cite[Chapter 7]{Wilson93} for the importance of taking income effects into account. 
+Very few results are known for such nonlinearities,  due to the complications which they entail. \medskip
+
+
+	In 2013, Trudinger's lecture at the optimal transport program at MSRI inspired us to try generalizing Carlier \cite{Carlier01} and Figalli-Kim-McCann \cite{FigalliKimMcCann11} to the non-quasilinear case. With the tools developed by Trudinger \cite{Trudinger14} and others  \cite{Balder77,Singer97}, we are able to provide existence, convexity and concavity theorems for general utility and net profit functions. \medskip
+
+	The generalized existence problem was also mentioned as a conjecture by Basov \cite[Chapter 8]{Basov05}. 
+	Recently, N\"oldeke and Samuelson (2015, \cite{NoldekeSamuelson15p}) provided a general existence result for $cl(X)$, $cl(Y)$ being compact and the utility $G$ being decreasing with respect to its third variable, by implementing a duality argument based on Galois Connections. \medskip
+
+
+
+	The equivalence of concavity to the corresponding non-negative cross-curvature condition revealed by Figalli-Kim-McCann \cite{FigalliKimMcCann11} directly inspires our work. In addition to the quaslinearity of
+	$G(x,y,z) = b(x,y) - z$ essential to their model,  they require additional restrictions such as $m=n$ and $b \in C^4(cl(X\times Y))$ which are not economically motivated
+	and which we shall relax or remove. However,  we shall eventually show that under certain conditions the concavity or convexity of $G$ and $\pi$ (or their derivatives)
+	with respect to $v$ tends to be reflected by concavity or convexity of $\Pi$, not with respect to 
+	$v$ or $y$,  but rather with respect to the agents indirect utility $u$, in terms of 
+	which the principal's maximization is reformulated below. Moreover, our results allow for the monopolist's profit $\pi$ to depend in a general
+	way both on monetary transfers and on the agents' types $x$,  revealed after contracting.  Such dependence plays an important role in applications such as insurance marketing.\medskip
+	
+	Inspired by Kim-McCann \cite{KimMcCann10}, which expressed the fourth-order Ma-Trudinger-Wang condition in optimal transportation theory via non-negativity of the sectional curvature in some pseudo-Riemannian geometry,
+	we would like to explore the geometric interpretations of some hypothesis to the concavity results.\medskip
+
+
+Figalli-Kim-McCann \cite{FigalliKimMcCann11} provides a non-negative definiteness condition of some fourth order differential expression (B3), which not only is equivalent to the convexity of function space,  but also implies concavity of the maximization functional, and thus uniqueness follows from a strict version of (B3). One may wonder what happens if this curvature condition (B3) is dissatisfied. Inspired by Loeper \cite{Loeper09}, which claims that, for quasilinear Riemannian quadratic utility, (B3) is satisfied if and only if the Riemannian sectional curvature is non-negative, some part of the thesis aims to investigate uniqueness  
+without concavity on the hyperbolic spaces with constant negative curvatures. Besides, previously there are few explicit results on spaces with dimensionality greater than two.\medskip
+
+It is worth mentioning that given the technical arguments exploited in this thesis, it may be very fruitful to study possible generalizations of other known results for convex functions to $G$-convex functions.
+\medskip
+
+
+\section{Outline of the Thesis}
+
+
+	Chapter 2 provides some preliminaries and, in particular, a generalized notion of convex functions: the $G$-convex function (c.f. \cite{Trudinger14,Balder77,Singer97}).
+	We'll also see that the incentive compatibility is conveniently encoded via the  $G$-convexity
+	of the agents' indirect utility $u$, which is an analog of Carlier \cite{Carlier01}.
+	\medskip
+
+	Initialed independently of \cite{NoldekeSamuelson15p}, chapter \ref{chapter:existence}  provides a general existence result for the multidimensional monopolist model with general nonlinear preferences with less restriction on boundedness of the product domain, {by extending} %in an extension of 
+	Carlier \cite{Carlier01} to fully nonlinear preferences. Due to lack of natural compactness, the proof of this work is quite different from that of N$\ddot{o}$ldeke-Samuelson. Furthermore, $G$-convex analysis, which is strongly tied to Trudinger's theory on regularity of nonlinear PDEs \cite{Trudinger14}  developed for vastly different purposes, is employed to deal with the difficulty of non-quasilinear preferences.	
+	\medskip
+
+
+%My joint work with Robert J. McCann
+
+Chapter \ref{chapter:existence_bounded} presents another general existence result given the generalized single-crossing condition and boundedness of the consumer-type and product-type spaces. This result is also shown using $G$-convex analysis, but the proof is different from chapter \ref{chapter:existence}, since most assumptions are different.\medskip
+
+%Moreover, together with McCann, 
+
+We will show convexity results in chapter \ref{chapter:convexity}. In Chapter \ref{chapter:convexity}, we generalize uniqueness and concavity results of Figalli-Kim-McCann to the non-quasilinear case. In this work, we first give a necessary and sufficient condition \Gthree~under which the function space $\mathcal{U}_\nul$ is convex. \medskip
+
+We then provide the equivalent conditions, respectively, to the concavity, convexity, uniform concavity, and uniform convexity of the functional $\pmb\Pi$. We also give sufficient conditions for strict concavity, which implies uniqueness for this problem. Besides, the maximizers of $\pmb\Pi$ may not be unique under convexity, but are attained at extreme points of the function space $\mathcal{U}_{\emptyset}$.\medskip 
+
+We also show that the concavity (uniform concavity) condition is equivalent to non-positive (uniform negative) definiteness of some quadratic form on $\R^{n+1}$. \medskip
+
+The condition \Gthree~is so crucial to the concavity result that we want to investigate it a bit more. Chapter \ref{chapter:analytic_representation} shows that \Gthree~is equivalent to the non-positive definiteness of some fourth order differential expression along affinely parametrized line segments, which is an analog of the non-negative definiteness of the fourth order condition adopted in Trudinger \cite{Trudinger14} for regularity of prescribed Jacobian equations. It also coincides in the quasilinear case with the fourth order condition provided in Figalli-Kim-McCann \cite{FigalliKimMcCann11}, which corresponds to the Ma-Trudinger-Wang condition \cite{MaTrudingerWang05} in regularity theory of Optimal Transport.\medskip
+
+Motived by Kim-McCann \cite{KimMcCann10}, in chapter \ref{chapter:geometry}, we will show that \Gthree~is equivalent to non-negativity of the sectional curvature in some natural pseudo-Riemannian geometry.\medskip
+
+
+
+
+Oriented by Loeper's work \cite{Loeper09}, chapter \ref{chapter:examples} proves uniqueness by showing (in exact form) the unique solutions of special examples with quasilinear preferences where domains are symmetric disks on $n$-dimensional hyperbolic $\mathbf{H}^n$, and the utility is a quasilinear quadratic hyperbolic distance. It also shows solutions on spherical $\mathbf{S}^n$ and Euclidean spaces $\R^n$, where the utility is a quasilinear quadratic spherical or Euclidean distance. Moreover, the solutions on $\mathbf{S}^n$ and $\mathbf{H}^n$ converge to those on $\R^n$, as curvature goes to $0$.
+\medskip
+
+
+
+%since convexity imply uniqueness but uniqueness does not necessarily implies convexity. 
+%This work shows that we may still have uniqueness, via uniqueness examples on some negative curvature spaces. \medskip \medskip
+
+
+
+For non-quasilinear preferences, we specialize the form obtained from chapter \ref{chapter:convexity} into various examples  and give the equivalent conditions to the concavity/convexity of the maximization problem.\medskip
+
+
+\begin{remark}
+	Chapter \ref{chapter:existence_bounded}, \ref{chapter:convexity}, \ref{chapter:analytic_representation}, \ref{chapter:geometry} and second part of chapter \ref{chapter:examples} are joint work with my advisor Robert J. McCann. It should be mentioned here that neither the convexity work, nor the earlier two existence results, require the monopolist profit to take on a special form, which is a generalization from much of the literature. And the $G$-convexity method in this thesis is potentially applicable to other problems under the same principal-agent framework, such as the study of tax policy (\cite{Mirrlees71}) and other regulatory policies (\cite{BaronMyerson82}). For an application of $G$-convexity to geometric optics, see~\cite{GuillenKitagawaCPAM}. \medskip
+	
+\end{remark}
+
+
+
+
+
+

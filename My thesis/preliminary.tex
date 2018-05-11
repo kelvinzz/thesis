@@ -1,0 +1,180 @@
+\chapter{Preliminaries and $G$-convexity}\label{chapter:preliminaries}
+
+\section{preliminaries}
+
+
+Let $X$ be a subset of $\R^m$ and $S$ be any set of functions on $X$, i.e., $S\subset \{f: X \longrightarrow \R \}$.
+\medskip
+\begin{definition}[Convex Sets]
+	A set $A \subset \R^m$ or $A \subset S$ is called convex if and only if for any $x , y \in A$, and any $t \in [0,1]$,  $ t x + (1-t)y \in A$.
+\end{definition}
+
+%\begin{lemma}
+%	Let $A$ be a subset contained in $\R^m$ or $S$, the following statements are equivalent:
+%	\begin{enumerate}
+%		\item $A$ is convex;
+%		\item For any $x, y \in A$, $\frac{1}{2}x + \frac{1}{2}y$ also belongs to $A$;
+%		\item For any $r\in \N$, $r>1$, any element $x_1, ..., x_r \in A$, and for any nonnegative numbers $t_1, ..., t_r$ such that $t_1 + ... + t_r =1$, then $\sum_{k = 1}^{r} t_k x_k \in A$.
+%	\end{enumerate}
+%\end{lemma}
+
+\begin{definition}[(Strictly) Convex Functions]
+	Let $X$ be a convex set in $\R^m$ and let $f: X \longrightarrow \R$ be a function. Then $f$ is called (strictly) convex if for any $x_1, x_2 \in X$ and any $t\in (0,1)$, the following inequality holds.
+	\begin{flalign}
+		f(tx_1 +(1-t) x_2) (<) \le tf(x_1) +(1-t) f(x_2).
+	\end{flalign} 
+\end{definition}
+
+A function $f: X \longrightarrow \R$ is said to be (strictly) concave is $-f$ is (strictly) convex.
+\medskip
+
+\begin{definition}[Subdifferential]
+	Recall that the subdifferential of a (convex) function $u: X \longrightarrow \R$ at $x_0 \in X$ is defined as the set:
+	\begin{equation}\label{defn:subdifferential}
+	\partial u(x_0) := \{ y \in \R^m| u(x) - u(x_0) \ge \langle  x- x_0,  y \rangle, \text{ for all } x \in X  \}.
+	\end{equation}
+	Here  $ \langle, \rangle$ denotes the Euclidean inner product. 
+\end{definition}
+
+\begin{lemma}\label{lemma:subdiff}
+	This set defined in \eqref{defn:subdifferential} is nonempty for every $x_0 \in X$ if and only if $u$ is convex.
+\end{lemma}
+
+We give a proof below for a generalized version of this lemma.\medskip
+
+For any vectors $p, w \in \R^n$, we denote $p\parallel w$ if $p$ and $w$ are parallel.\medskip
+
+We use $\mathcal{L}^m$ to denote Lebesgue measure, which characterizes $m$-dimensional volume. A non-negative measure $\mu$ is said to be absolutely continuous with respect to  $\mathcal{L}^m$ if for every measurable set $A$, $\mathcal{L}^m(A) =0$ implies $\mu(A) =0$. This is written as $\mu \ll \mathcal{L}^m$. \medskip
+
+Here we use $G_x=\big(\frac{\partial G}{\partial x^1}, \frac{\partial G}{\partial x^2}, ..., \frac{\partial G}{\partial x^m}\big)$, $G_y=\big(\frac{\partial G}{\partial y^1}, \frac{\partial G}{\partial y^2}, ..., \frac{\partial G}{\partial y^n}\big)$, $G_z = \frac{\partial G}{\partial z}$ to denote derivatives with respect to $x\in X\subset \R^m$ , $y \in Y \subset \R^n$, and $z\in \R$, respectively. Also, for second partial derivatives, we adopt following notations
+\begin{flalign*}
+G_{x,y}=
+\begin{bmatrix}
+\frac{\partial^2 G}{\partial x^1 \partial y^1} & \frac{\partial^2 G}{\partial x^1 \partial y^2} & ... & \frac{\partial^2 G}{\partial x^1 \partial y^n}  \\
+\frac{\partial^2 G}{\partial x^2 \partial y^1} & \frac{\partial^2 G}{\partial x^2 \partial y^2} & ... & \frac{\partial^2 G}{\partial x^2 \partial y^n}  \\	
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial^2 G}{\partial x^m \partial y^1} & \frac{\partial^2 G}{\partial x^m \partial y^2} & ... & \frac{\partial^2 G}{\partial x^m \partial y^n}  
+\end{bmatrix},
+\end{flalign*}
+and $G_{x,z}=\big(\frac{\partial^2 G}{\partial x^1 \partial z}, \frac{\partial^2 G}{\partial x^2 \partial z}, ..., \frac{\partial^2 G}{\partial x^m \partial z}\big)$. 
+\medskip
+
+We say $G \in C^{1}(cl(X\times Y \times Z))$, if all the partial derivatives $\frac{\partial G}{\partial x^1}$, ...,$\frac{\partial G}{\partial x^m}$, $\frac{\partial G}{\partial y^1}$, ..., $\frac{\partial G}{\partial y^n}$, $\frac{\partial G}{\partial z}$ exist and are continuous. Also, we say $G \in C^{2}(cl(X\times Y \times Z))$, if all the partial derivatives up to second order (i.e. $\frac{\partial^2 G}{\partial \alpha \partial \beta}$, where $\alpha, \beta = x^1, ... , x^m, y^1, ..., y^n, z$) exist and are continuous. Any bijective continuous function whose inverse is also continuous, is called a homeomorphism (a.k.a.\ bicontinuous).
+\medskip
+
+\section{$G$-convex, $G$-subdifferentiability}\label{section:G-convexity}
+In this section, we introduce some tools from convex analysis and the notion of $G$-convexity  (c.f. \cite{Trudinger14,Balder77,Singer97}), which is a generalization of ordinary convexity. \medskip
+
+Let $X$, $Y$, and $Z$ be subsets of $\R^m$, $\R^n$, and $\R$ respectively. Assume $G: X \times Y \times Z \longrightarrow \R$ is any function which is strictly decreasing on its last variable. For each $(x, y) \in X\times cl(Y)$ and $u\in G(x,y, cl(Z))$, define $H(x,y,u) := z$ whenever $G(x,y,z) = u$, i.e., $H(x, y, \cdot)= G^{-1}(x,y,\cdot)$. In the context of nonlinear pricing, $G(x,y,z)$ represents the utility that consumer $x$ obtains for purchasing product $y$ at price $z$, while $H(x,y,u)$ denotes the price paid by agent $x$ for product $y$ when receiving value $u$. \medskip
+
+
+From Lemma \ref{lemma:subdiff}, for any convex function $u$ on $X$ and any fixed point $x_0 \in X$, there exists $y_0 \in \partial u(x_0)$, satisfying% {$u(x) - u(x_0) \ge \langle x - x_0, y_0\rangle$}, i.e., 
+\begin{equation}\label{convex_function}
+	u(x) \ge  \langle x , y_0\rangle -( \langle x_0, y_0\rangle -  u(x_0)),	\text{  for all $x \in X$},
+\end{equation} 
+where equality holds at $x = x_0$. On the other hand, if for any $x_0\in X$, there exists $y_0$, such that \eqref{convex_function} holds for all $x\in X$, then $u$ is convex. The following definition is analogous to this property, which is a special case of $G$-convexity, when $G(x,y,z) = \langle x, y \rangle -z$. In this case, we have $H(x,y,u) = \langle x, y \rangle -u$. \medskip
+	
+\begin{definition}[$G$-convexity]\label{defn:GConvexity}
+ A function $u\in C^0(X)$ is called {\it $G$-convex} if for each $x_0 \in X$, there exist $y_0 \in   cl(Y)$, and $z_0 \in  cl(Z)$ such that $u(x_0)=G(x_0, y_0, z_0)$, and $u(x)\ge G(x, y_0, z_0)$, for all $x\in X$.
+\end{definition}
+		
+		%%\begin{comment}
+		%%From the definition, we know if $u$ is a $G$-convex function, for any $x\in X$, there exist $y\in cl(Y)$ and $z \in cl(Z)$, such that
+		%%\begin{equation}\label{2}
+		%%u(x)= G(x, y, z),\ \ \   Du(x) = D_x G(x, y, z)
+		%%\end{equation}
+		%%
+		%%Given $u(x), Du(x)$, one can solve $y, z$, according to Assumption 1. \medskip
+		%%\end{comment}
+		
+Similarly, one can also generalize the definition of subdifferential from \eqref{convex_function}.\medskip
+		
+\begin{definition}[$G$-subdifferentiability]\label{defn:GSubdifferential}
+	The $G$-subdifferential of a 
+			%$G$-convex % 
+	function $u: X \longrightarrow \R$ is a point-to-set mapping defined by
+	\begin{equation*}
+			\partial^G u(x):= \{ y\in  cl(Y)| u(x')\ge G(x',y, H(x,y,u(x))), \text{ for all } x'\in X\}.
+	\end{equation*}
+	A function $u$ is said to be {\it $G$-subdifferentiable} at $x$ if and only if $\partial^G u(x) \neq \emptyset$.\footnote{In Trudinger \cite{Trudinger14}, this point-to-set mapping $\partial^G u$ is also called $G$-$normal$ mapping; see paper for more properties related to $G$-convexity.}		
+\end{definition}
+			
+			
+			
+			
+In particular, if $G(x,y,z) = \langle x, y \rangle - z$, then the $G$-subdifferential coincides with the subdifferential. There are other generalizations of convexity and subdifferentiability. For instance, $h$-convexity in Carlier \cite{Carlier01}, or equivalently, $b$-convexity in Figalli-Kim-McCann \cite{FigalliKimMcCann11}, or $c$-convexity in  Gangbo-McCann \cite{GangboMcCann96}, is a special form of $G$-convexity, where $G(x,y,z)=  h(x,y) -z$, which serves an important role in the quasilinear case. For more references of convexity generalizations, see Kutateladze-Rubinov \cite{KutateladzeRubinov72}, Elster-Nehse \cite{ElsterNehse74}, Balder \cite{Balder77}, Dolecki-Kurcyusz \cite{DoleckiKurcyusz78},  Singer \cite{Singer97},  Rubinov \cite{Rubinov00a}, and Martínez-Legaz \cite{MartinezLegaz05}.\medskip
+			
+			
+As mentioned above, it is known in convex analysis that a function is convex if and only if it is subdifferentiable everywhere. The following lemma adapts this to the notion of $G$-convexity. \medskip
+			
+\begin{lemma}\label{convex-subdiff0}
+A function $u: X \rightarrow \R$ is $G$-convex if and only if it is $G$-subdifferentiable everywhere.
+\end{lemma}
+\begin{proof}[Proof]
+		Assume $u$ is $G$-convex, want to show $u$ is $G$-subdifferentiable everywhere, i.e., need to prove  $\partial^G u(x_0)\neq \emptyset$ for all $x_0\in X$.
+		
+		Since $u$ is $G$-convex, by definition, for each $x_0$, there exists $ y_0, z_0$, such that $u(x_0) = G(x_0,y_0,z_0)$, and for all  $ x \in X$, 
+		\begin{equation*}
+		u(x)\ge G(x, y_0, z_0) = G(x, y_0, H(x_0,y_0,u(x_0))).
+		\end{equation*}
+		By the definition of $G$-subdifferentiability, $y_0 \in \partial^G u(x_0)$, i.e. $\partial^G u(x_0) \neq \emptyset$.
+		
+		On the other hand, assume $u$ is $G$-subdifferentiable everywhere, then for each $ x_0 \in X$,  there exists $ y_0 \in \partial^G u(x_0)$. Set $z_0:=H(x_0,y_0,u(x_0))$ so that $u(x_0) = G(x_0, y_0, z_0)$.
+		
+		Since $y_0\in \partial^G u(x_0)$, for all $x\in X$, we have 
+		\begin{equation*}
+		u(x)\ge G(x,y_0,H(x_0,y_0,u(x_0))) = G(x,y_0,z_0).
+		\end{equation*}
+		By definition, $u$ is $G$-convex.
+\end{proof}
+%\begin{proof}%[Proof of Lemma \ref{convex-subdiff0}]
+%	$"\Rightarrow"$. Assume $u$ is $G$-convex, we want to show $u$ is $G$-subdifferentiable everywhere, i.e., the statement $\partial^G u(x_0)\neq \emptyset$ is true for any $ x_0\in X$.
+%	
+%	Since $u$ is $G$-convex, by definition, for any fixed $x_0 \in X$, there exist $y_0$ and $z_0$, such that $u(x_0) = G(x_0,y_0,z_0)$, and for any $x \in X$, $u(x)\ge G(x, y_0, z_0)$. By definition of function $H$, we know $z_0 = H(x_0,y_0,u(x_0))$. Therefore, combining the above inequality, we have $u(x) \ge G(x, y_0, H(x_0,y_0,u(x_0)))$, for any $x \in X$. By definition of $G$-subdifferentiability, it implies $y_0 \in \partial^G u(x_0)$, that is, $\partial^G u(x_0) \neq \emptyset$.
+%	
+%	
+%	$"\Leftarrow"$. Assume $u$ is $G$-subdifferentiable everywhere. Then for any fixed $x_0 \in X$, there exists $y_0 \in \partial^G u(x_0)$. Define $z_0:=H(x_0,y_0,u(x_0))$, then by definition of function $H$, one has $u(x_0) = G(x_0, y_0, z_0)$.
+%	%\sloppy
+%	
+%	Since $y_0\in \partial^G u(x_0)$, by definitions of $G$-subdifferentiability, we have $u(x)\ge G(x,y_0,H(x_0,y_0,u(x_0)))$\ $ = G(x,y_0,z_0)$, for any $x\in X$, where the last equality comes from the definition of $z_0$.
+%	
+%	By definition (of $G$-convexity), $u$ is $G$-convex.
+%\end{proof}				
+				
+				
+Using Lemma \ref{convex-subdiff0}, one can show the following result,  %Proposition \ref{incen/convex} 
+which plays the role of bridge connecting incentive compatibility in the economic context with $G$-convexity and $G$-subdifferentiability in mathematical analysis, generalizing the results of Rochet \cite{Rochet87} and Carlier \cite{Carlier01}.
+\medskip
+
+
+
+
+\begin{proposition}[$G$-convex utilities characterize incentive compatibility]\label{incen/convex}
+	Let $(y,z)$ be a pair of mappings from $X$ to $cl(Y) \times cl(Z)$.  This (product, price) pair is incentive compatible 
+	if and only if $u(\cdot):=G(\cdot,y(\cdot),z(\cdot))$ is $G$-convex and $y(x)\in \partial^G u(x)$ for each $x \in X$.
+\end{proposition}
+					
+\begin{proof}%[Proof of Proposition \ref{incen/convex}]
+	$"\Rightarrow"$. Suppose $(y,z)$ is incentive compatible. For any fixed $x_0 \in X$, let $y_0 = y(x_0)$ and $z_0 = z(x_0)$. Then $u(x_0) = G(x_0, y(x_0), z(x_0)) = G(x_0, y_0, z_0)$. By incentive compatibility of the contract $(y,z)$, for any $x\in X$, one has $G(x, y(x), z(x)) \ge G(x, y(x_0), z(x_0))$. This implies $u(x) \ge G(x,y_0,z_0)$, for any $x\in X$, since $u(x)= G(x, y(x), z(x))$,  $y_0 = y(x_0)$ and $z_0 = z(x_0)$. By definition, $u$ is $G$-convex. 
+	
+	Since $u(x_0)=G(x_0, y_0, z_0)$, by definition of function $H$, one has $z_0 = H(x_0, y_0, u(x_0))$.  Combining with $u(x) \ge G(x, y_0, z_0)$,  for any $x\in X$, which is concluded from above, we have $u(x)\ge G(x, y_0, H(x_0, y_0, u(x_0)))$, for any $x\in X$. By definition of  $G$-subdifferentiability, one has $y_0 \in \partial^G u(x_0)$, and thus $y(x_0) = y_0 \in \partial^G u(x_0)$.
+	
+	$"\Leftarrow"$. Assume that $u = G(x, y(x),z(x))$ is $G$-convex, and $y(x)\in \partial^G u(x)$, for any $x\in X$. For any fixed $x \in X$, since $y(x)\in \partial^G u(x)$, for any $x'\in X$, one has 
+	\begin{equation}\label{eqn_prop3.4}
+	u(x')\ge G(x', y(x), H(x, y(x), u(x)))
+	\end{equation} 
+	Since $u(x) = G(x, y(x),z(x))$, by definition of function $H$, one has $z(x) = H(x,y(x), u(x))$. Combining with the inequality \eqref{eqn_prop3.4}, we have $u(x')\ge G(x', y(x), z(x))$. Noticing $u(x') = G(x',y(x'),$ $z(x')) $, one has $G(x',y(x'),z(x')) = u(x') \ge G(x', y(x), z(x))$.
+	By definition, (y,z) is incentive compatible.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+

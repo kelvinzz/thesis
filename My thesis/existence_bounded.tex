@@ -1,0 +1,406 @@
+\chapter{Existence: bounded product spaces}\label{chapter:existence_bounded}
+
+\section{Introduction}
+
+
+	In this chapter, we will first state the hypotheses that will be need for this and most of the following chapters. The purpose of section \ref{section:Hypotheses} is to fix terminology for the main results of the following chapters.\medskip
+	
+	In section \ref{section:ExistenceBounded}, we will reformulate the principal's program in the language of $G$-convexity and $G$-subdifferentiability, state and prove the existence theorem, where the product space is bounded.  \medskip
+
+
+
+\section{Hypotheses}\label{section:Hypotheses}
+
+For notational convenience, we adopt the following technical hypotheses, inspired by those of 
+Trudinger~\cite{Trudinger14} and Figalli-Kim-McCann \cite{FigalliKimMcCann11}. 
+
+The following hypotheses will be relevant:  \Gone-\Gthree\ represent partial analogs of the twist, domain convexity,
+and non-negative cross-curvature hypotheses from the quasilinear setting \cite{FigalliKimMcCann11} \cite{Loeper09};
+\Gfour\ encodes a form of the desirability of money to each agent, while \Gfive\ quantifies the assertion that the maximum
+price $\bar z$ is high enough that no agent prefers paying it for any product $y$ to the outside option.
+
+\begin{itemize}
+	\item[\Gzero] $G \in C^{1}(cl(X\times Y \times Z))$, where $X\subset \R^m, Y \subset \R^n$ are open and bounded and $Z=(\underbar z,\bar z)$ with $-\infty <\underbar z < \bar z \le +\infty$.
+	
+	\item[\Gone] For each $x \in X$, the map $(y,z) \in cl( Y \times Z) \longmapsto (G_x, G)(x,y,z)$ is a homeomorphism onto its range;
+	
+	\item[\Gtwo] its range $(cl( Y \times Z))_x := (G_x,G)(x,cl(Y \times Z)) \subset \R^{m+1}$ is convex.
+\end{itemize}
+
+For each $x_0\in X$ and $(y_0, z_0),(y_1,z_1) \in cl( Y \times Z)$, 
+define $(y_t, z_t)\in cl( Y \times Z)$ such that the following equation holds:
+\begin{flalign}\label{$G$-segment}
+\begin{split}
+(G_x, G)(x_0,y_t,z_t) = (1-t)(G_x, G)(x_0,y_0,z_0) + t (G_x, G)(x_0,y_1,z_1),\\ \text{ for each $t\in [0,1].$}
+\end{split}
+\end{flalign}
+By \Gone \ and \Gtwo , $(y_t, z_t)$ is uniquely determined by (\ref{$G$-segment}). 
+We call $t \in [0,1] \longmapsto (x_0,y_t,z_t)$ the  $G$-segment connecting $(x_0, y_0, z_0)$ and $(x_0, y_1, z_1)$.
+
+\begin{itemize}
+	\item[\Gthree] For each $x,x_0 \in X$, assume $t \in [0,1] \longmapsto G(x, y_t, z_t)$ is convex along all $G$-segments ($\ref{$G$-segment}$).
+	
+	\item[\Gfour]  For each $(x,y,z) \in X \times cl(Y)\times cl(Z)$, assume $G_{z}(x,y,z)<0$.  
+	
+	\item[\Gfive] $\pi\in C^0(cl(X\times Y \times Z))$ and $u_\nul (x) := G(x,y_\nul,z_\nul)$ for some fixed
+	$(y_\nul,z_\nul) \in cl(Y \times Z)$  satisfying
+	\begin{equation*}
+	\ \ \ \ \ \ \ \ \ \ 		G(x,y,\bar z)  := \lim_{z \to \bar z}G(x,y,z) \le G(x,y_\nul,z_\nul) \text{ for all}\ (x,y) \in X \times cl (Y).
+	\end{equation*}
+	When $\bar z = +\infty$ assume this inequality is strict, and moreover that $z$ sufficiently large implies
+	\begin{equation*}
+	G(x,y,z) < G(x,y_\nul,z_\nul) \text{ for all}\ (x,y) \in X \times cl(Y).
+	\end{equation*}
+\end{itemize}
+
+For each $u \in \R$, \Gfour \ allows us to define $H(x,y,u) := z$ 
+if  $G(x,y,z) = u$, i.e. $H(x, y, \cdot)= G^{-1}(x,y,\cdot)$.
+
+
+
+
+\section{Reformulation of the principal's program, Existence theorem}\label{section:ExistenceBounded}
+
+
+
+In this section,
+we'll reformulate the 
+principal's program using $u$ as a proxy for the prices $v$ controlled
+by the principal,  thus generalizing Carlier's approach \cite{Carlier01} to the non-quasilinear setting. Moreover, the agent's indirect utility $u$ and product selling price $v$ are $G$-dual to each other in the sense of \cite{Trudinger14}.\medskip
+
+%\begin{definition}[$G$-convexity]\label{$G$-convexity}
+%	A function $u\in C^0(X)$ is called $G$-convex if for each $x_0 \in X$, there exists $y_0 \in cl(Y)$, and $z_0 \in cl(Z)$ such that $u(x_0)=G(x_0, y_0, z_0)$, and $u(x)\ge G(x, y_0, z_0),\mbox{ for all } x\in X$.
+%	\end{definition}
+%	
+	
+
+		
+%		While $G$-convexity acts as a generalized notion of convexity, the $G$-subdifferentiability defined in \ref{defn:GSubdifferential} generalizes the concept of differentiability/subdifferentiability. 
+		
+%		\begin{definition}[$G$-subdifferentiability]
+%			The $G$-subdifferential of a function $u(x)$ is defined by
+%			\begin{equation*}
+%			\partial^G u(x):= \{ y\in cl(Y)\mid u(x')\ge G(x',y, H(x,y,u(x))), \mbox{ for all } x'\in X\}.
+%			\end{equation*}
+%			
+%			A function $u$ is said to be $G$-subdifferentiable at $x$ if and only if $\partial^G u(x) \neq \emptyset$.
+%			\end{definition}
+%			
+%			In \cite{Trudinger14}, this point-to-set map $\partial^G u$ is also called $G$-$normal$ mapping. For more properties related to $G$-convexity, see \cite{Trudinger14}.
+
+{\color{blue}			
+%			Lemma \ref{convex-subdiff} shows an equivalent relationship between $G$-convexity and $G$-subdifferentiability, a special case of which is that a function is convex if and only if it is subdifferentiable on (the interior of) its domain. 
+%			
+%			\begin{lemma}[$G$-subdifferentiability characterizes $G$-convexity]
+%				\label{convex-subdiff}
+%				Allowing hypothesis \Gfour, a function $u: X \longrightarrow \R$ is $G$-convex if and only if it is $G$-subdifferentiable everywhere.
+%				\end{lemma}
+			
+}
+					
+	We now show each $G$-convex function defined in Definition \ref{defn:GConvexity} can be achieved by 
+	some price menu $v$,  and conversely each price menu yields a $G$-convex indirect utility \cite{Trudinger14}.
+	We require either \Gfive\ or \eqref{repulsed}, which asserts
+	all agents are repelled by the maximum price,  and insensitive to which contract they receive at that price.\medskip
+					
+					
+\begin{proposition}[Duality between prices and indirect utilities]\label{Prop:Gtransform}
+	Assume \Gzero\ and \Gfour. {\rm (a)} If 
+	\begin{equation}\label{repulsed}
+	\begin{split}
+		G(x,y,\bar{z}) := \lim_{z \to \bar z}G(x,y,z) = \inf_{(\tilde{y}, \tilde{z})\in cl(Y\times Z)} G(x, \tilde{y}, \tilde{z}), \\
+		\text{ for all } (x,y)\in X\times cl(Y),
+	\end{split}
+	\end{equation} 
+	then a function $u \in C^0(X)$ is $G$-convex if and only if there exist a lower semicontinuous 
+	$v: cl(Y) \longrightarrow cl(Z)$ such that $u(x) = \max_{y\in cl(Y)} G(x,y,v(y))$.
+	{\rm (b)} If instead of \eqref{repulsed} we assume \Gfive,
+	then $u_\nul \le u \in C^0(X)$ is $G$-convex if and only if there exists a lower semicontinuous function $v: cl(Y) \longrightarrow cl(Z)$ with $v(y_\nul) \le z_\nul$ such that $u(x) = \max_{y\in cl(Y)} G(x,y,v(y))$.
+\end{proposition}
+						
+\begin{proof}
+	1. Suppose $u$ is $G$-convex. Then for any agent type $x_0\in X$, there exists a product and price
+	$(y_0,z_0) \in cl(Y \times Z)$, such that $u(x_0)=G(x_0,y_0,z_0)$ and $u(x)\ge G(x,y_0,z_0)$, for all $x\in X$. 
+							
+	Let $A:=\cup_{x\in X} \partial^{G} u(x)$ denote the corresponding set of products.          
+	For $y_0\in A$, define $v(y_0) = z_0$, where $z_0\in cl(Z)$ and $x_0\in X$ satisfy $u(x_0)=G(x_0,y_0,z_0)$ and $ u(x)\ge G(x, y_0,z_0)$ for all $x\in X$.
+	We shall shortly show this makes $v:A \longrightarrow cl(Z)$ (i) well-defined and (ii) lower semicontinuous. Taking (i)  for granted,  our construction yields
+	\begin{equation}\label{restricted1}
+	u(x)  =
+		\max_{y \in A} G(x,y,v(y)) \qquad \forall x \in X.
+	\end{equation}
+							
+	(i) Now for $y_0 \in A$, suppose there exist $(x_0, z_0), (x_1, z_1)\in X\times cl(Z)$ with 
+	$z_0 \ne z_1$, such that $u(x_i) = G(x_i, y_0, z_i)$ and $u(x) \ge G(x, y_0, z_i)$ for all $x\in X$ and $i=0,1$.  Without loss of generality, assume $z_0< z_1$. By \Gfour, we know $u(x_1) = G(x_1, y_0, z_1)<G(x_1, y_0, z_0)$, contradicting $u(x)\ge G(x,y_0,z_0)$, for all $x\in X$.   
+	Having shown $v:A \longrightarrow cl(Z)$ is well-defined, we now show it is lower semicontinuous.
+							
+							
+	(ii) Suppose $\{y_{k}\}\subset A$ converges to $y_0 \in A$ and 
+		$z_\infty:= \lim\limits_{k \to \infty} v(y_k) = \liminf\limits_{y \rightarrow y_0}v(y)$.  We need to show 
+		$v(y_0) \le z_\infty$.  Letting $z_k := v(y_k)$ for each $k$,  there exists $x_k \in X$ such that 
+		\begin{equation}\label{sequence3.6}
+			u(x) \ge G( x, y_k,z_k) \qquad {\forall} x \in X \text{ and}\ k =0,1,2,\ldots,
+		\end{equation}
+	with equality holding at $x=x_k$.  In case (b) we deduce $z_\infty < \infty$ from 
+		\begin{equation*}
+			G(x_k,y_k,z_k) =u(x_k)  \ge G(x_k,y_\nul,z_\nul)	
+		\end{equation*}
+	and \Gfive.
+	Taking $k \to \infty$,  \Gzero\ (or \eqref{repulsed}  in case (a) when $z_\infty=+\infty$)
+	implies
+	\begin{equation}\label{limit3.6}
+		u(x) \ge G(x,y_0,z_\infty) \qquad {\forall} x \in X.
+	\end{equation}
+	Applying \Gfour\ to $G(x_0,y_0,z_0)=u(x_0)\ge G(x_0,y_0,z_\infty)$ yields 
+	the desired semicontinuity: $z_0 \le z_\infty$.
+							
+	{(iii)} We extend $v$ from $A$ to $cl(Y)$ by taking its lower semicontinuous hull;
+			this does not change the values of $v$ on $A$, but satisfies $v(y_0) := \bar z$  on $y_0 \notin cl(A)$.
+			We now 	show this choice of price menu $v$ yields \eqref{1}. 
+			Recall for each $x \in X$,  there exists $(y_0,z_0) \in cl(Y \times Z)$ such that
+				\begin{equation*}
+				u(x) = G(x,y_0,z_0) \ge (u_\nul(x) := G(x,y_\nul,z_\nul) \ge) \sup_{y \in cl(Y)\setminus cl(A)} G(x,y,v(y)),
+				\end{equation*}
+			in view of \eqref{repulsed} (or \Gfive), and the fact that $v(y) = \bar z$ for each $y$ outside $cl(A)$.
+			Thus to establish \eqref{1},  we need only show that \eqref{restricted1} remains true when
+			the domain of the maximum is enlarged from $A$ to $cl(A)$.
+			Since we have chosen the {\em largest} lower semicontinuous extension of $v$ outside of $A$,
+			each $y_0 \in cl(A) \setminus A$ is approximated by a sequence  $\{y_{k}\}\subset A$
+			for which $z_k := v(y_k)$ converges to $z_\infty :=v(y_0)$. As before, \eqref{sequence3.6} holds
+			and implies \eqref{limit3.6}, showing \eqref{restricted1} indeed remains true when
+			the domain of the maximum is enlarged from $A$ to $cl(A)$, and establishing \eqref{1}.
+			Finally, if $v(y_\nul) > z_\nul$ in case (b) then \Gfour\ yields $u(x) \ge u_\nul(x) > G(x,y_\nul,v(y_\nul))$, and
+			we may redefine $v(y_\nul):=z_\nul$ without violating either \eqref{1} or the lower semicontinuity of $v$.\medskip
+							
+	2. Conversely, suppose there exist a lower semicontinuous function $v: cl(Y)\longrightarrow cl(Z)$, such that $u(x)=\max_{y\in {cl(Y)}} G(x, y,v(y))$. Then for any $x_0\in X$, there exists $y_0 \in cl(Y)$, such that $u(x_0) = G(x_0, y_0, v(y_0))$. Let $z_0:= v(y_0)$, then $u(x_0)= G(x_0, y_0, z_0)$, and for all $x\in X$, $u(x)\ge G(x, y_0, z_0)$. By definition, $u$ is $G$-convex.   If $v(y_\nul) \le z_\nul$ then $u(\cdot) \ge G(\cdot ,y_\nul,v(y_\nul)) \ge u_\nul(\cdot)$ 
+	by \eqref{1} and \Gfour.
+\end{proof}
+							
+							
+\begin{remark}[Optimal agent strategies] Assume \Gzero\ and \Gfour.
+	When $\bar z< \infty$,  lower semicontinuity of $v:cl(Y) \longrightarrow cl(Z)$ is enough to ensure the maximum 
+	\eqref{1} is attained.  However, when $\bar z=+\infty$ we can reach the same conclusion either by assuming the limit \eqref{repulsed} converges uniformly with respect to  $y \in cl(Y)$,  or else by assuming $v(y_\nul) \le z_\nul$ and \Gfive.
+\end{remark}
+								
+								
+\begin{proof}
+	For any fixed $x \in X$ let $u(x) = \sup\limits_{y\in cl(Y)} G(x,y,v(y))$. We will show that the maximum is attained. Since $cl(Y)$ is compact, suppose $\{y_{k}\}\subset cl(Y)$ converges to $y_0 \in cl(Y)$,
+	$z_\infty:= \limsup\limits_{k \to \infty} v(y_k)$ and $u(x) = \lim\limits_{k\to \infty} G(x, y_k,  v(y_k))$. By extracting subsequence of $\{y_k\}$ and relabelling, without loss of generality, assume $\lim\limits_{k\to \infty} v(y_k) = z_{\infty}$. 
+								
+	1.  If $z_{\infty}< \bar{z}$ then lower semicontinuity of $v$ yields $v(y_0)\le z_{\infty} < +\infty$. By \Gfour, one has
+		\begin{equation}
+		\begin{split}
+			G(x, y_0, v(y_0)) \ge & ~G(x, y_0, z_{\infty}) = \lim\limits_{k\to \infty} G(x, y_k,  v(y_k))\\
+			= & ~u(x) = \sup\limits_{y\in cl(Y)} G(x,y,v(y)).
+		\end{split}
+		\end{equation}
+	Therefore, the maximum is attained by $y_0$.\medskip
+									
+	2. If $z_{\infty} = \bar{z}$ then $\lim\limits_{k\to \infty} v(y_k) = \bar{z} = + \infty$.
+									
+		2.1. By assuming the limit \eqref{repulsed} converges uniformly with respect to  $y \in cl(Y)$, we have 
+			\begin{equation*}
+			\begin{split}
+				\inf_{(\tilde{y}, \tilde{z})\in cl(Y\times Z)} G(x, \tilde{y}, \tilde{z}) = &~ G(x,y_0,\bar{z}) = \lim_{k \to \infty} G(x,y_k, v(y_k)) \\
+				=&~ u(x) = \sup \limits_{y\in cl(Y)} G(x,y,v(y)).
+			\end{split}
+			\end{equation*}
+		In this case, the maximum is attained by $y_0$. 
+									
+		2.2. By assuming \Gfive, for sufficient large $k$, we have $G(x, y_k, v(y_k)) < G(x, y_{\emptyset}, z_{\emptyset})$. Taking $k \to \infty$, by $v(y_{\emptyset}) \le z_{\emptyset}$  and \Gfour, one has
+			\begin{equation*}
+			\begin{split}
+				\sup\limits_{y\in cl(Y)} G(x,y,v(y)) = &~u(x) = \lim_{k \to \infty} G(x,y_k, v(y_k)) \\
+				\le &~ G(x, y_{\emptyset}, z_{\emptyset}) \le G(x, y_{\emptyset}, v(y_{\emptyset})).
+			\end{split}
+			\end{equation*}
+	Thus, the maximum is attained by $y_{\emptyset}$.
+\end{proof}
+									
+									
+	From the definition of $G$-convexity, we know if $u$ is a $G$-convex function, for any $x \in X$ where $u$ happens
+	to be differentiable,  denoted $x\in \dom Du$, there exists $y\in cl(Y)$ and $z\in cl(Z)$ such that
+	\begin{equation}\label{EqnInverse}
+	u(x)= G(x, y, z),\ \ \   Du(x) = D_x G(x, y, z).
+	\end{equation}
+	Conversely, when (\ref{EqnInverse}) holds, one can identify $(y, z) \in cl( Y \times Z)$ in terms of $u(x)$ and $Du(x)$, according to Condition \Gone. We denote it as 
+	\begin{equation*}
+	\bar{y}_G (x,u(x),Du(x)) := (y_G, z_G)(x,u(x),Du(x)),
+	\end{equation*} 
+	and drop the subscript
+	$G$ when it is clear from context. 
+	Under our hypotheses, $\bar y_G$ is a continuous function 
+	{ on the relevant domain of 
+		definition.\footnote{Namely $(id_X, G, G_x)(\{(x,y,z) \in cl(X \times Y \times Z) \mid G(x,y,z) \ge G(x,y_\nul,z_\nul)\})$.}}
+	It will often prove convenient to augment the types $x$ and $y$ with an extra real variable;
+	here and later we use the notation $\bar x \in \R^{m+1}$ and $\bar y \in \R^{n+1}$ to signify this augmentation.
+	In addition, the set $X\setminus \dom Du$ has Lebesgue measure zero, which will be shown in the proof of Theorem \ref{Thm:Existence}.	\medskip
+									
+									
+									
+									
+									
+The following proposition not only reformulates the principal's problem, but manifests the existence of maximizer(s). 
+Besides chapter \ref{chapter:existence} 
+%of this thesis (Zhang~\cite{Zhang}) 
+which relaxes relative compactness of the domain, for other existence results guaranteeing this supremum is attained in the non-quasilinear setting, 
+see N\" oldeke-Samuelson \cite{NoldekeSamuelson15p} who require mere continuity of the direct utility $G$.\medskip
+									
+
+\begin{theorem}[Reformulating the principal's program using the agents' indirect utilities]\label{Thm:Existence}
+	Assume hypotheses \Gzero-\Gone ~and \Gfour-\Gfive, 
+	$\bar z < +\infty$  and $\mu \ll \mathcal{L}^m$. Setting  $$\tilde{\Pi}(u,y)=\int_{X} \pi(x, y(x), H(x,y(x), u(x))) d\mu(x),$$
+	the principal's problem $(P_0)$ is equivalent to
+		\begin{equation*}
+			(P_3)
+			\begin{cases}
+				\max \tilde{\Pi}(u,y) \\
+				\text{\rm among }
+				$G$\text{\rm-convex  $u(x) \ge u_\nul(x)$ with }
+				y(x) \in \partial^G u(x)\ \text{\rm for all } x \in X.
+			\end{cases}
+		\end{equation*}
+	This maximum is attained. Moreover, $u$ determines $y(x)$ uniquely for a.e. $x \in X$.
+\end{theorem}
+										
+\begin{proof}
+	1. Proposition \ref{Prop:Gtransform} encodes a bijective correspondence between
+lower semicontinuous price menus $v:cl(Y) \longrightarrow cl(Z)$ with $v(y_\nul) \le z_\nul$
+and $G$-convex indirect utilities $u \ge u_\nul$; it also shows \eqref{1} is attained.
+Fix a $G$-convex $u \ge u_\nul$ and the corresponding price menu
+$v$.  For each $x \in X$ let $y(x)$ denote the point achieving the maximum \eqref{1}, so that 
+$u(x) = G(x,y(x),z(x))$ with $z(x):=v(y(x)) = H(x,y(x),u(x))$ and $\Pi(v,y) = \tilde \Pi(u, y)$.
+From \eqref{1} we see
+\begin{equation}\label{TIEGsub}
+	G(\cdot, y(\cdot),v\circ y(\cdot)) = u(\cdot) \ge G(\cdot, y(x),H(x,y(x),u(x))),
+\end{equation}
+so that $y(x) \in \partial^Gu(x)$.  Apart from the measurability established below,
+Proposition \ref{incen/convex} asserts incentive compatibility of $(y,v \circ y)$,
+while $u \ge u_\nul$ shows individual rationality, so $(P_3)\le(P_0)$.  \medskip
+											
+	2. The reverse inequality begins with a lower semicontinuous price menu $v:cl(Y) \longrightarrow cl(Z)$ with 
+$v(y_\nul) \le z_\nul$ and an incentive compatible, individually rational map $(y,v \circ y)$ on $X$. 
+Proposition \ref{incen/convex}
+then asserts $G$-convexity of $u(\cdot) :=G(\cdot, y(\cdot),v(y(\cdot)))$ and that $y(x) \in \partial^Gu(x)$ for each 
+$x \in X$.  Choosing $\cdot = x$ in the corresponding inequality \eqref{TIEGsub}
+produces equality, whence \Gfour\ implies
+$v(y(x)) = H(x,y(x),u(x))$ and $\Pi(v,y) = \tilde \Pi(u, y)$.  Since $u \ge u_\nul$ follows from individual 
+rationality, we have established equivalence of $(P_3)$ to $(P_0)$.  Let us now argue the supremum $(P_3)$ is attained.\medskip
+							
+							
+	3. Let us first show  $\pi(x, y(x), H(x,y(x), u(x)))$ is measurable on $X$ for all $G$-convex $u$ and $y(x) \in \partial^G u(x)$.
+											
+	By \Gzero, we know $G$ is Lipschitz, i.e., there exists $L>0$, such that $|G(x_1, y_1, z_1)-G(x_2, y_2, z_2)|< L ||(x_1-x_2,y_1-y_2, z_1-z_2)||$, for all $(x_1,y_1,z_1),$ $(x_2, y_2, z_2) \in cl(X\times Y\times Z)$.
+	Since $u$ is $G$-convex, for any $x_1, x_2 \in X$, there exist $(y_1, z_1), (y_2, z_2) \in cl( Y \times Z)$, such that $u(x_i) = G(x_i,y_i,z_i)$, for $i=1,2$. Therefore, 
+	\begin{equation*}
+	\begin{split}
+	&u(x_1)-u(x_2) \ge G(x_1, y_2, z_2) - G(x_2, y_2, z_2) > -L ||x_1-x_2||;\\
+	& 	u(x_1)-u(x_2) \le G(x_1, y_1, z_1) - G(x_2, y_1, z_1) < L ||x_1-x_2||.
+	\end{split}
+	\end{equation*}
+	That is to say, $u$ is also Lipschitz with Lipschitz constant $L$. By Rademacher's theorem and $\mu \ll \mathcal{L}^m$, we have $\mu(X\setminus \dom Du) =\mathcal{L}^m(X\setminus \dom Du) =0$.  Moreover, since $u$ is continuous, $\frac{\partial u(x)}{\partial x_j} = \lim\limits_{h\rightarrow 0} \frac{u(x+he_j)-u(x)}{h}$ is measurable on $\dom Du$, for $j=1,2,..., m$, where $e_j=(0,...0, 1, 0, ...,0)$ is the unit vector in $\R^m$ with $j$-th coordinate nonzero. Thus, $Du$ is also Borel on $\dom Du$.
+	
+	Since $y(x) \in \partial^G u(x) $, for all $x\in \dom Du$, we have
+	\begin{equation}\label{EqnInverse2}
+	\begin{split}
+		u(x) &= G(x, y(x), H(x, y(x), u(x))), \\
+		Du(x) &= D_xG(x, y(x), H(x, y(x), u(x))).
+	\end{split}
+	\end{equation}
+	By \Gone, there exists a continuous function $\yG$, such that 
+	\begin{equation*}
+		y(x) = \yG(x, u(x), Du(x)).
+	\end{equation*} 
+	Thus $y(x)$ is Borel on $\dom Du$, which implies $\pi(x, y(x), H(x,y(x), u(x)))$ is measurable on $X$, given $\pi \in C^0(cl(X\times Y\times Z))$ and $\mu \ll \mathcal{L}^m$. Here we use the fact that $H$ is also continuous since $G$ is continuous and strictly decreasing with respect	to its third variable.\medskip
+											
+											
+	4. To show the supremum is attained,
+	let $\{u_k\}_{k\in \NN}$ be a sequence of %\linebreak
+	$G$-convex functions, $u_k(x) \ge u_{\emptyset}(x)$ and  $y_k(x) \in \partial^G u_k(x)$ for any $x\in X$ and $k \in \NN$,  such that $\lim_{k\rightarrow \infty} \tilde{\Pi}(u_k, y_k) = \sup \tilde{\Pi}(u,y)$, among all feasible $(u,y)$. Below we construct a feasible pair $(u_{\infty}, y_{\infty})$ 
+	attaining the maximum.
+											
+	4.1. Claim: There exists $M>0$, such that $|u(x)|<M$, for any $G$-convex $u$ and any $x \in X$. Thus $\{u_k\}_{k \in \NN}$ is uniformly bounded.
+											
+		Proof: Since $u$ is $G$-convex, for any $x\in X$, there exists $(y, z)\in cl( Y \times Z) $, such that $u(x) = G(x,y,z)$. Notice that $G$ is bounded, since $G$ is continuous on a compact set. Thus, there exists $M>0$, such that $|u(x)| =| G(x,y,z)|<M$ is also bounded.
+											
+	4.2. From part 1, we know $\{u_k\}_{k\in \NN}$ are uniformly Lipschitz with Lipschitz constant $L$, thus $\{u_k\}_{k\in \NN}$ are uniformly equicontinuous.
+											
+	4.3. By Arzel\`a-Ascoli theorem, there exists a subsequence of $\{u_k\}_{k\in \NN}$, again denoted as $\{u_k\}_{k\in \NN}$, and $u_{\infty} : X \longrightarrow \R$ such that $\{u_k\}_{k\in \NN}$  converges uniformly to $u_{\infty}$ on $X$.
+											
+	4.4. Claim: $u_{\infty}$ is also Lipschitz.
+											
+		Proof: For any $\varepsilon >0$, any $x_1, x_2 \in X$, since $\{u_k\}_{k\in \NN}$ converges to $u_{\infty}$ uniformly, there exist $K>0$, such that for any $k >K$, we have $|u_k(x_i) -u_{\infty}(x_i)|<\varepsilon$, for $i=1,2$. Therefore, 
+			\begin{equation*}
+			\begin{split}
+			&~|u_{\infty}(x_1) -u_{\infty}(x_2)| \\
+			\le & ~|u_k(x_1)-u_{\infty}(x_1)| + |u_k(x_2)-u_{\infty}(x_2)| + |u_k(x_1) -u_k(x_2)| \\
+			< & ~2\varepsilon + L ||x_1-x_2||.
+			\end{split}
+			\end{equation*}
+		Since the above inequality is true for all $\varepsilon >0$, thus $u_{\infty}$ is also Lipschitz.
+											
+	4.5. For any $x\in X$, since $u_k(x)\ge u_{\emptyset}(x)$ and $\lim\limits_{k\rightarrow \infty} u_{k}(x) = u_{\infty}(x)$, we have $u_{\infty}(x)\ge u_{\emptyset}(x)$. Therefore, $u_{\infty}$ satisfies the participation constraint.
+											
+	4.6. For any fixed $x\in X$, since $\{y_k(x)\}_{k \in \NN} \subset cl(Y)$ which is compact, there exists a subsequence $\{y_{k_l}(x)\}_{l\in \NN}$ which converges. Define $y_{\infty}(x):= \lim\limits_{l\rightarrow \infty} y_{k_l}(x) \in cl(Y)$.
+	For each $l\in \NN$, because  $y_{k_l}(x)\in \partial^G u_{k_l} (x)$, by definition, we have $u_{k_l}(x_0)\ge G(x_0, y_{k_l}(x), H(x, y_{k_l}(x), u_{k_l}(x)))$, for any $x_0\in X$. This implies, for all $x_0\in X$, we have
+		\begin{equation*}
+		\begin{split}
+			u_{\infty}(x_0) = \lim\limits_{l \rightarrow \infty} u_{k_l}(x_0) &~\ge \lim_{l\rightarrow \infty}  G(x_0, y_{k_l}(x), H(x, y_{k_l}(x), u_{k_l}(x)))\\
+			&~\ge G(x_0, y_{\infty}(x), H(x, y_{\infty}(x), u_{\infty}(x))).
+		\end{split}
+		\end{equation*} 
+	Thus, $y_{\infty}(x) \in \partial^G u_{\infty}(x)$. 
+											
+	Therefore, $\partial^G u_{\infty}(x) \ne \emptyset$, for any $x\in X$. By Lemma \ref{convex-subdiff0}, this implies $u_{\infty}$ is $G$-convex.
+											
+	At this point, we have found a feasible pair $(u_{\infty}, y_{\infty})$, satisfying all the constraints in $(P_3)$.
+											
+	4.7. Claim: For any $x\in \dom Du_{\infty}$, the sequence $\{y_k(x)\}_{k\in \NN} \subset cl(Y)$ converges to $y_{\infty}(x)$.
+											
+		Proof: Since $u_{\infty}$ is Lipschitz, by Rademacher's theorem, $u_{\infty}$ is differentiable almost everywhere in $X$, i.e. $\mu(X\setminus \dom Du_{\infty}) = \mathcal{L}^m(X\setminus \dom Du_{\infty}) =0$.
+											
+		For any $x\in \dom Du_{\infty}$ and any $\tilde{y}\in \partial^G u_{\infty}(x)$, we have 
+			\begin{equation*}
+				\tilde{y}(x) = \yG(x, u_{\infty}(x), Du_{\infty}(x)),
+			\end{equation*}
+		according to equation $(\ref{EqnInverse2})$ and hypothesis \Gone. This implies $ \partial^G u_{\infty}(x)$ is a singleton for each $x\in \dom Du_{\infty}$, i.e. $\partial^G u_{\infty}(x) =\{y_{\infty}(x)\}$.
+											
+		For any $x\in \dom Du_{\infty}$, by similar argument to that above in part 4.6, we can show that any (other) accumulation points of $\{y_k(x)\}_{k\in \NN}$ are elements in the set $\partial^G u_{\infty}(x)=\{y_{\infty}(x)\}$, i.e. the sequence $\{y_k(x)\}_{k\in \NN}$ converges to $y_{\infty}(x)$.
+											
+	4.8. Finally, since $\mu \ll \mathcal{L}^m$, by Fatou's lemma, we have 
+		\begin{flalign*}
+			\tilde{\Pi}(u_{\infty}, y_{\infty}) = \int_{X} \pi(x, y_{\infty}(x), H(x,y_{\infty}(x), u_{\infty}(x))) d\mu(x)  
+		\end{flalign*}
+		\begin{flalign*}
+			\hspace{2.65cm}	&=\int_{X} \limsup\limits_{k\rightarrow \infty}\pi(x, y_k(x), H(x,y_k(x), u_k(x))) d\mu(x) 
+			\\
+			&\ge \limsup\limits_{k\rightarrow \infty} \int_{X} \pi(x, y_k(x), H(x,y_k(x), u_k(x))) d\mu(x) 
+			\\
+			& = \lim\limits_{k\rightarrow \infty} \tilde{\Pi}(u_k, y_k)\\
+			&= \sup \tilde{\Pi}(u,y),
+		\end{flalign*}
+	among all feasible (u,y). Thus, the supremum is attained.
+\end{proof}
+											
+\begin{remark}[More Singular measures]
+	If $G \in C^2$ (uniformly in $z \in Z$) the same conclusions extend to $\mu$ which need not be absolutely
+	continuous with respect to Lebesgue,  provide $\mu$ vanishes on all hypersurfaces parameterized 
+	locally as a difference of convex functions \cite{FigalliKimMcCann11} \cite{Gigli11},  essentially because $G$-convexity then implies semiconvexity of $u$.  On the other hand,  apart from its final sentence,  
+	the proposition extends to all probability measures $\mu$ if $G$ is merely continuous, according to 
+	N\"oldeke-Samuelson \cite{NoldekeSamuelson15p}.  Our argument is simpler than
+	theirs on one point however:  
+	Borel measurability of $y(x)$ on $\dom Du$ follows automatically from $(G0)-(G1)$;
+	in the absence of these extra hypotheses,  they are required to make a measurable selection from among each
+	agent's preferred products to define $y(x)$.
+\end{remark}
+												
+\begin{remark}[Tie-breaking rules for singular measures] 
+	When an agent $x$ finds more than one product which maximize his utility, in order to reduce the ambiguity, it is convenient to assume the principal has satisfactory persuasion to  convince the agent to choose one of those products which maximize the principal's profit. 
+	According to equation (\ref{EqnInverse}) and condition $(G1)$, this scenario would occur only for $x\in X \setminus \dom Du $, which has Lebesgue measure zero. Thus this convention has no effect for absolutely continuous measures, 
+	but can be used as in Figalli-Kim-McCann \cite{FigalliKimMcCann11} to extend our result to singular measures.
+\end{remark}
+													
+													
+													
+													
+													
