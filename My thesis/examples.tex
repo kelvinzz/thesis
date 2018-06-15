@@ -4,7 +4,16 @@
 
 
 \section{Several examples for the quasilinear case with explicit solutions}
-In 2011, Figalli-Kim-McCann \cite{FigalliKimMcCann11} provided a non-negative curvature condition (B3) which is equivalent to concavity of the maximization functional $\pmb \Pi$ or convexity of the functional $\mathcal{L}$ defined below, under some other constraints. One may wonder whether this curvature condition (B3) is equivalent to uniqueness of the functionals as well. According to Loeper \cite{Loeper09}, (B3) is satisfied if and only if the Riemannian sectional curvature is non-negative.
+In 2011, Figalli-Kim-McCann \cite{FigalliKimMcCann11} provided a non-negative curvature condition (B3) which is equivalent to convexity of the 
+domain of the objective
+ $\pmb \Pi$ or the domain of 
+ $\mathcal{L}$ defined below, under some other constraints. One may wonder whether this curvature condition (B3) is 
+ %equivalent to 
+necessary for 
+uniqueness of the 
+optimizer 
+as well. According to Loeper \cite{Loeper09}, 
+for $c=d^2$, where $d$ is a Riemannian distance, (B3) is satisfied if and only if the Riemannian sectional curvature is non-negative.
 %, some part of the thesis aims to investigate uniqueness without concavity on the hyperbolic spaces with constant negative curvatures. 
 This section shows a negative answer, via uniqueness examples on the hyperbolic spaces with constant negative curvatures%negative curvature spaces
 , where (B3) is violated. \medskip
@@ -19,7 +28,8 @@ Let $D$ be a disk with a small radius $\bar{r}$ on $\HH^n$($n\ge 2$), and consid
 \end{split}
 \end{equation} 
 
-Here $\prod$ means the product notation. In order to distinguish it from the profit functional $\pmb \Pi$, equivalently, in this section, we minimize $\mathcal{L} := - \pmb \Pi$. We take $\mu$ be uniform measure on this hyperbolic disk $D$, and participation constraint $u_{\emptyset}(x)= -\frac{1}{2}|x|^2$.\medskip
+Here $\prod$ means the product notation. In order to distinguish it from the profit functional $\pmb \Pi$, equivalently, in this section, we minimize $\mathcal{L} := - \pmb \Pi$. We take $\mu$ be uniform measure on this hyperbolic disk $D$, and participation constraint $u_{\emptyset}(x)= -\frac{1}{2}d^2(x, x_{\emptyset})$, where $x_{\emptyset} = (R, 0, 0, ..., 0) \in D$.\medskip
+
 
 Then the monopolist problem becomes
 
@@ -52,14 +62,14 @@ Then the monopolist problem becomes
 \begin{theorem}
 	The program $(P_5)$ has an unique minimizer on $D$. And 
 	\begin{equation*}
-	\argmin\limits_{\substack{u\ge -\frac{1}{2}r^2 \\ u \text{ is radially symmetric} \\ u \in C^1(D)}} \mathcal{L}(u)= \argmin\limits_{\substack{u\ge -\frac{1}{2}r^2 \\ u \text{ is radially symmetric} \\ u \text{ is $G$-convex}}} \mathcal{L}(u)=\argmin\limits_{\substack{u\ge -\frac{1}{2}|x|^2 \\ u \text{ is $G$-convex}}} \mathcal{L}(u) =: \bar{u}(r)
+	\argmin\limits_{\substack{u\ge -\frac{1}{2}r^2 \\ u \text{ is radially symmetric} \\ u \in C^1(D)}} \mathcal{L}(u)= \argmin\limits_{\substack{u\ge -\frac{1}{2}r^2 \\ u \text{ is radially symmetric} \\ u \text{ is $G$-convex}}} \mathcal{L}(u)=\argmin\limits_{\substack{u\ge u_{\emptyset} \\ u \text{ is $G$-convex}}} \mathcal{L}(u) =: \bar{u}(r)
 	\end{equation*}
 	where
 	\begin{equation*}
 	\bar{u}(r) = 
 	\begin{cases}
-	-\frac{1}{2} r^2 & ,0\le r\le \tilde{r} \\
-	\parbox[t]{.8\textwidth}{$\int_{\tilde{r}}^{r}\sinh^{1-n}(\frac{t}{R})\int_{0}^{t}\sinh^{n-1}(\frac{\sigma}{R})d\sigma dt - \int_{0}^{\bar{r}}\sinh^{n-1}(\frac{\sigma }{R})d \sigma  \int_{\tilde{r}}^{r}\sinh^{1-n}(\frac{t}{R}) d t -\frac{1}{2}(\tilde{r})^2 $} & ,\tilde{r} < r \le \bar{r} \\
+	-\frac{1}{2} r^2, & 0\le r\le \tilde{r} \\
+	\parbox[t]{.8\textwidth}{$\int_{\tilde{r}}^{r}\sinh^{1-n}(\frac{t}{R})\int_{0}^{t}\sinh^{n-1}(\frac{\sigma}{R})d\sigma dt - \int_{0}^{\bar{r}}\sinh^{n-1}(\frac{\sigma }{R})d \sigma  \int_{\tilde{r}}^{r}\sinh^{1-n}(\frac{t}{R}) d t -\frac{1}{2}(\tilde{r})^2, $} & \tilde{r} < r \le \bar{r} \\
 	\end{cases}.
 	\end{equation*}
 	Here $\tilde{r}$ satisfies 
@@ -95,7 +105,7 @@ Then the monopolist problem becomes
 	&=C_0 \int_B w[(\sinh\frac{r}{R})^{n-1}-\bar{u}''(r)(\sinh\frac{r}{R})^{n-1}- \frac{n-1}{R}\bar{u}'(r)(\sinh\frac{r}{R})^{n-2}\cosh\frac{r}{R}]dr\\& \ \ \  +C_0 \bar{u}'(r)w(r)(\sinh\frac{r}{R})^{n-1}\bigg|_{\partial B}\\
 	\end{split}
 	\end{equation*}
-	By fundamental lemma of Calculus of Variations, together with the inequality we derived from non-negativity of magnitude of $y_G(x, D\bar{u}(x))$, we have following constraints for $\bar{u}$:
+	By the fundamental lemma of the Calculus of Variations, together with the inequality we derived from non-negativity of magnitude of $y_G(x, D\bar{u}(x))$, we have following constraints for $\bar{u}$:
 	\begin{equation*}
 	(ODE) \begin{cases} 
 	r+\bar{u}'(r) \ge 0, & (1)\mbox{ on } B \\ 
@@ -107,7 +117,7 @@ Then the monopolist problem becomes
 	\begin{equation*}
 	\bar{u}(r) = \int_{0}^{r}(\sinh\frac{t}{R})^{1-n} \int_{0}^{t} (\sinh\frac{\sigma }{R})^{n-1} d\sigma  dt + C_1 \int_{0}^{r}(\sinh\frac{t}{R})^{1-n} dt +C_2
 	\end{equation*}
-	Taking derivative of $\bar{u}$, 
+	Taking two derivatives of $\bar{u}$, 
 	\begin{align*}
 	\bar{u}'(r) = (\sinh\frac{r}{R})^{1-n} [\int_{0}^{r} (\sinh\frac{\sigma }{R})^{n-1} d\sigma  +C_1],\\
 	\bar{u}''(r) = 1-\frac{n-1}{R}\cdot \frac{\cosh \frac{r}{R}}{\sinh^n(\frac{r}{R})}[\int_{0}^{r} (\sinh\frac{\sigma }{R})^{n-1} d\sigma +C_1].
@@ -125,7 +135,7 @@ Then the monopolist problem becomes
 		$$h_1(r):= \frac{R\sinh^n(\frac{r}{R})}{(n-1)\cosh(\frac{r}{R})} - \int_{0}^{r} (\sinh\frac{\sigma }{R})^{n-1} d\sigma.$$ 
 		Then $h_1(0)=0, h_1'(r) = \frac{\sinh^{n-1}(\frac{r}{R})}{(n-1)\cosh^2(\frac{r}{R})}\ge 0, \forall r\in [0, \bar{r}].$ Thus, $h_1(r) \ge 0 , \forall r\in [0, \bar{r}]$, which implies, $u''(r)\ge 0$, i.e., $\bar{u}$ is convex on $B$.
 	\end{itemize}
-	In either case, $A$ is path-connected, since one cannot join two points on $u_{\emptyset}(r) = -\frac{1}{2}r^2$ by either increasing or convex curve above the graph of $u_{\emptyset}$.\\
+	In either case, $A$ is path-connected, since one cannot join two points on $u_{0}(r) = -\frac{1}{2}r^2$ by either increasing or convex curve above the graph of $u_{0}$.\\
 	Assume $A=[\alpha_1, \alpha_2] \neq [0, \bar{r}]$. For the relative position of $A$ and $B$, considering $A \cup B =[0,\bar{r}]$, there are three cases:
 	\begin{itemize}
 		\item [1).] If $\alpha_1>0, \alpha_2<\bar{r}$, assume $B = B_1 \cup B_2$ with $B_1 = [0, \alpha_1)$ and $B_2 = (\alpha_2, \bar{r}]$. Let $	\bar{u}'(r) = (\sinh\frac{r}{R})^{1-n} [\int_{0}^{r} (\sinh\frac{\sigma }{R})^{n-1} d\sigma  +C_{1_0}]$ on $B_1$ and 	$\bar{u}'(r) = (\sinh\frac{r}{R})^{1-n} [\int_{0}^{r} (\sinh\frac{\sigma }{R})^{n-1} d\sigma  + C_{1_{\bar{r}}}]$ on $B_2$.
@@ -133,7 +143,7 @@ Then the monopolist problem becomes
 		\begin{flalign}\label{eqn:constant_C_1}
 			C_{1_{\bar{r}}} = C_{1_0} -  \int_{0}^{\bar{r}} (\sinh\frac{\sigma }{R})^{n-1} d\sigma .
 		\end{flalign}
-		Since $\bar{u}(r) \ge u_{\emptyset} (r)$ on $B_1$ with equality holds at $r= \alpha_1$, we know $\bar{u}$ could not be increasing on $B_1$. Therefore, by the above discussion, we know $C_{1_0} <0$ and $C_{1_{\bar{r}}}<0$ by \eqref{eqn:constant_C_1}. Thus $\bar{u}$ is convex on $B$. In particular,  $\bar{u}$ is convex and decreasing on $B_1$. Let $\tilde{u} = \bar{u}$ on $A \cup B_2$, and $\tilde{u} = u_{\emptyset}$ on $B_1$. Then for any $r\in B_1$, $\tilde{u}(r) - \bar{u}(r) \le 0$ and $0\ge  \tilde{u}'(r)> u_{\emptyset}'(\alpha_1) \ge \bar{u}'(\alpha_1) \ge \bar{u}'(r) $. Thus,
+		Since $\bar{u}(r) \ge u_{0} (r)$ on $B_1$ with equality holds at $r= \alpha_1$, we know $\bar{u}$ could not be increasing on $B_1$. Therefore, by the above discussion, we know $C_{1_0} <0$ and $C_{1_{\bar{r}}}<0$ by \eqref{eqn:constant_C_1}. Thus $\bar{u}$ is convex on $B$. In particular,  $\bar{u}$ is convex and decreasing on $B_1$. Let $\tilde{u} = \bar{u}$ on $A \cup B_2$, and $\tilde{u} = u_{0}$ on $B_1$. Then for any $r\in B_1$, $\tilde{u}(r) - \bar{u}(r) \le 0$ and $0\ge  \tilde{u}'(r)> u_{0}'(\alpha_1) \ge \bar{u}'(\alpha_1) \ge \bar{u}'(r) $. Thus,
 		\begin{flalign}
 			\mathcal{L}(\tilde{u}) - \mathcal{L}(\bar{u}) = C_0 \int_{0}^{\alpha_1} \Big\{[\frac{(\tilde{u}'(r))^2}{2} -\frac{(\bar{u}'(r))^2}{2}]+[\tilde{u}-\bar{u}(r)]\Big\} (\sinh\frac{r}{R})^{n-1} dr < 0.
 		\end{flalign}
@@ -285,7 +295,7 @@ Then the monopolist problem becomes
 	
 	{\bf Step 3:} We are going to show
 	\begin{equation*}
-	\bar{u}=\argmin\limits_{\substack{u\ge -\frac{1}{2}|x|^2 \\ u \text{ is $G$-convex}}} \mathcal{L}(u) .
+	\bar{u}=\argmin\limits_{\substack{u\ge u_{\emptyset} \\ u \text{ is $G$-convex}}} \mathcal{L}(u) .
 	\end{equation*}
 
 	Suppose $u$ is any $G$-convex function (not necessarily radially symmetric), then there exists a function $v$, such that $u(x)=\max\limits_{y} b(x,y)-v(y)$. Thus, 
@@ -312,7 +322,7 @@ Then the monopolist problem becomes
 	\end{equation*}
 	Thus 
 	\begin{equation*}
-	\bar{u}\in \argmin\limits_{\substack{u\ge -\frac{1}{2}|x|^2 \\ u \text{ is $G$-convex}}} \mathcal{L}(u) .
+	\bar{u}\in \argmin\limits_{\substack{u\ge u_{\emptyset} \\ u \text{ is $G$-convex}}} \mathcal{L}(u) .
 	\end{equation*}
 	If, in addition,  $\mathcal{L}(\bar{u}+w)-\mathcal{L}(\bar{u})=0$, then the above equalities must be equality. Thus $D_rw(x)=0$, a.e. $x \in D$. Since both $\bar{u}+w$ and $\bar{u}$ are $G$-convex, $w \in C^{1,1}$, thus $D_r w(x)\equiv 0, \forall x\in D$. So, one can write $w(x)= w(\theta_1, ..., \theta_{n-1})$. Since for $x\in A\times [0,\pi]^{n-1}\times[0,2\pi]$, $w(x)\ge 0$, we have $w\ge 0$ on $D$. Then from the above inequalities, we get 
 	\begin{equation*}
@@ -320,7 +330,7 @@ Then the monopolist problem becomes
 	\end{equation*} 
 	Thus, $ w(x)R^{n-1}\sinh^{n-1}(\frac{r}{R})\sin^{n-2}\theta_1\cdots \sin\theta_{n-2} =0$, for a.e. $ x \in D$, which implies $w \equiv 0 $ on $D$. So,  $\bar{u}$ is the unique minimizer, i.e. 
 	\begin{equation*}
-	\bar{u}= \argmin\limits_{\substack{u\ge -\frac{1}{2}|x|^2 \\ u \text{ is $G$-convex}}} \mathcal{L}(u).
+	\bar{u}= \argmin\limits_{\substack{u\ge u_{\emptyset} \\ u \text{ is $G$-convex}}} \mathcal{L}(u).
 	\end{equation*}
 
 

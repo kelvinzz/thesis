@@ -4,7 +4,7 @@
 
 In optimal transportation theory, Ma-Trudinger-Wang \cite{MaTrudingerWang05} in 2005 gave sufficient conditions on a transportation cost to guarantee smoothness of the optimal transportation map, while Leoper \cite{Loeper09} showed these conditions are also necessary. In 2010, Kim-McCann \cite{KimMcCann10} expressed them via non-negativity of the sectional curvature of certain null-planes in a novel but natural pseudo-Riemannian geometry which was induced by the cost function on some product space.\medskip
 
-In chapter \ref{chapter:analytic_representation}, we've shown \Gthree~is in fact a fourth order condition in the spirit of the Ma-Trudinger-Wang condition. Inspired by Kim-McCann \cite{KimMcCann10}, we will show in this chapter a geometric representation of \Gthree, which is non-negativity of the sectional curvature in some pseudo-Riemannian geometry induced by the utility $\barG$, up to the additional variable, on the product space $X\times \R \times Y \times \R$.\medskip
+In chapter \ref{chapter:analytic_representation}, we've shown \Gthree~is in fact a fourth order condition in the spirit of the Ma-Trudinger-Wang condition. Inspired by Kim-McCann \cite{KimMcCann10}, we will show in this chapter a geometric representation of \Gthree, which is non-negativity of the sectional curvature in a pseudo-Riemannian geometry induced by the utility $\barG$, up to the additional variable, on the product space $X\times \R \times Y \times \R$.\medskip
 
 \section{Settings}\label{section:geometric_setting}
 
@@ -21,7 +21,8 @@ For some fixed $(\barx_0, \bary_0)$, one can view the $\delta$ defined above as 
 \end{equation}
 Here we adopt this notation $\bar{i}:= i-(n+1)$ for $n+1 <i\le 2(n+1)$. For notation convention, we use comma to separate subscripts of $\barG$, which correspond to the derivatives with respect to the variables $\barx$ in spaces $X \times \R$ (before comma) and $\bary$ in $Y \times \R$ (after comma), respectively.\medskip
 
-The second order derivatives of $\delta$ at $\Xi_0 = (\barx_0, \bary_0)$ is written as follows.
+If $G\in C^2$, for each fixed $(\barx_0, \bary_0)$, since the first derivative of $\delta$ vanishes at $(\barx, \bary) = (\barx_0, \bary_0)$,  
+the second order derivatives of $\delta$ at $\Xi_0 = (\barx_0, \bary_0)$ is well-defined and can be written as follows.
 \begin{equation}\label{pseudo_metric}
 	\nabla_{ij} \delta (\barx, \bary, \barx_0, \bary_0){\big|}_{(\barx, \bary) = (\barx_0, \bary_0)}
 	=\begin{cases}
@@ -31,14 +32,14 @@ The second order derivatives of $\delta$ at $\Xi_0 = (\barx_0, \bary_0)$ is writ
 	\end{cases}
 \end{equation}  
 
-Let $T_{\Xi_0}M$ denote the tangent spaces to $M$ at ${\Xi_0}$. Define the pseudo-Riemannian metric $ g_{\Xi_0}: T_{\Xi_0}M\times T_{\Xi_0}M \rightarrow \R$ at $\Xi_0$ on $M$ to be the above $2(n+1) \times 2(n+1)$ symmetric matrix.\medskip
+Let $T_{\Xi_0}M$ denote the tangent space to $M$ at ${\Xi_0}$. Define the pseudo-Riemannian metric $ g_{\Xi_0}: T_{\Xi_0}M\times T_{\Xi_0}M \rightarrow \R$ at $\Xi_0$ on $M$ to be the above $2(n+1) \times 2(n+1)$ symmetric matrix.\medskip
 
 One can calculate the Christoffel symbols using the following formula with Einstein summation convention and $g^{ml}$ being the inverse matrix of $g$:
 \begin{equation}\label{Gamma}
 	\Gamma_{ij}^m = \frac{1}{2} g^{ml}(\frac{\partial g_{il}}{\partial \Xi_j} + \frac{\partial g_{jl}}{\partial \Xi_i} - \frac{\partial g_{ij}}{\partial \Xi_l}).
 \end{equation}
 
-Here are calculation of each components.
+Here is a calculation of each component.
 \begin{equation}
 g_{il;j}:=	\frac{\partial g_{il}}{\partial \Xi_j} = \begin{cases}
 -	\barG_{i, \bar{j}\bar{l}}, & i \le n+1 < j, l; \\
@@ -56,7 +57,7 @@ g_{lj;i}:=\frac{\partial g_{lj}}{\partial \Xi_i} = \begin{cases}
 -\barG_{ij, \bar{l}}, & i,j \le n+1 <l; \\
 -\barG_{l, \bar{i}\bar{j}}, & l \le n+1 < i,j; \\
 -\barG_{il, \bar{j}}, &  i,l \le n+1 <j ; \\
-0 & \text{ otherwise}.
+0 & \text{ otherwise};
 \end{cases}
 \end{equation}
 
@@ -104,7 +105,7 @@ Therefore, the Christoffel symbols could be represented as follows.
 \end{split}	
 \end{flalign}
 
-Then one can calculate the curvature tensor $R$.
+Then one can calculate the pseudo Riemannian curvature tensor $R$.
 \begin{flalign}
 	R_{ijkl} &= g_{im}R^{m}_{jkl}\\
 		  &= -g_{im}[\frac{\partial }{\partial \Xi_l} \Gamma_{jk}^{m} -\frac{\partial }{\partial \Xi_k} \Gamma_{jl}^m + \Gamma_{l\alpha}^{m}\Gamma_{jk}^{\alpha} - \Gamma_{k\alpha}^{m} \Gamma_{jl}^{\alpha} ]\\
@@ -171,7 +172,7 @@ where $\Gamma_{ij}^{m}$ is the Christoffel symbol define in \eqref{Gamma}. The a
 	Combining with \eqref{Gamma_2}, this implies the geodesic equation \eqref{geodesicEqn}.
 \end{proof}
 
-\section{\Gthree\ is a non-negative curvature condition}
+\section{\Gthree\ is a non-negative sectional curvature condition}
 
 Recall that in concavity arguments in Chapter \ref{chapter:convexity}, condition \Gthree\ plays the most important role. In Section \ref{section:4thorder}, we introduced the fourth-order differential re-expression of \Gthree. One may also wonder what is the geometric meaning of the \Gthree\ condition. In this section, we are going to show the geometric re-expression of \Gthree.
 
@@ -179,7 +180,7 @@ Recall that in concavity arguments in Chapter \ref{chapter:convexity}, condition
 	\item[\Gthree] For any $\barx=(x, w)$ with $w>0$, assume $\partial_t^2 \barG(\barx, \bary_t) \ge 0$, whenever there exists $\barx_0 =(x_0, 1)$ such that $\partial_t^2 D_{\barx}\barG(\barx_0, \bary_t) = 0$. 
 \end{itemize}
 
-For the pseudo Riemannian metric tensor $g$ defined in \eqref{pseudo_metric} and any two tangent vector $P, Q\in T_{\Xi_0}M$, define the sectional curvature at the point $\Xi_0 \in M$ as
+For the pseudo Riemannian metric tensor $g$ defined in \eqref{pseudo_metric} and any two tangent vectors $P, Q\in T_{\Xi_0}M$, define the unnormalized sectional curvature at the point $\Xi_0 \in M$ as
 \begin{flalign}
 	\sec_{\Xi_0}^{(M, g)}P \wedge Q 
 	:= R_{ijkl}(\Xi_{0})\cdot P^{i}\cdot P^{l} \cdot Q^{j} \cdot Q^{k},
@@ -188,9 +189,7 @@ where $R$ is the curvature tensor shown in \eqref{curvature_tensor}.
 \medskip
 
 
-The following theorem describes equivalent expressions of the \Gthree\ condition. Part $\mathrm{(i)}$ and $\mathrm{(iii)}$ are taken from Theorem \ref{theorem:4thorder}, part $\mathrm{(v)}$ is a variation of $\mathrm{(iii)}$ by rewriting \Gthree\ condition with the notion of the additional variable, while part $\mathrm{(vi)}$ is the non-negative sectional curvature condition on the manifold $M$ defined in section \ref{section:geometric_setting}.
-
-
+The following theorem describes equivalent expressions of the \Gthree\ condition. Part $\mathrm{(i)}$ and $\mathrm{(iii)}$ are taken from Theorem \ref{theorem:4thorder}. While keeping the ordering number of statements from Chapter \ref{chapter:analytic_representation} (Theorem \ref{theorem:4thorder} and Corollary \ref{FourthOrder4}),  part $\mathrm{(v)}$ is a variation of $\mathrm{(iii)}$ by rewriting \Gthree\ condition with the notion of the additional variable, and part $\mathrm{(vi)}$ is the non-negative sectional curvature condition on the manifold $M$ defined in section \ref{section:geometric_setting}.
 
 
 \begin{theorem}\label{prop:4thorder2}
@@ -220,7 +219,7 @@ The following theorem describes equivalent expressions of the \Gthree\ condition
 %		whenever $t\in [0,1] \longmapsto (\barx_{s_0}, \bary_t)$  forms a G-segment for some $s_0\in [0,1]$, where $p=\dot{\barx}_{s_0}$ and $q = \dot{\bary}_t$.
 
 	
-	\item[(vi)] For any vector $P = p \oplus 0$, $Q = 0 \oplus q \in \R^{2n+2}$, and $\Xi_{\nul} = (x_{\nul}, w_{\nul}, \bary_{\nul}) \in M$ with $w_{\nul} \in (0, \infty)$, the sectional curvature satisfies
+	\item[(vi)] For any vectors $P = p \oplus 0$, $Q = 0 \oplus q \in \R^{2n+2}$, and $\Xi_{\nul} = (x_{\nul}, w_{\nul}, \bary_{\nul}) \in M$ with $w_{\nul} \in (0, \infty)$, the sectional curvature satisfies
 		\begin{equation}\label{Curvature_sectional2}
 		\sec_{\Xi_{\nul}}^{(M, g)} P \wedge Q \ge 0.
 		\end{equation}

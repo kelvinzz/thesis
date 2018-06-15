@@ -89,7 +89,7 @@ s.t.\ p \text{  is lower semicontinuous}.
 We assume that $p$ is lower semicontinuous, without which the maximum in \eqref{eqn_optimal_product} may not be attained. However, in the equivalence form of $(P_0)$, this restriction will be encoded in $G$-convexity of the value functions, which will be shown in Proposition \ref{equiv_form}.\medskip
 
 
-This paper makes the followings assumptions. {We use $C^0(X)$ to denote the space of all continuous functions on $X$, and use $C^1(X)$ to denote the space of all differentiable functions on $X$ whose derivative is continuous.}\medskip%, i.e. continuous differentiable functions.} \medskip
+This paper makes the followings assumptions. {We use $C^0(X)$ to denote the space of all continuous functions on $X$, and use $C^1(X)$ to denote the space of all differentiable functions on $X$ whose derivative is continuous.} Note that, even in 1 dimensional case, we assume no single-crossing type condition.\medskip%, i.e. continuous differentiable functions.} \medskip
 
 
 %We adopt technical hypotheses, following from Carlier (Assumptions \ref{assmp:Gcoordinate-monotone}-\ref{assmp:Gtech3}) and Trudinger (Assumptions \ref{assmp:Gregular} - \ref{assmp:Gdecreasing}) as below:\medskip
@@ -135,18 +135,18 @@ In Assumption \ref{assmp:Gcoordinate-monotone}, we assume that agent utility inc
  {In the following, we use  $D_x G(x,y,z) := (\frac{\partial G}{\partial x_1}, \frac{\partial G}{\partial x_2}, \dots, \frac{\partial G}{\partial x_M})(x,y,z)$ to denote derivative with respect to $x$. For any vector in $\R^M$ or $\R^N$, we use $||\cdot||$ and $||\cdot||_{\alpha}$ to denote its Euclidean  $2$-norm and $\alpha$-norm ($\alpha \ge 1$), respectively. For example, for $x\in \R^M$, we have $||x|| = \sqrt{\sum_{i=1}^{M} x_i^2}$ and $||x||_{\alpha} = (\sum_{i=1}^{M} |x_i|^{\alpha})^{\frac{1}{\alpha}}$. 
  We use $H$ defined in section \ref{section:G-convexity} as the inverse of $G$ with respect to the third variable, i.e., for each $(x, y) \in X\times cl(Y)$, $H(x, y, \cdot)= G^{-1}(x,y,\cdot)$. Here, $H(x,y,u)$ represents the price paid by agent $x$ for product $y$ when receiving value $u$.}\medskip
 
-In Rochet-Chon$\acute{e}$'s model, $H(x,y,u) = x\cdot y -u$ and $\pi(x,y,z) = z-C(y)$, for some superlinear cost function $C$. In this case, $\pi(x,y,H(x,y,u)) = x\cdot y -u -C(y)$. Since $C$ is superlinear, it is reasonable to assume the following:\medskip
+In Rochet-Chon$\acute{e}$'s model, $H(x,y,u) = x\cdot y -u$ and $\pi(x,y,z) = z-C(y)$, for some superlinear cost function $C$. In this case, $\pi(x,y,H(x,y,u)) = x\cdot y -u -C(y)$. Since $C$ is superlinear and the space $X$ is bounded, it is reasonable to assume the following:\medskip
 
 
 \begin{assumption}\label{assmp:Gtech0}
-	$\pi(x,y,H(x,y,u))$ is super-linearly decreasing in $y$. That is, there exist $\alpha \ge 1$, $a_1, a_2> 0$ and $b\in \R$, such that $\pi(x,y,H(x,y,u)) \le -a_1 ||y||_{\alpha}^{\alpha} - a_2 u +b$ for all $ (x, y, u)\in X\times cl(Y)\times \R$, or equivalently, $\pi(x,y,z) + a_2 G(x,y,z) \le -a_1 ||y||_{\alpha}^{\alpha}  +b$ for all $ (x, y, z)\in X\times cl(Y)\times \R$.
+	$\pi(x,y,H(x,y,u))$ is super-linearly decreasing in $y$. That is, there exist $\alpha \ge 1$, $a_1, a_2> 0$ and $b\in \R$, such that $\pi(x,y,H(x,y,u)) \le -a_1 ||y||_{\alpha}^{\alpha} - a_2 u +b$ for all $ (x, y, u)\in \{ (x,y, G(x,y,z))| x\in X, y\in Y, z\in \R \}$; or equivalently, $\pi(x,y,z) + a_2 G(x,y,z) \le -a_1 ||y||_{\alpha}^{\alpha}  +b$ for all $ (x, y, z)\in X\times cl(Y)\times \R$.
 \end{assumption}
 
 
-As shown in the alternative formulation, Assumption \ref{assmp:Gtech0} requires the existence of some weighted surplus which is super-linearly decreasing in product.\medskip
+	As shown in the alternative formulation, Assumption \ref{assmp:Gtech0} requires the existence of some weighted surplus which is super-linearly decreasing in product. In the case that $Y$ is bounded, Assumption \ref{assmp:Gtech0} is equivalent to the existence of some weighted surplus bounded from above.   \medskip
 
 
-Assumptions \ref{assmp:Gtech1}-\ref{assmp:Gtech3} are some technical assumptions on $D_xG$.\medskip
+Assumptions \ref{assmp:Gtech1} - \ref{assmp:Gtech3} are some technical assumptions on $D_xG$, which are automatically satisfied for $X$, $Y$, $Z$ being compact.\medskip
 
 
 
@@ -161,7 +161,7 @@ Assumptions \ref{assmp:Gtech1}-\ref{assmp:Gtech3} are some technical assumptions
 %---For $G(x,y,z) = \langle x, y \rangle -f(z)$, Assumption \ref{assmp:Gtech1} will be reduced to 
 
 \begin{assumption}\label{assmp:Gtech2}
-	$||D_x G(x,y,z)||_{1}$ increases sub-linearly in $y$. That is, there exist $ \beta \in (0, \alpha], c>0$, and $ d\in \R$, such that $||D_x G(x,y,z)||_{1}\le c||y||_{\beta}^{\beta} +d$ for all $ (x, y, z)\in X\times cl(Y) \times cl(Z)$.
+	$||D_x G(x,y,z)||_{1}$ increases in $y$. More precisely, there exist $ \beta \in (0, \alpha], c>0$, and $ d\in \R$, such that $||D_x G(x,y,z)||_{1}\le c||y||_{\beta}^{\beta} +d$ for all $ (x, y, z)\in X\times cl(Y) \times cl(Z)$.
 \end{assumption}
 
 
@@ -170,8 +170,11 @@ Assumptions \ref{assmp:Gtech1}-\ref{assmp:Gtech3} are some technical assumptions
 \end{assumption}
 
 
-{Allowing Assumption \ref{assmp:Gcoordinate-monotone}, {the derivatives $D_{x_i}G$ are always nonnegative; therefore,} we no longer need to take absolute values of $D_{x_i}G$ in the inequality of Assumption \ref{assmp:Gtech3}.} And then Assumption \ref{assmp:Gtech3} says that the marginal utility of agents who select the same product $y$ will increase to infinity as $||y||$ approaches infinity, uniformly for all agents and prices. {For instance, when $M = N$, utility $G(x,y,z) = \sum_{i=1}^{M} x_iy_i^2 -z $ satisfies Assumption~\ref{assmp:Gtech3}, because $\sum_{i=1}^{M} |D_{x_i}G(x,y,z)| = \sum_{i=1}^{M} D_{x_i}G(x,y,z) = \sum_{i=1}^{M} y_i^2 \rightarrow +\infty$ as $||y|| \rightarrow + \infty$. }\medskip
+{Allowing Assumption \ref{assmp:Gcoordinate-monotone}, {the derivatives $D_{x_i}G$ are always nonnegative; therefore,} we no longer need to take absolute values of $D_{x_i}G$ in the inequality of Assumption \ref{assmp:Gtech3}.} And then Assumption \ref{assmp:Gtech3} says that the marginal utility of agents who select the same product $y$ will increase to infinity as $||y||$ approaches infinity, uniformly for all agents and prices. {For instance, when $M = N$, utility $G(x,y,z) = \sum_{i=1}^{M} x_iy_i^2 -f(z) $ satisfies Assumption~\ref{assmp:Gtech3}, because $\sum_{i=1}^{M} |D_{x_i}G(x,y,z)| = \sum_{i=1}^{M} D_{x_i}G(x,y,z) = \sum_{i=1}^{M} y_i^2 \rightarrow +\infty$ as $||y|| \rightarrow + \infty$.  In addition, this $G$ also satisfies all the other assumptions.}\medskip
 
+
+
+In general, if $Y$ is bounded, any $G$ in the form of $G(x,y,z) = b(x,y) - f(y,z)$, with $b \in C^1(cl(X\times Y))$ and $f\in C^0(cl(Y \times Z))$, satisfies Assumption~\ref{assmp:Gtech1} - \ref{assmp:Gtech3}.\medskip
 
 
 
@@ -214,7 +217,7 @@ For $\alpha \ge 1$, denote $L^{\alpha}(X)$ as the space of functions for which t
 
 
 
-\section{Reformulation of the Monopolist's Problem}\label{section:preliminary}
+\section{Reformulation of the monopolist's problem}\label{section:preliminary}
 
 
 The purpose of this section is to fix terminology and prepare the preliminaries for the main results of the next section. We also rewrite the monopolist's problem in Proposition \ref{equiv_form}, which is an equivalent form of \eqref{origin_problem}. \medskip
@@ -323,6 +326,7 @@ Proposition \ref{Subdiff/Bdd} presents that uniform boundedness of agents' value
 \begin{proof}%[Proof of Proposition \ref{Subdiff/Bdd}]
 	(Proof by contradiction).\medskip
 	By Assumption \ref{assmp:Gcoordinate-monotone} and Assumption \ref{assmp:Gtech3}, for $s=\frac{4R\sqrt{M}}{\delta}$, there exists $r>0$, such that for any $(x, y, z)\in X \times  cl(Y) \times cl(Z)$, whenever $||y||\ge r$, we have $\sum\limits_{i=1}^{M}D_{x_i}G(x,y,z)\ge \frac{4R\sqrt{M}}{\delta}$.\medskip
+	
 	Assume the boundedness conclusion of this proposition is not true. Then for this $r$, there exist $ x_0 \in \omega$ and  $ y_0\in \partial^G u(x_0)$, such that $||y_0||\ge r$. Thus,
 	\begin{equation}\label{eqn_coercivity}
 	\sum\limits_{i=1}^{M}D_{x_i}G(x,y_0,z)\ge \frac{4R\sqrt{M}}{\delta}, \ \ \ \ \ \text{ for all } x \in X, z \in \R.
@@ -372,7 +376,7 @@ Technically, in order to demonstrate existence, we start from a sequence of valu
 Then we need to show that this sequence converges, up to a subsequence, to a pair of limit mappings. Then we show this limit value-product pair satisfies the constraints of $(P_2)$; and its corresponding total payoff is better (or no worse) than those of any other admissible pairs. \medskip
 
 
-In the following, we denote $W^{1,1}(X)$ as the Sobolev space of $L^1$ functions whose first derivatives exist in the weak sense and belong to $L^1(X)$. For more properties of Sobolev spaces and weak derivatives, see Evans~\cite[Chapter 5]{Evans98}. If $\omega$ is some open subset of $X$, notation $\omega \subset \subset X$ means the closure of $\omega$ is also included in $X$.\medskip
+In the following, notation $\omega \subset \subset X$ represents the closure of $\omega$ is also included in $X$.\medskip
 
 Lemma \ref{lemma1} provides sequence convergence results of convex functions, which are uniformly bounded in Sobolev spaces on open convex subsets. We state this classical result without proof, which can be found in Carlier \cite{Carlier01}.\medskip
 
@@ -440,6 +444,7 @@ Lemma \ref{lemma1} provides sequence convergence results of convex functions, wh
 	Let $u^*(x):=v^*(x)-\lambda||x||^2$, then  $(u_n)$ converges to $u^*$ uniformly on compact subset of $X$ and $(\nabla u_n)$ converges to $\nabla u^*$ pointwise in A.\medskip
 	
 	{\bf Step 4:}	Finally, let us prove that $u^*$ is $G$-convex.\medskip
+	
 	Define $\Gamma(x):=\cap_{i\ge 1}\overline{\cup_{n\ge i}\partial^G u_n(x)}$, for all $x\in X$.\medskip
 
 	

@@ -1,6 +1,6 @@
 \chapter{Preliminaries and $G$-convexity}\label{chapter:preliminaries}
 
-\section{preliminaries}
+\section{Preliminaries}
 
 
 Let $X$ be a subset of $\R^m$ and $S$ be any set of functions on $X$, i.e., $S\subset \{f: X \longrightarrow \R \}$.
@@ -46,6 +46,8 @@ For any vectors $p, w \in \R^n$, we denote $p\parallel w$ if $p$ and $w$ are par
 
 We use $\mathcal{L}^m$ to denote Lebesgue measure, which characterizes $m$-dimensional volume. A non-negative measure $\mu$ is said to be absolutely continuous with respect to  $\mathcal{L}^m$ if for every measurable set $A$, $\mathcal{L}^m(A) =0$ implies $\mu(A) =0$. This is written as $\mu \ll \mathcal{L}^m$. \medskip
 
+Let $f$ be a function on $X$. We say $f \in L^1(X)$ if $\int_X |f(x)| d\mathcal{L}^m(x) < \infty$. Denote $W^{1,1}(X)$ as the Sobolev space of $L^1(X)$ functions whose first derivatives exist in the weak sense and belong to $L^1(X)$. For more properties of Sobolev spaces and weak derivatives, see Evans~\cite[Chapter 5]{Evans98}. If $\omega$ is some open subset of $X$, notation $\omega \subset \subset X$ means the closure of $\omega$ is also included in $X$.\medskip
+
 Here we use $G_x=\big(\frac{\partial G}{\partial x^1}, \frac{\partial G}{\partial x^2}, ..., \frac{\partial G}{\partial x^m}\big)$, $G_y=\big(\frac{\partial G}{\partial y^1}, \frac{\partial G}{\partial y^2}, ..., \frac{\partial G}{\partial y^n}\big)$, $G_z = \frac{\partial G}{\partial z}$ to denote derivatives with respect to $x\in X\subset \R^m$ , $y \in Y \subset \R^n$, and $z\in \R$, respectively. Also, for second partial derivatives, we adopt following notations
 \begin{flalign*}
 G_{x,y}=
@@ -61,6 +63,8 @@ and $G_{x,z}=\big(\frac{\partial^2 G}{\partial x^1 \partial z}, \frac{\partial^2
 
 We say $G \in C^{1}(cl(X\times Y \times Z))$, if all the partial derivatives $\frac{\partial G}{\partial x^1}$, ...,$\frac{\partial G}{\partial x^m}$, $\frac{\partial G}{\partial y^1}$, ..., $\frac{\partial G}{\partial y^n}$, $\frac{\partial G}{\partial z}$ exist and are continuous. Also, we say $G \in C^{2}(cl(X\times Y \times Z))$, if all the partial derivatives up to second order (i.e. $\frac{\partial^2 G}{\partial \alpha \partial \beta}$, where $\alpha, \beta = x^1, ... , x^m, y^1, ..., y^n, z$) exist and are continuous. Any bijective continuous function whose inverse is also continuous, is called a homeomorphism (a.k.a.\ bicontinuous).
 \medskip
+
+
 
 \section{$G$-convex, $G$-subdifferentiability}\label{section:G-convexity}
 In this section, we introduce some tools from convex analysis and the notion of $G$-convexity  (c.f. \cite{Trudinger14,Balder77,Singer97}), which is a generalization of ordinary convexity. \medskip
