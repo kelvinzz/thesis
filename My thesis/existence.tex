@@ -494,7 +494,10 @@ Lemma \ref{lemma1} provides sequence convergence results of convex functions, wh
 Lastly, we show the proof of the main theorem.\medskip
 
 \begin{proof}[Proof of the Existence Theorem]
-	{\bf Step 1:} 	 Define $\Phi_u: x \longmapsto argmin_{\partial^G u(x)} -\pi(x, \cdot, H(x,\cdot,u(x)))$, then by Proposition \ref{Subdiff/Bdd}, the measurable section theorem (cf. \cite[Theorem 1.2, Chapter VIII]{EkelandTemam76}) and Lusin Theorem, one has $\Phi_u$ admits measurable selections. \medskip
+	{\bf Step 1:} 	 Define $\Phi_u: x \longmapsto argmin_{\partial^G u(x)} -\pi(x, \cdot, H(x,\cdot,u(x)))$, then by Proposition \ref{Subdiff/Bdd}, for any compact set $\omega \subset X$, one has $\cup_{x \in \omega} \partial^G u(x)$ is nonempty and compact, $\Phi_u(x)$ is nonempty and compact for all $x\in \omega$, and $\cup_{x \in \omega} \{(x, y)| y \in \Phi_u(x)\}$ is a Borel set. By the measurable selection theorem (cf. \cite[Theorem 1.2, Chapter VIII]{EkelandTemam76}), there exists a measurable mapping $y: \omega \rightarrow Y$ such that for almost all $x$, $y(x) \in \Phi_u(x)$. Let $\{\omega_n\}_{n=1}^{\infty}$ denote a sequence of measurable compact sets such that $\omega_1 \subset \omega_2 \subset ... \subset \omega_n \subset ...\subset X$ with $\cup_{n}\omega_n = X$. On each $\omega_n$, there exists a measurable selection map $y^n: \omega_n \rightarrow Y$. Define $\bar{y}: X \rightarrow Y$, such that $\bar{y} = y^1$ on $\omega_1$ and $\bar{y} = y^n$ on $\omega_n\setminus \omega_{n-1}$ for $n \ge 2$. Then $\bar{y}$ is a measurable selection of $\Phi_u$. \medskip
+	
+	
+	%Define $\Phi_u: x \longmapsto argmin_{\partial^G u(x)} -\pi(x, \cdot, H(x,\cdot,u(x)))$, then by Proposition \ref{Subdiff/Bdd}, the measurable section theorem (cf. \cite[Theorem 1.2, Chapter VIII]{EkelandTemam76}) and Lusin Theorem, one has $\Phi_u$ admits measurable selections. \medskip
 	
 	Let $\{(u_n, y_n)\}$ be a maximizing sequence of $(P_2)$, where maps $u_n: X\rightarrow \R$ and $y_n: X\rightarrow cl(Y)$, for all $n\in \N$. Without loss of generality, we may assume that for all $n$, $y_n(\cdot)$ is measurable and $y_n(x) \in \Phi_{u_n}(x)$, for each $x\in X$. Starting from $\{(u_n, y_n)\}$, we would find an value-product pair $(u^*, y^*)$ satisfying all the constraints in \eqref{Principal_new_problem}, and show that it is actually a maximizer.\medskip
 	
