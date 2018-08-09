@@ -1,14 +1,14 @@
-\chapter{Analytic representation of \Gthree}\label{chapter:analytic_representation}
+\chapter{Analytic representation of condition \Gthree}\label{chapter:analytic_representation}
 
 
 
-\section{A fourth-order differential re-expression of \Gthree}\label{section:4thorder}
+\section{A fourth-order differential re-expression of condition \Gthree}\label{section:4thorder}
 
 
 %Lastly, We introduce a theorem expressing our crucial hypothesis \Gthree \  in a fourth-order differential form, which is %the main result in Appendix \ref{A:4thorder}.
 
 In our convexity argument, hypothesis \Gthree\ plays a crucial role. In this chapter, we 
-localize this hypothesis using differential calculus.    Inspired by and strongly connected with Trudinger's theory of generalized prescribed Jacobian equations, this form is analogous to the non-negative cross-curvature condition (B3) 
+localize this hypothesis using differential calculus. Inspired by and strongly connected with Trudinger's theory of generalized prescribed Jacobian equations, this form is analogous to the non-negative cross-curvature condition (B3) 
 of Figalli-Kim-McCann \cite{FigalliKimMcCann11}, a fourth order condition in the spirit of the Ma-Trudinger-Wang \cite{MaTrudingerWang05}. For another formulation, see e.g.\ \cite{GuillenKitagawa15}.
 \medskip
 
@@ -22,8 +22,8 @@ condition assumed in Section \ref{section:concavity}:
 	\item[\Gsix] $G\in C^2(cl(X\times Y \times Z)
 	)$, and $D_{\bar{x},\bar{y}}(\bar{G})(x,-1,y,z)$ has full rank, for each $(x,y,z)\in cl(X\times Y\times Z)$. 
 \end{itemize}
-For this and next chapter only, we assume the dimensions of spaces $X$ and $Y$ are equal, i.e. $m=n$,
-so that the matrix mentioned in \Gsix\ becomes square.
+For this and the next chapter only, we assume the dimensions of spaces $X$ and $Y$ are equal, i.e. $m=n$,
+so that the matrix mentioned in \Gsix\ is square.
 We shall also need to extend the twist and convex range hypotheses \Gone\ and \Gtwo\  
 to the function $H$ in place of $G$. This is equivalent to assuming:
 
@@ -32,7 +32,6 @@ to the function $H$ in place of $G$. This is equivalent to assuming:
 	\item[\Geight] its range $X_{(y,z)} := \frac{G_y}{G_z}(X,y,z) \subset \R^n$ is convex.
 \end{itemize}
 
-%The proof of the following theorem is relegated to an appendix:
 We can now state:
 \medskip
 
@@ -58,22 +57,9 @@ We can now state:
 	\end{enumerate} 
 \end{theorem}
 
-Its proof and embelleshments are relegated to an appendix:
+The proof of this theorem and its embellishments are represented in the following section:
 
 
-%%      ---------------------------------------------------------------------
-%%      ------------------------- APPENDIX (OPTIONAL) -----------------------
-%%      ---------------------------------------------------------------------
-
-%%      If you have one appendix, uncomment the line \appendix and add
-%%      a \section{ *** APPENDIX TITLE ***}. If you have more than
-%%      one, uncomment the line \appendices and add a \section{ ***
-%%      APPENDIX TITLE ***} command for each appendix title.
-
-%\appendix
-%\appendices
-
-%%      Type body of appendix/-ices here.
 
 \section{Proof and variations on Theorem \ref{theorem:4thorder}}\label{A:4thorder}
 
@@ -89,14 +75,14 @@ Its proof and embelleshments are relegated to an appendix:
 	Computing the fourth mixed derivative yields
 	\begin{flalign*}
 	&\frac{\partial^2}{\partial s^2 }\Biggl(\frac{1}{G_z(x_s, y_t, z_t)}\frac{\partial^2}{\partial t^2} G(x_s,y_t,z_t) \Biggr)\\
-	=&\frac{\partial^2}{\partial s^2}\Biggl(\frac{1}{G_z}\Biggr) \frac{\partial^2}{\partial t^2} G + 2 \frac{\partial}{\partial s} \Biggl(\frac{1}{G_z}\Biggr) \frac{\partial^3}{\partial s \partial t^2} G + \frac{1}{G_z} \frac{\partial^4}{\partial s^2 \partial t^2} G  \\
-	=& [-(G_z)^{-2}G_{i,z} \ddot{x_s}^{i} - (G_z)^{-2} G_{ij,z}\dot{x_s}^i \dot{x_s}^j+ 2(G_z)^{-3} G_{i,z} G_{j,z} \dot{x_s}^i \dot{x_s}^j]\cdot [G_{,k}\ddot{y_t}^{k}+G_z\ddot{z}_t+G_{,kl}\dot{y_t}^k \dot{y_t}^l\\
+	=~&\frac{\partial^2}{\partial s^2}\Biggl(\frac{1}{G_z}\Biggr) \frac{\partial^2}{\partial t^2} G + 2 \frac{\partial}{\partial s} \Biggl(\frac{1}{G_z}\Biggr) \frac{\partial^3}{\partial s \partial t^2} G + \frac{1}{G_z} \frac{\partial^4}{\partial s^2 \partial t^2} G  \\
+	=~& [-(G_z)^{-2}G_{i,z} \ddot{x_s}^{i} - (G_z)^{-2} G_{ij,z}\dot{x_s}^i \dot{x_s}^j+ 2(G_z)^{-3} G_{i,z} G_{j,z} \dot{x_s}^i \dot{x_s}^j]\cdot [G_{,k}\ddot{y_t}^{k}+G_z\ddot{z}_t+G_{,kl}\dot{y_t}^k \dot{y_t}^l\\
 	&\hspace{0.5cm} + 2G_{,kz} \dot{y_t}^k \dot{z}_t +G_{zz} (\dot{z}_t)^2]\\
 	&+ 2[-(G_z)^{-2}G_{i,z}\dot{x_s}^i]\cdot[G_{j,k}\dot{x_s}^j\ddot{y_t}^{k}+G_{j,z}\dot{x_s}^j\ddot{z}_t+G_{j,kl}\dot{x_s}^j\dot{y_t}^k \dot{y_t}^l + 2G_{j,kz}\dot{x_s}^j \dot{y_t}^k \dot{z}_t +G_{j,zz} \dot{x_s}^j(\dot{z}_t)^2]\\
 	&+(G_z)^{-1}[G_{i,k}\ddot{x_s}^i\ddot{y_t}^{k} +G_{ij,k}\dot{x_s}^i\dot{x_s}^j\ddot{y_t}^{k} +G_{i,z}\ddot{x_s}^i\ddot{z}_t +G_{ij,z}\dot{x_s}^i\dot{x_s}^j\ddot{z}_t  +G_{i,kl}\ddot{x_s}^i\dot{y_t}^k \dot{y_t}^l +G_{ij,kl}\dot{x_s}^i\dot{x_s}^j\dot{y_t}^k \dot{y_t}^l \\
 	&\hspace{0.5cm} +2G_{i,kz}\ddot{x_s}^i\dot{y_t}^k\dot{z}_t 
 	 +2G_{ij,kz}\dot{x_s}^i\dot{x_s}^j\dot{y_t}^k\dot{z}_t +G_{i,zz}\ddot{x_s}^i(\dot{z}_t)^2 +G_{ij,zz}\dot{x_s}^i\dot{x_s}^j(\dot{z}_t)^2]\\ 
-	=& [((G_z)^{-1}G_{i,k}-(G_z)^{-2}G_{i,z}G_{,k})\ddot{x_s}^i +((G_z)^{-1}G_{ij,k}- (G_z)^{-2} G_{,k}G_{ij,z} -2(G_z)^{-2}G_{i,z}G_{j,k} \\
+	=~& [((G_z)^{-1}G_{i,k}-(G_z)^{-2}G_{i,z}G_{,k})\ddot{x_s}^i +((G_z)^{-1}G_{ij,k}- (G_z)^{-2} G_{,k}G_{ij,z} -2(G_z)^{-2}G_{i,z}G_{j,k} \\
 		& \hspace{0.5cm}   +2(G_z)^{-3}G_{,k}G_{i,z} G_{j,z}) \dot{x_s}^i \dot{x_s}^j]\ddot{y_t}^k \\
 		&+ [(G_z)^{-1}G_{i,kl}-(G_z)^{-2}G_{i,z}G_{,kl}]\ddot{x_s}^i\dot{y_t}^k \dot{y_t}^l \\
 		&+ [(G_z)^{-1}G_{ij,kl}-(G_z)^{-2} G_{ij,z}G_{,kl}+ 2(G_z)^{-3} G_{i,z} G_{j,z}G_{,kl} -2(G_z)^{-2}G_{i,z}G_{j,kl}]\dot{x_s}^i \dot{x_s}^j\dot{y_t}^k \dot{y_t}^l\\
@@ -111,8 +97,9 @@ Its proof and embelleshments are relegated to an appendix:
 	\begin{flalign*}
 	0=~& \frac{\partial^2}{\partial s^2} \frac{G_y}{G_z}(x_s, y_{t_0}, z_{t_0})\\
 	=~&[((G_z)^{-1}G_{i,y}-(G_z)^{-2}G_{i,z}G_{,y})\ddot{x}^i +((G_z)^{-1}G_{ij,y}- (G_z)^{-2} G_{,y}G_{ij,z} \\
-	&\hspace{0.5cm}-2(G_z)^{-2}G_{i,z}G_{j,y}  +2(G_z)^{-3}G_{,y}G_{i,z} G_{j,z}) \dot{x}^i \dot{x}^j], \mbox{ for all } s\in [0,1].
+	&\hspace{0.5cm}-2(G_z)^{-2}G_{i,z}G_{j,y}  +2(G_z)^{-3}G_{,y}G_{i,z} G_{j,z}) \dot{x}^i \dot{x}^j]
 	\end{flalign*}
+	for all  $s\in [0,1]$.
 	
 	Since $(\dot{y_t}^{s_0},\dot{z_t}^{s_0})|_{t=t_0} \parallel (\dot{y}_t,\dot{z}_t)|_{t=t_0}$, there exists some constant $C_1>0$, such that $(\dot{y}_t,\dot{z}_t)|_{t=t_0} =C_1(\dot{y_t}^{s_0},\dot{z_t}^{s_0})|_{t=t_0} $. Moreover, since  $ (y_t,z_t)\mid _{t=t_0}=(y_t^{s_0},z_t^{s_0})\mid _{t=t_0} $, we have
 	\begin{flalign*}
@@ -179,7 +166,7 @@ Its proof and embelleshments are relegated to an appendix:
 	Computing the mixed fourth derivative yields
 	\begin{flalign*}
 	&\frac{\partial^2}{\partial s^2 }\Biggl(\frac{1}{G_z(x_s, y_t^{0}, z_t^{0})}\frac{\partial^2}{\partial t^2} G(x_s,y_t^{0},z_t^{0}) \Biggr) \Bigg|_{(s,t)=(s_0, t_0)} \\
-	=& C_2^2	\frac{\partial^2}{\partial s^2 }\Biggl(\frac{1}{G_z(x_s, y_t^{s_0}, z_t^{s_0})}\frac{\partial^2}{\partial t^2} G(x_s,y_t^{s_0},z_t^{s_0}) \Biggr) \Bigg|_{(s,t)=(s_0, t_0)} ,
+	=~& C_2^2	\frac{\partial^2}{\partial s^2 }\Biggl(\frac{1}{G_z(x_s, y_t^{s_0}, z_t^{s_0})}\frac{\partial^2}{\partial t^2} G(x_s,y_t^{s_0},z_t^{s_0}) \Biggr) \Bigg|_{(s,t)=(s_0, t_0)} ,
 	\end{flalign*}
 	where the equality is derived from the condition that $s \in [0,1] \longmapsto \frac{G_y}{G_z}(x_s, y_{t_0},$ $ z_{t_0})$ forms an affinely parametrized line segment,  $(y_t^{s_0},z_t^{s_0})\mid _{t=t_0} = (y_t,z_t)\mid _{t=t_0}$ and $ (\dot{y}_t^{0},\dot{z}_t^{0})\mid _{t=t_0} = C_2(\dot{y_t}^{s_0},\dot{z_t}^{s_0})\mid _{t=t_0} $. Moreover, the latter expression is non-positive by assumption $\mathrm{(iii)}$.
 	
@@ -188,19 +175,20 @@ Its proof and embelleshments are relegated to an appendix:
 
 
 For strictly concavity of the profit functional, one might need a strict version of hypothesis \Gthree:
+\begin{itemize}
+\item[\Gthree$_{s}$] For each $x,x_0 \in X$ and $x\ne x_0$, assume $t \in [0,1] \longmapsto G(x, y_t, z_t)$ is strictly convex along all $G$-segments $(x_0, y_t, z_t)$ defined in (\ref{$G$-segment}).
+\end{itemize}
 
-\Gthree$_{s}$ For each $x,x_0 \in X$ and $x\ne x_0$, assume $t \in [0,1] \longmapsto G(x, y_t, z_t)$ is strictly convex along all $G$-segments $(x_0, y_t, z_t)$ defined in (\ref{$G$-segment}).
-\medskip
 
 \begin{remark}\label{(C5)_s and (C5)_u}
 	Strict inequality in $\mathrm{(ii)}$ [or $\mathrm{(iii)}$] implies \Gthree$_{s}$ but the reverse is not necessarily true, i.e. \Gthree$_{s}$ is intermediate in strength between \Gthree\ and strict inequality version of $\mathrm{(ii)}$ [or $\mathrm{(iii)}$]. Besides, strict inequality versions of $\mathrm{(ii)}$ and $\mathrm{(iii)}$ are equivalent, and denoted by $\Gthree_{u}$.
 	
 	Note inequality \eqref{foc} below and its strict and uniform versions \Gthree$_{s}$ and \Gthree$_{u}$
-	precisely generalize of the analogous hypotheses $(B3)$, $(B3)_{s}$ and $(B3)_{u}$ from the quasilinear case 
+	precisely generalize of the analogous hypotheses $(B3)$, $(B3)_{s}$ and $(B3)_{u}$ from the quasilinear case in
 	\cite{FigalliKimMcCann11}.
 \end{remark}
 \begin{proof}
-	We only show strict inequality of $\mathrm{(ii)}$ implies that of $\mathrm{(iii)}$ here, since the other direction is similar.
+	We only show strict inequality of $\mathrm{(ii)}$ implies that of $\mathrm{(iii)}$ here since the other direction is similar.
 	
 	For any fixed $s_0\in [0,1]$, suppose $t\in [0,1] \longmapsto (G_x, G)(x_{s_0}, y_t, z_t)$  forms an affinely parametrized line segment. For any fixed $t_0 \in [0,1]$, define ${x}_s^{t_0}$ as a solution to the equation
 	$\frac{G_y}{G_z}({x}_{s}^{t_0}, y_{t_0},z_{t_0})$ $= (1-s) \frac{G_y}{G_z}({x}_{0}^{t_0}, y_{t_0},z_{t_0}) +s \frac{G_y}{G_z}({x}_{1}^{t_0}, y_{t_0},z_{t_0})$, with initial conditions ${x}_s^{t_0} |_{s=s_0}= x_{s_0}$ and $\dot{x}_s^{t_0}|_{s=s_0} = C_1 $ $\cdot \dot{x}_s|_{s=s_0}$, for some constant $C_1 >0$.	
@@ -222,7 +210,7 @@ For strictly concavity of the profit functional, one might need a strict version
 	\frac{\partial^2}{\partial t^2} G(x_s^{t_0},y_t,z_t) \Big|_{(s,t)=(s_0, t_0)}=\frac{\partial^2}{\partial t^2} G(x_s,y_t,z_t) \Big|_{(s,t)=(s_0, t_0)}=0,
 	\end{flalign*}
 	\begin{flalign*}
-	\text{ and } \frac{\partial^2}{\partial t^2} G_x(x_s^{t_0},y_t,z_t) \Big|_{(s,t)=(s_0, t_0)}=\frac{\partial^2}{\partial t^2} G_x(x_s,y_t,z_t) \Big|_{(s,t)=(s_0, t_0)}=0.
+	\text{ and }\ \  \frac{\partial^2}{\partial t^2} G_x(x_s^{t_0},y_t,z_t) \Big|_{(s,t)=(s_0, t_0)}=\frac{\partial^2}{\partial t^2} G_x(x_s,y_t,z_t) \Big|_{(s,t)=(s_0, t_0)}=0.
 	\end{flalign*}
 	
 	From the above inequality and $C_1 >0$, one has 
@@ -238,11 +226,13 @@ Combining $\mathrm{(ii)}$ and $\mathrm{(iii)}$, one can conclude they are also e
 \begin{corollary}\label{FourthOrder4}
 	Assuming \Gzero-\Gtwo, \Gfour-\Geight\ and $G\in C^4(cl(X\times Y \times Z)
 	)$,  then \Gthree\ is equivalent to the following statement:\\
-	$\mathrm{(iv)}$. For any given curve $x_s\in X$ connecting $x_0$ and $x_1$,  and any curve $(y_t, z_t) \in cl( Y \times Z)$ connecting $(y_0,z_0)$ and $(y_1, z_1)$, we have 
+	\begin{enumerate}[(i)]
+	\item[$\mathrm{(iv)}$] For any given curve $x_s\in X$ connecting $x_0$ and $x_1$,  and any curve $(y_t, z_t) \in cl( Y \times Z)$ connecting $(y_0,z_0)$ and $(y_1, z_1)$, we have 
 	\begin{equation}\label{foc}
 	\frac{\partial^2}{\partial s^2 }\Biggl(\frac{1}{G_z(x_s, y_t, z_t)}\frac{\partial^2}{\partial t^2} G(x_s,y_t,z_t) \Biggr)\Bigg|_{(s,t) = (s_0,t_0)}\le 0,
 	\end{equation}
 	whenever either of the two curves $t\in [0,1] \longmapsto (G_x, G)(x_{s_0}, y_t, z_t)$ and  $s\in [0,1] \longmapsto \frac{G_y}{G_z}(x_s, y_{t_0}, z_{t_0})$ forms an affinely parametrized line segment.
+	\end{enumerate}
 \end{corollary}	
 
 

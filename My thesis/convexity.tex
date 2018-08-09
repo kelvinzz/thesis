@@ -15,11 +15,11 @@
 
 \section{Introduction}\label{secttion:intro}
 
-In this chapter, we will show concavity and uniqueness results of the principal's problem, under the settings in section \ref{section:Hypotheses}.
+In this chapter, we will show concavity and uniqueness results of the principal's problem, under the settings in Section \ref{section:Hypotheses}.
 \medskip
 %Most of hypotheses we need in this chapter is listed in section \ref{section:Hypotheses}. 
 
-In section \ref{section:concavity}, we will first rewrite the principal's problem as \eqref{eqn:principalFinal}, then state the equivalent condition to convexity of the functional domain $\mathcal{U}_\nul$. Then we will show a variety of necessary and sufficient conditions for concavity (and convexity) of the principal's problem, and the resulting uniqueness of her optimal strategy.  
+In Section \ref{section:concavity}, we will first rewrite the principal's problem as \eqref{eqn:principalFinal}, then state the equivalent condition to convexity of the functional domain $\mathcal{U}_\nul$. Then we will show a variety of necessary and sufficient conditions for concavity (and convexity) of the principal's problem, and the resulting uniqueness of her optimal strategy.  
 
 \medskip
 
@@ -28,12 +28,11 @@ In section \ref{section:concavity}, we will first rewrite the principal's proble
 %Section \ref{section:4thorder} gives a differential criterion for the crucial hypotheses --- \Gthree\ of the next section --- clarifying its relation to that of Figalli, Kim \& McCann \cite{FigalliKimMcCann11}, and the Ma-Trudinger-Wang criteria for regularity of optimal maps \cite{MaTrudingerWang05} which inspired it. 
 
 
-In section \ref{section:privateInformation},  we assume the monopolist's utility does not depend on the agent's private information, which in certain circumstances allows us to provide a necessary and sufficient condition for concavity of her profit functional.
+In Section \ref{section:privateInformation},  we assume the monopolist's utility does not depend on the agent's private information, which in certain circumstances allows us to provide a necessary and sufficient condition for the concavity of her profit functional.
 \medskip
 
 
 
-\medskip
 
 
 \section{Concavity and convexity results}\label{section:concavity}
@@ -46,14 +45,14 @@ depending only on the agents' indirect utility $u$:
 \begin{equation}\label{eqn:principalFinal}
 	(P_4) \ \ \ \ \ \  \max\limits_{ u\ge u_\nul \atop \text{$u$ is $G$-convex}} \pmb\Pi(u) := \max\limits_{u \ge u_\nul \atop \text{$u$ is $G$-convex}} \int_X \pi(x, \bar{y}_G(x, u(x), Du(x)))  d \mu(x) .
 \end{equation}
-
+\medskip
 
 Define $\mathcal{U}:=\{u:X\longrightarrow \R \mid  u \text{ is } G\text{-convex}\}$
 and $\mathcal{U}_{\emptyset}:=\{u \in \mathcal{U}\mid  u\ge u_{\emptyset}\}$. 
 Then the problem becomes to maximize $\pmb\Pi$ on $\mathcal{U}_\nul$. 
 In this section, we give conditions under which the function space $\mathcal{U}_\nul$ 
 is convex and the functional $\pmb\Pi$ is concave, often strictly.
-Uniqueness and stability of the principal's maximizing strategy follow from strict concavity as in \cite{FigalliKimMcCann11}. We also provide conditions under which $\pmb\Pi$ is convex. In this situation, the maximizers of $\pmb\Pi$ may not be unique, but are attained at extreme points of 
+Uniqueness and stability of the principal's maximizing strategy follow from strict concavity as in \cite{FigalliKimMcCann11}. We also provide conditions under which $\pmb\Pi$ is convex. In this situation, the maximizers of $\pmb\Pi$ may not be unique but are attained at extreme points of 
 $\mathcal{U}_{\emptyset}$. (Recall that $u \in \mathcal{U}$ is called {\em extreme} if 
 $u$ does not lie at the midpoint of any segment in $\mathcal{U}$.)
 \medskip
@@ -71,7 +70,7 @@ $u$ does not lie at the midpoint of any segment in $\mathcal{U}$.)
 	
 	In order to prove $u_t$ is $G$-convex, it remains to show $u_t(x)\ge  G(x,y_t,z_t)$, for all $x\in X$. 
 	
-	By \Gthree, $G(x, y_t, z_t)$ is convex in $t$, i.e., $G(x,y_t,z_t)\le (1-t)G(x, y_0,z_0)+tG(x, y_1, z_1)$. So, $u_t(x)=$ $  (1-t)u_0(x)+tu_1(x) \ge (1-t) G(x,y_0,z_0)+tG(x, y_1, z_1)\ge G(x, y_t, z_t)$, for each $x \in X$. By definition, $u_t$ is $G$-convex, i.e., $u_t\in \mathcal{U}$, for all $t \in (0,1)$. Thus, $\mathcal{U}$ is convex.
+	By \Gthree, $G(x, y_t, z_t)$ is convex in $t$, i.e., $G(x,y_t,z_t)\le (1-t)G(x, y_0,z_0)+tG(x, y_1, z_1)$. So, $u_t(x)=$ $  (1-t)u_0(x)+tu_1(x) \ge (1-t) G(x,y_0,z_0)+tG(x, y_1, z_1)\ge G(x, y_t, z_t)$, for each $x \in X$. By definition, $u_t$ is $G$-convex, i.e., $u_t\in \mathcal{U}$, for all $t \in (0,1)$. Thus, $\mathcal{U}$ is convex.\medskip
 	
 	Conversely, assume $\mathcal{U}$ is convex. For any fixed $x_0 \in X$, $(y_t,z_t) \in cl( Y \times Z)$ with $(x_0, y_t, z_t)$ being a $G$-segment, we would like to show $G(x,y_t, z_t) \le (1-t)G(x,y_0,z_0)+tG(x,y_1, z_1)$, for any $x\in X$.
 	
@@ -84,14 +83,15 @@ $u$ does not lie at the midpoint of any segment in $\mathcal{U}$.)
 
 
 
-The following theorem provides a sufficient and necessary condition for the functional $\pmb \Pi(u)$ to be concave. It reveals the relationship between linear interpolations on the function space $\mathcal{U}$ and G-segments on the underlying type space $cl( Y \times Z)$.\medskip
+The following theorem provides a necessary and sufficient condition for the functional $\pmb \Pi(u)$ to be concave. It reveals the relationship between linear interpolations on the function space $\mathcal{U}$ and G-segments on the underlying type space $cl( Y \times Z)$.\medskip
 
 \begin{theorem}[Concavity of the principal's objective]\label{maintheorem}
 	If $G$ and $\pi: cl(X\times Y\times Z) \longrightarrow \R$ satisfy \Gzero-\Gfive, the following statements are equivalent:
+	\begin{enumerate}[(i)]
+	\item[$(i)$] $t\in[0,1] \longmapsto \pi(x, y_t ,z_t)$ is concave along all G-segments $(x, y_t, z_t)$;
 	
-	$(i)$ $t\in[0,1] \longmapsto \pi(x, y_t ,z_t)$ is concave along all G-segments $(x, y_t, z_t)$;
-	
-	$(ii)$ $\pmb \Pi(u)$ is concave in $\mathcal{U}$ for all $\mu\ll \mathcal{L}^m$. 
+	\item[$(ii)$] $\pmb \Pi(u)$ is concave in $\mathcal{U}$ for all $\mu\ll \mathcal{L}^m$. 
+	\end{enumerate}
 \end{theorem}
 
 \begin{proof}
@@ -114,7 +114,7 @@ The following theorem provides a sufficient and necessary condition for the func
 	&\ge \int_X (1-t)\pi(x, y_0(x), z_0(x)) +t\pi(x, y_1(x), z_1(x))    d\mu (x)\\
 	&=(1-t)\pmb \Pi (u_0)+ t \pmb \Pi(u_1).
 	\end{align*}
-	Thus, $\pmb \Pi $ is concave in $\mathcal{U}$.
+	Thus, $\pmb \Pi $ is concave in $\mathcal{U}$.\medskip
 	
 	$(ii)\Rightarrow (i).$ To derive a contradiction, assume $(i)$ fails.  Then there exists a $G$-segment $(x_0, y_t(x_0), z_t(x_0))$ and $t_0\in (0,1)$ such that 
 	\begin{equation*}
@@ -144,17 +144,18 @@ The following theorem provides a sufficient and necessary condition for the func
 	This contradicts the concavity of $\pmb \Pi$.
 \end{proof}
 
-A similar proof shows the following result. Corollary $\ref{Cor:concave}$ implies that concavity of the principal's profit is equivalent to concavity of principal's utility along qualified $G$-segments. Moreover, Theorem~\ref{convex set} and Corollary $\ref{Cor:concave}$ together imply that the principal's profit $\pmb \Pi$ is a concave functional on a convex space, under assumptions \Gzero-\Gfive, $\mu\ll \mathcal{L}^m$, and $(i)'$ below. 
+A similar proof shows the following result. Corollary $\ref{Cor:concave}$ implies that the concavity of the principal's profit is equivalent to the concavity of principal's utility along qualified $G$-segments. Moreover, Theorem~\ref{convex set} and Corollary $\ref{Cor:concave}$ together imply that the principal's profit $\pmb \Pi$ is a concave functional on a convex space, under assumptions \Gzero-\Gfive, $\mu\ll \mathcal{L}^m$, and $(i)'$ below. 
 \medskip
 
 \begin{corollary}\label{Cor:concave}
 	If $G$ and $\pi$ satisfy \Gzero-\Gfive,  the following are equivalent:
-	
-	$(i)'$ $t\in[0,1] \longmapsto \pi(x, y_t(x) ,z_t(x))$ is concave  along all G-segments $(x, y_t(x), z_t(x))$ whose 
+	\begin{enumerate}[(i)]
+	\item[$(i)'$] $t\in[0,1] \longmapsto \pi(x, y_t(x) ,z_t(x))$ is concave  along all G-segments $(x, y_t(x), z_t(x))$ whose 
 	endpoints satisfy $\min\{G(x, y_0(x), z_0(x)),G(x,y_1(x),$
 	$z_1(x))\} \ge u_{\emptyset}(x)$;
 	
-	$(ii)'$ $\pmb \Pi(u)$ is concave in $\mathcal{U}_{\emptyset}$  for all $\mu\ll \mathcal{L}^m$. 
+	\item[$(ii)'$] $\pmb \Pi(u)$ is concave in $\mathcal{U}_{\emptyset}$  for all $\mu\ll \mathcal{L}^m$. 
+	\end{enumerate}
 \end{corollary}
 
 
@@ -180,21 +181,22 @@ on $\mathcal{U}$ and $\mathcal{U}_{\emptyset}$. We then have the following resul
 
 \begin{corollary}\label{Cor:strictconcave}
 	Let $\pi$ and $G$ satisfy \Gzero-\Gfive. If 
+	\begin{enumerate}[(i)]	
+	\item[$(iii)$]  $t\in[0,1] \longmapsto \pi(x, y_t ,z_t)$ is strictly concave along all G-segments $(x, y_t, z_t)$, then  
 	
-	$(iii)$  $t\in[0,1] \longmapsto \pi(x, y_t ,z_t)$ is strictly concave along all G-segments $(x, y_t, z_t)$, then  
+	\item[$(iv)$] $\pmb \Pi(u)$ is strictly concave in $\mathcal{U} \subset W^{1,2}(X,d\mu)$  for all $\mu\ll \mathcal{L}^m$. If 	
 	
-	$(iv)$ $\pmb \Pi(u)$ is strictly concave in $\mathcal{U} \subset W^{1,2}(X,d\mu)$  for all $\mu\ll \mathcal{L}^m$. If 	
-	
-	$(iii)'$ $t\in[0,1] \longmapsto \pi(x, y_t(x) ,z_t(x))$ is strictly concave along all G-segments $(x, y_t(x), z_t(x))$ whose 
+	\item[$(iii)'$] $t\in[0,1] \longmapsto \pi(x, y_t(x) ,z_t(x))$ is strictly concave along all G-segments $(x, y_t(x), z_t(x))$ whose 
 	endpoints satisfy $\min\{G(x, y_0(x), z_0(x)),$ $G(x,$ $y_1(x), z_1(x))\} \ge u_{\emptyset}(x)$, then 
 	
-	$(iv)'$ $\pmb \Pi(u)$ is strictly concave in $\mathcal{U}_{\emptyset} \subset W^{1,2}(X,d\mu)$ for all $\mu\ll \mathcal{L}^m$. 
+	\item[$(iv)'$] $\pmb \Pi(u)$ is strictly concave in $\mathcal{U}_{\emptyset} \subset W^{1,2}(X,d\mu)$ for all $\mu\ll \mathcal{L}^m$. 
+	\end{enumerate}
 \end{corollary}
 
-In addition, Theorem $\ref{convex set}$ and Corollary $\ref{Cor:strictconcave}$ together imply strict concavity of principal's profit on a convex space, which guarantees a unique solution to the monopolist's problem.\medskip
+Besides, Theorem $\ref{convex set}$ and Corollary $\ref{Cor:strictconcave}$ together imply strict concavity of principal's profit on a convex space, which guarantees a unique solution to the monopolist's problem.\medskip
 
 
-Define $\bar{G}(\bar{x}, \bar{y})=\bar{G}(x,x_0, y,z) := x_0 G(x, y,z)$, where $\bar{x}=(x, x_0)$, $\bar{y}=(y,z)$ and $x_0\in X_0$, where $X_0 \subset (-\infty, 0)$ is an open bounded interval containing $-1$. {Hereafter, except in chapter \ref{chapter:analytic_representation}, we use $x_0$ to denote a number in $X_0$.} For further applications, we need the following non-degeneracy assumption. \medskip
+Define $\bar{G}(\bar{x}, \bar{y})=\bar{G}(x,x_0, y,z) := x_0 G(x, y,z)$, where $\bar{x}=(x, x_0)$, $\bar{y}=(y,z)$ and $x_0\in X_0$, where $X_0 \subset (-\infty, 0)$ is an open bounded interval containing $-1$. Hereafter, in this chapter and Section \ref{section:example_convexity} only, we use $x_0$ to denote a number in $X_0$. For further applications, we need the following non-degeneracy assumption. \medskip
 
 \begin{itemize}
 	\item[\Gsix] $G\in C^2(cl(X\times Y \times Z)
@@ -207,8 +209,9 @@ Since \Gone\ implies $m \ge n$,  full rank means $D_{\bar{x},\bar{y}}(\bar{G})(x
 
 \begin{theorem}[Uniform concavity of the principal's objective]\label{maintheorem2}
 	Assume $G\in  C^{2}(cl(X\times Y\times Z))$ satisfies \Gzero-{\Gsix}. In case $\bar{z}=+\infty$, assume the homeomorphisms of \Gone\ are uniformly bi-Lipschitz. Then the following statements are equivalent:
-	
-	$(v)$ Uniform concavity of $\pi$ along G-segments, i.e., there exists $\lambda>0$, for any $G$-segment $(x, y_t, z_t)$, and any $t\in [0,1]$, 
+
+	\begin{enumerate}[(i)]	
+	\item[$(v)$] Uniform concavity of $\pi$ along G-segments, i.e., there exists $\lambda>0$, for any $G$-segment $(x, y_t, z_t)$, and any $t\in [0,1]$, 
 	\begin{flalign}\label{uniformconvavity}
 	\begin{split}
 	&\pi(x, y_t(x), z_t(x)) - (1-t)\pi(x, y_0(x), z_0(x)) - t\pi(x, y_1(x), z_1(x)) \\
@@ -216,27 +219,26 @@ Since \Gone\ implies $m \ge n$,  full rank means $D_{\bar{x},\bar{y}}(\bar{G})(x
 	\end{split}
 	\end{flalign} 
 	
-	$(vi)$ $\pmb \Pi(u)$ is uniformly concave in $\mathcal{U} \subset W^{1,2}(X,d\mu)$,  uniformly for all $\mu\ll \mathcal{L}^m$. 
+	\item[$(vi)$] $\pmb \Pi(u)$ is uniformly concave in $\mathcal{U} \subset W^{1,2}(X,d\mu)$,  uniformly for all $\mu\ll \mathcal{L}^m$. 
+	\end{enumerate}
 \end{theorem}
 
 \begin{proof}
 	$(v)\Rightarrow (vi).$ With the same notation as last proof, we want to prove there exists  
 	$\tilde{\lambda}>0$, such that $\pmb \Pi(u_t) - (1-t) \pmb \Pi(u_0) - t\pmb \Pi(u_1)\ge t(1-t)\tilde{\lambda}||u_1-u_0||^2_{W^{1,2}(X,d\mu)}$, for any $\mu\ll \mathcal{L}^m$, $u_0, u_1 \in \mathcal{U}$ and $t\in (0,1)$. 
 	
-	Similar to last proof, we have (\ref{Eqn:u_01}) and (\ref{EqnG-segments}). Denote $\Lip(G_x,G)$ the uniform Lipschitz constant of the map $(x,y,z)\in X\times Y\times Z \longmapsto (G_x,G)(x,y,z)$.
+	Similar to the last proof, we have (\ref{Eqn:u_01}) and (\ref{EqnG-segments}). Denote $\Lip(G_x,G)$ the uniform Lipschitz constant of the map $(x,y,z)\in X\times Y\times Z \longmapsto (G_x,G)(x,y,z)$.
 
 	Thus by uniform concavity of $\pi$ on $G$-segments, there exists  
 	$\lambda>0$, such that for every $t \in [0,1]$,
 	\begin{align*}
 	&\pmb \Pi (u_t)-(1-t)\pmb \Pi (u_0)- t \pmb \Pi(u_1)\\
 	&= \int_X \pi(x, y_t(x), z_t(x)) - (1-t)\pi(x, y_0(x), z_0(x)) - t\pi(x, y_1(x), z_1(x)) d \mu (x)\\
-	\end{align*}
-	\begin{align*}
 	&\ge \int_{X} t(1-t)\lambda||(y_1(x)-y_0(x),z_1(x)-z_0(x))||^2_{\R^{n+1}} d\mu (x)\\
 	&\ge \int_{X} t(1-t)\lambda||(Du_1(x)-Du_0(x),u_1(x)-u_0(x))||^2_{\R^{n+1}}/{\Lip}^2(G_x,G) d\mu (x)\\
 	&= t(1-t)\frac{\lambda}{\Lip^2(G_x,G)} ||u_1-u_0||_{W^{1,2}(X,d\mu)}.
 	\end{align*}
-	Thus, $\pmb \Pi $ is uniformly concave in $\mathcal{U}$, with $\tilde{\lambda} = \frac{\lambda}{\Lip^2(G_x,G)} >0$.
+	Thus, $\pmb \Pi $ is uniformly concave in $\mathcal{U}$, with $\tilde{\lambda} = \frac{\lambda}{\Lip^2(G_x,G)} >0$.\medskip
 	
 	$(vi)\Rightarrow (v).$ To derive a contradiction, assume $(v)$ fails.  Then for any $\lambda>0$, there exists a $G$-segment $(x^0, y_t(x^0), z_t(x^0))$, and some $\tau \in (0,1)$, such that $\pi(x^0, y_{\tau}(x^0), z_{\tau}(x^0)) -  (1-\tau)\pi(x^0, y_{0}(x^0),z_{0}(x^0))-\tau \pi(x^0, y_{1}(x^0), z_{1}(x^0)) < \tau (1-\tau)\lambda ||(y_{1}(x^0)-y_{0}(x^0), z_{1}(x^0)-z_{0}(x^0))||^2_{\R^{n+1}}$.
 	
@@ -261,27 +263,34 @@ Since \Gone\ implies $m \ge n$,  full rank means $D_{\bar{x},\bar{y}}(\bar{G})(x
 	Thus for such $\tau$, $u_0$, $u_1$ and $\mu$, we have
 	\begin{flalign*}
 	&\pmb \Pi (u_{\tau})- (1-\tau)\pmb \Pi(u_0)- \tau \pmb \Pi(u_1)\\
-		&= \int_X \pi(x, y_{\tau}(x), z_{\tau}(x)) -  (1-\tau)\pi(x, y_{0}(x^0),z_{0}(x^0)) -\tau \pi(x, y_{1}(x^0), z_{1}(x^0)) d\mu(x)
-	\end{flalign*}
-	\begin{flalign*}		
+	&= \int_X \pi(x, y_{\tau}(x), z_{\tau}(x)) -  (1-\tau)\pi(x, y_{0}(x^0),z_{0}(x^0)) -\tau \pi(x, y_{1}(x^0), z_{1}(x^0)) d\mu(x)\\		
 	&<  \int_X    \tau(1-\tau)\lambda ||(y_{1}-y_{0}, z_{1}-z_{0})||^2_{\R^{n+1}} d\mu(x)\\
 	&\le \tau(1-\tau)\lambda {\Lip}^2(\bar{y}_G)||u_1-u_0||^2_{W^{1,2}(X,d\mu)}.\hspace{6cm}
 	\end{flalign*}
 	This contradicts the uniform concavity of $\pmb \Pi$.
 \end{proof}
 
-A similar argument implies the following equivalence. Theorem $\ref{convex set}$ and Corollary $\ref{Cor:concave2}$ together imply that the principal's profit $\pmb \Pi$ is a uniformly concave functional on a convex space, under assumptions \Gzero-\Gsix, $\mu\ll \mathcal{L}^m$, and $(v)'$.  
+A similar argument implies the following equivalence. Theorem $\ref{convex set}$ and Corollary $\ref{Cor:concave2}$ together imply that the principal's profit $\pmb \Pi$ is a uniformly concave functional on a convex space, under assumptions \Gzero-\Gsix, $\mu\ll \mathcal{L}^m$, and $(v)'$.  \medskip
 
 
 
 \begin{corollary}\label{Cor:concave2}
 	Under the same assumptions as in Theorem \ref{maintheorem2},  the following are equivalent:
 	
-	$(v)'$ Uniform concavity of $\pi$  (in the sense of equation (\ref{uniformconvavity})) along G-segments $(x, y_t(x), z_t(x))$ whose 
+%%	$(v)'$ Uniform concavity of $\pi$  (in the sense of equation (\ref{uniformconvavity})) along G-segments $(x, y_t(x), z_t(x))$ whose 
+%%	endpoints satisfy $\min\{G(x, y_0(x), z_0(x)), G(x,$ $y_1(x),z_1(x))\} \ge u_{\emptyset}(x)$;
+%%	
+%%	$(vi)'$ $\pmb \Pi(u)$ is uniformly concave  in $\mathcal{U}_{\emptyset} \subset W^{1,2}(X,d\mu)$   uniformly
+%%	for all $\mu\ll \mathcal{L}^m$. 
+
+
+\begin{enumerate}[(i)]
+	\item[$(v)'$] Uniform concavity of $\pi$  (in the sense of equation (\ref{uniformconvavity})) along G-segments $(x, y_t(x), z_t(x))$ whose 
 	endpoints satisfy $\min\{G(x, y_0(x), z_0(x)), G(x,$ $y_1(x),z_1(x))\} \ge u_{\emptyset}(x)$;
-	
-	$(vi)'$ $\pmb \Pi(u)$ is uniformly concave  in $\mathcal{U}_{\emptyset} \subset W^{1,2}(X,d\mu)$   uniformly
-	for all $\mu\ll \mathcal{L}^m$. 
+	\item[$(vi)'$] $\pmb \Pi(u)$ is uniformly concave  in $\mathcal{U}_{\emptyset} \subset W^{1,2}(X,d\mu)$   uniformly
+	for all $\mu\ll \mathcal{L}^m$.
+\end{enumerate}
+
 \end{corollary}
 
 The preceding concavity results also have convexity analogs. Unlike strict concavity, strict convexity does not
@@ -303,10 +312,10 @@ extreme points of the strategy space $\mathcal U$,  where extreme point needs to
 
 
 Assuming \Gsix, we denote $(\bar{G}_{\bar{x}, \bar{y}})^{-1}$ the left inverse of $D_{\bar{x},\bar{y}}(\bar{G})(x,x_0,y,z)$.
-We will use Einstein notation for simplifying expressions including summations of vectors, matrices, and general tensors for higher order derivatives. There are essentially three rules of Einstein summation notation, namely: 1. repeated indices are implicitly summed over; 2. each index can appear at most twice in any term; 3.~both sides of an equation must contain the same non-repeated indices. For example, $a_{ij}v_i =\sum_{i}a_{ij}v_i$, $a_{ij}b^{kj}v_k=\sum_{j}\sum_{k}a_{ij}b^{kj}v_k$. We also use comma to separate subscripts: the subscripts before comma represent derivatives with respect to first variable and those after comma represent derivatives with respect to second variable. For instance, for $b=b(x,y)$, $b_{,kl}$ represents second derivatives with respect of $y$ only. And for $G=G(x,y,z)$, where $z\in \R$, $G_{i,jz}$ denotes third order derivatives with respect of $x$, $y$ and $z$, instead of using another comma to separate subscripts corresponding to $y$ and $z$. Starting from now, for subscripts, we use $i,k,j,l, \alpha, \beta$ denoting integers  from either $\{1,...,m\}$ or $\{ 1,..., n\}$, and $\bar{i},\bar{k},\bar{j},\bar{l}$ denoting augmented indices from $\{1,...,m+1\}$ or $ \{1, ..., n+1\}$. For instance, $\pi_{i,}$ denotes first order derivative with respect to $x$ only, $\pi_{,\bar{k}\bar{j}}$ represents Hessian matrix with respect to $\bar{y}$ only, and $\bar{G}_{\bar{i},\bar{k}\bar{j}}$ denotes a third order derivative tensor which can be viewed as taking $\bar{x}$-derivative of $\bar{G}_{,\bar{k}\bar{j}}$.
+Starting from now, for subscripts, we use $i,k,j,l, \alpha, \beta$ denoting integers  from either $\{1,...,m\}$ or $\{ 1,..., n\}$, and $\bar{i},\bar{k},\bar{j},\bar{l}$ denoting augmented indices from $\{1,...,m+1\}$ or $ \{1, ..., n+1\}$. For instance, $\pi_{i,}$ denotes first order derivative with respect to $x$ only, $\pi_{,\bar{k}\bar{j}}$ represents Hessian matrix with respect to $\bar{y}$ only, and $\bar{G}_{\bar{i},\bar{k}\bar{j}}$ denotes a third order derivative tensor which can be viewed as taking $\bar{x}$-derivative of $\bar{G}_{,\bar{k}\bar{j}}$.
 \medskip
 
-The following remark reformulates concavity of $\pi$ on $G$-segments using non-positive definiteness of a matrix. This equivalent form provides a simple method to verify concavity condition stated in Theorem $\ref{maintheorem}$. We will apply this matrix form to establish Corollary $\ref{bar{G}^*-Concavity}$ and Example $\ref{general example1} - \ref{general example3}$.\medskip
+The following remark reformulates concavity of $\pi$ on $G$-segments using non-positive definiteness of a matrix. This equivalent form provides a simple method to verify the concavity condition stated in Theorem $\ref{maintheorem}$. We will apply this matrix form to establish Corollary $\ref{bar{G}^*-Concavity}$ and Example $\ref{general example1} - \ref{general example3}$.\medskip
 
 \begin{lemma}[Characterizing concavity of principal's profit in the smooth case]\label{LemmaProfitConcavity}
 	When $G \in C^3(cl(X\times Y \times Z))$ satisfies \Gzero-\Gsix \ and  $\pi \in C^2(cl(X\times Y \times Z))$, then differentiating $\pi$ along an arbitrary $G$-segment $t \in[0,1] \longrightarrow (x,y_t,z_t)$ yields
@@ -341,7 +350,7 @@ The following remark reformulates concavity of $\pi$ on $G$-segments using non-p
 	Thus, the non-positivity  of $\frac{d^2}{dt^2} \pi(x, y_t, z_t)$ along all G-segments $(x, y_t, z_t)$ is equivalent to non-positive  definiteness of the matrix $(\pi_{,\bar{k}\bar{j}}- \pi_{,\bar{l}} \bar{G}^{\bar i,\bar l}\bar{G}_{\bar{i},\bar{k}\bar{j}})$ on $T_{\bar y} (Y\times Z)=\R^{n+1}$.
 	
 	In addition, the uniform concavity of $\pi(x, y_t, z_t)$ along all G-segments $(x, y_t, z_t)$ is equivalent to uniform negative definiteness of $(\pi_{,\bar{k}\bar{j}}- \pi_{,\bar{l}} \bar{G}^{\bar i,\bar l}\bar{G}_{\bar{i},\bar{k}\bar{j}})$ on $\R^{n+1}$.
-\end{proof}
+\end{proof}\medskip
 
 
 
@@ -356,7 +365,7 @@ The following remark reformulates concavity of $\pi$ on $G$-segments using non-p
 \label{section:privateInformation}
 
 
-In this section, we reveal a necessary and sufficient condition  for the concavity of principal's maximization problem, not for some specific examples in chapter \ref{chapter:examples}, but for many other private-value circumstances, where principal's utility only directly depends on the products sold and their selling prices, but not the buyer's type. 
+In this section, we reveal a necessary and sufficient condition  for the concavity of principal's maximization problem, not for some specific examples in Chapter \ref{chapter:examples}, but for many other private-value circumstances, where principal's utility only directly depends on the products sold and their selling prices, but not the buyer's type. 
 \medskip
 
 
@@ -383,7 +392,7 @@ In this section, we reveal a necessary and sufficient condition  for the concavi
 	\medskip
 	
 	
-	The following corollary characterizes the concavity of principal's profit when her utility on one hand is not influenced by the agents' identity, and on the other hand has adequate generality to  encompass a
+	The following corollary characterizes the concavity of principal's profit when her utility, on the one hand, is not influenced by the agents' identity, and, on the other hand, has adequate generality to encompass a
 	tangled nonlinear relationship between products and selling prices. It generalizes the convexity result in Figalli-Kim-McCann \cite{FigalliKimMcCann11}, where $G(x,y,z) = b(x,y)-z$ and $\pi(x,y,z) = z-a(y)$. 
 	\medskip
 	
@@ -410,10 +419,10 @@ In this section, we reveal a necessary and sufficient condition  for the concavi
 		&\le
 		\big(\bar{G}_{,\bar{k}\bar{j}}({\bar{x}}^*, \bar{y})- \bar{G}_{,\bar{l}}({\bar{x}}^*, \bar{y})\bar{G}^{\bar i,\bar l}(\bar{x}, \bar{y})\bar{G}_{\bar{i},\bar{k}\bar{j}}(\bar{x}, \bar{y})\big)\xi^{\bar{k}}\xi^{\bar{j}} \\
 		&= \bar{G}_{,\bar{k}\bar{j}}({\bar{x}}^*, \bar{y})\xi^{\bar{k}}\xi^{\bar{j}}+ \bar{G}_{,\bar{l}}({\bar{x}}^*, \bar{y})\cdot (\ddot{\bar{y}}_t)^{\bar{l}}\big|_{t=0}\\
-		\end{split}
-		\end{align*}
-		\begin{align*}
-		\begin{split}
+%		\end{split}
+%		\end{align*}
+%		\begin{align*}
+%		\begin{split}
 		& = \frac{d^2}{dt^2}\bigg|_{t=0} \bar{G}({\bar{x}}^*, \bar{y}_t) \hspace{5.33cm}\\
 		& = {x_0}^* \cdot\frac{d^2}{dt^2}\bigg|_{t=0} G({x}^*, \bar{y}_t) \\
 		&\le 0.
@@ -422,7 +431,7 @@ In this section, we reveal a necessary and sufficient condition  for the concavi
 		The last inequality comes from ${x_0}^* \le 0$ and \Gthree.
 	\end{proof}
 	
-The following proposition shows a version of sufficient and necessary condition to concavity in corollary \ref{bar{G}^*-Concavity}.\medskip
+The following proposition shows a version of a necessary and sufficient condition to the concavity in corollary \ref{bar{G}^*-Concavity}.\medskip
 
 
 \begin{proposition}[Concavity of principal's objective when her payoff is independent of agents' types]\label{bar{G}^*-Concavity2}
@@ -437,9 +446,10 @@ The following proposition shows a version of sufficient and necessary condition 
 	\end{enumerate}
 \end{proposition}
 
+	
 
 \begin{remark}
-	The sufficient condition, i.e., existence of $J \subset cl(X)$(, such that for each  $\bar{y}\in Y\times Z$, $ 0\in ( \pi_{\bar{y}}+G_{\bar{y}})(cl(J), \bar{y})$), make the statement more general than taking some specific subset of $cl(X)$ instead. In particular, if $J=cl(X)$, this condition is equivalent to: for each $\bar{y} \in Y\times Z$, there exists $x \in cl(X)$, such that $( \pi_{\bar{y}}+G_{\bar{y}})(x, \bar{y}) = 0$. One of its economic interpretations is that for each product-price type, there exists a customer type, such that his marginal disutility, the gradient with respect to product type (e.g., quality, quantity, etc.) and price type, coincides with the marginal utility of the monopolist. 
+	The sufficient condition, i.e., existence of $J \subset cl(X)$ (such that for each  $\bar{y}\in Y\times Z$, $ 0\in ( \pi_{\bar{y}}+G_{\bar{y}})(cl(J), \bar{y})$), make the statement more general than taking some specific subset of $cl(X)$ instead. In particular, if $J=cl(X)$, this condition is equivalent to: for each $\bar{y} \in Y\times Z$, there exists $x \in cl(X)$, such that $( \pi_{\bar{y}}+G_{\bar{y}})(x, \bar{y}) = 0$. One of its economic interpretations is that for each product-price type, there exists a customer type, such that his marginal disutility, the gradient with respect to product type (e.g., quality, quantity, etc.) and price type, coincides with the marginal utility of the monopolist. 
 \end{remark}
 
 \begin{proof}[Proof of Proposition \ref{bar{G}^*-Concavity2}]
@@ -481,7 +491,7 @@ The following proposition shows a version of sufficient and necessary condition 
 \end{proof}
 
 
-The following remark provides an equivalent condition for  uniform concavity of principal's maximization problem. Its proof is very similar to that of the above proposition.
+The following remark provides an equivalent condition for the uniform concavity of principal's maximization problem. Its proof is very similar to that of the above proposition.
 \medskip
 
 \begin{remark}\label{R:B2}
@@ -512,7 +522,7 @@ Combined with Proposition \ref{bar{G}^*-Concavity2}, we have the following corol
 \end{corollary}
 
 \begin{proof}
-	Assume $a$ is $b^*$-convex, by definition, there exists a function  $a^*: cl(X) \rightarrow \R$, such that for any $y\in Y$, $a(y) = \max_{x\in cl(X)} b(x,y) - a^*(x)$. Therefore, for any $y_0 \in Y$, there exists $x_0 \in cl(X)$, such that $a(y) \ge b(x_0,y) - a^*(x_0)$ for all $y \in Y$, with equality holds at $y = y_0$. This implies, $Da(y_0) = D_y b(x_0, y_0)$. Taking $J=cl(X)$ and applying Proposition \ref{bar{G}^*-Concavity2}, we have concavity of $\mathbf \Pi$, since local $b^*$-convexity of $a$ is automatically satisfied by a $b^*$-convex function $a$. 
+	Assume $a$ is $b^*$-convex, by definition, there exists a function  $a^*: cl(X) \rightarrow \R$, such that for any $y\in Y$, $a(y) = \max_{x\in cl(X)} b(x,y) - a^*(x)$. Therefore, for any $y^0 \in Y$, there exists $x^0 \in cl(X)$, such that $a(y) \ge b(x^0,y) - a^*(x^0)$ for all $y \in Y$, with equality holds at $y = y^0$. This implies, $Da(y^0) = D_y b(x^0, y^0)$. Taking $J=cl(X)$ and applying Proposition \ref{bar{G}^*-Concavity2}, we have concavity of $\mathbf \Pi$, since local $b^*$-convexity of $a$ is automatically satisfied by a $b^*$-convex function $a$. 
 	
 	On the other hand, assuming $\mathbf \Pi$ is concave on $\mathcal U$ and for every $y \in Y$, there exists $x \in cl(X)$ such that $Da(y) = D_y b(x,y)$, Proposition \ref{bar{G}^*-Concavity2} implies local $b^*$-convexity of $a$. Together with Theorem A.1 in \cite{KimMcCann10}, we know $a$ is $b^*$-convex.
 \end{proof}

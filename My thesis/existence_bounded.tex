@@ -3,21 +3,21 @@
 \section{Introduction}
 
 
-	In this chapter, we will first state the hypotheses that will be need for this and most of the following chapters. The purpose of section \ref{section:Hypotheses} is to fix terminology for the main results of the following chapters.\medskip
+	In this chapter, we will first state the hypotheses that will be needed for this and most of the following chapters. The purpose of Section \ref{section:Hypotheses} is to fix terminology for the main results of the following chapters.\medskip
 	
-	In section \ref{section:ExistenceBounded}, we will reformulate the principal's program in the language of $G$-convexity and $G$-subdifferentiability, state and prove the existence theorem, where the product space is bounded.  \medskip
+	In Section \ref{section:ExistenceBounded}, we will reformulate the principal's program in the language of $G$-convexity and $G$-subdifferentiability, state and prove the existence theorem, where the product space is bounded.  \medskip
 
 
 
 \section{Hypotheses}\label{section:Hypotheses}
 
 For notational convenience, we adopt the following technical hypotheses, inspired by those of 
-Trudinger~\cite{Trudinger14} and Figalli-Kim-McCann \cite{FigalliKimMcCann11}. 
+Trudinger~\cite{Trudinger14} and Figalli-Kim-McCann \cite{FigalliKimMcCann11}. \medskip
 
 The following hypotheses will be relevant:  \Gone-\Gthree\ represent partial analogs of the twist, domain convexity,
 and non-negative cross-curvature hypotheses from the quasilinear setting \cite{FigalliKimMcCann11} \cite{Loeper09};
 \Gfour\ encodes a form of the desirability of money to each agent, while \Gfive\ quantifies the assertion that the maximum
-price $\bar z$ is high enough that no agent prefers paying it for any product $y$ to the outside option.
+price $\bar z$ is high enough that no agent prefers paying it for any product $y$ to the outside option.\medskip
 
 \begin{itemize}
 	\item[\Gzero] $G \in C^{1}(cl(X\times Y \times Z))$, where $X\subset \R^m, Y \subset \R^n$ are open and bounded and $Z=(\underbar z,\bar z)$ with $-\infty <\underbar z < \bar z \le +\infty$.
@@ -35,7 +35,7 @@ define $(y_t, z_t)\in cl( Y \times Z)$ such that the following equation holds:
 \end{split}
 \end{flalign}
 By \Gone \ and \Gtwo , $(y_t, z_t)$ is uniquely determined by (\ref{$G$-segment}). 
-We call $t \in [0,1] \longmapsto (x_0,y_t,z_t)$ the  $G$-segment connecting $(x_0, y_0, z_0)$ and $(x_0, y_1, z_1)$.
+We call $t \in [0,1] \longmapsto (x_0,y_t,z_t)$ the  $G$-segment connecting $(x_0, y_0, z_0)$ and $(x_0, y_1, z_1)$.\medskip
 
 \begin{itemize}
 	\item[\Gthree] For each $x,x_0 \in X$, assume $t \in [0,1] \longmapsto G(x, y_t, z_t)$ is convex along all $G$-segments ($\ref{$G$-segment}$).
@@ -64,7 +64,7 @@ if  $G(x,y,z) = u$, i.e. $H(x, y, \cdot)= G^{-1}(x,y,\cdot)$.
 
 
 In this section,
-we'll reformulate the 
+we reformulate the 
 principal's program using $u$ as a proxy for the prices $v$ controlled
 by the principal,  thus generalizing Carlier's approach \cite{Carlier01} to the non-quasilinear setting. Moreover, the agent's indirect utility $u$ and product selling price $v$ are $G$-dual to each other in the sense of \cite{Trudinger14}.\medskip
 
@@ -88,7 +88,7 @@ by the principal,  thus generalizing Carlier's approach \cite{Carlier01} to the 
 %			
 %			In \cite{Trudinger14}, this point-to-set map $\partial^G u$ is also called $G$-$normal$ mapping. For more properties related to $G$-convexity, see \cite{Trudinger14}.
 
-{\color{blue}			
+%{\color{blue}			
 %			Lemma \ref{convex-subdiff} shows an equivalent relationship between $G$-convexity and $G$-subdifferentiability, a special case of which is that a function is convex if and only if it is subdifferentiable on (the interior of) its domain. 
 %			
 %			\begin{lemma}[$G$-subdifferentiability characterizes $G$-convexity]
@@ -96,12 +96,12 @@ by the principal,  thus generalizing Carlier's approach \cite{Carlier01} to the 
 %				Allowing hypothesis \Gfour, a function $u: X \longrightarrow \R$ is $G$-convex if and only if it is $G$-subdifferentiable everywhere.
 %				\end{lemma}
 			
-}
+%}
 					
 	We now show each $G$-convex function defined in Definition \ref{defn:GConvexity} can be achieved by 
 	some price menu $v$,  and conversely each price menu yields a $G$-convex indirect utility \cite{Trudinger14}.
 	We require either \Gfive\ or \eqref{repulsed}, which asserts
-	all agents are repelled by the maximum price,  and insensitive to which contract they receive at that price.\medskip
+	all agents are repelled by the maximum price and insensitive to which contract they receive at that price.\medskip
 					
 					
 \begin{proposition}[Duality between prices and indirect utilities]\label{Prop:Gtransform}
@@ -132,7 +132,7 @@ by the principal,  thus generalizing Carlier's approach \cite{Carlier01} to the 
 							
 	(i) Now for $y_0 \in A$, suppose there exist $(x_0, z_0), (x_1, z_1)\in X\times cl(Z)$ with 
 	$z_0 \ne z_1$, such that $u(x_i) = G(x_i, y_0, z_i)$ and $u(x) \ge G(x, y_0, z_i)$ for all $x\in X$ and $i=0,1$.  Without loss of generality, assume $z_0< z_1$. By \Gfour, we know $u(x_1) = G(x_1, y_0, z_1)<G(x_1, y_0, z_0)$, contradicting $u(x)\ge G(x,y_0,z_0)$, for all $x\in X$.   
-	Having shown $v:A \longrightarrow cl(Z)$ is well-defined, we now show it is lower semicontinuous.
+	Having shown $v:A \longrightarrow cl(Z)$ is well-defined, we now show it is lower semicontinuous.\medskip
 							
 							
 	(ii) Suppose $\{y_{k}\}\subset A$ converges to $y_0 \in A$ and 
@@ -152,7 +152,7 @@ by the principal,  thus generalizing Carlier's approach \cite{Carlier01} to the 
 		u(x) \ge G(x,y_0,z_\infty) \qquad {\forall} x \in X.
 	\end{equation}
 	Applying \Gfour\ to $G(x_0,y_0,z_0)=u(x_0)\ge G(x_0,y_0,z_\infty)$ yields 
-	the desired semicontinuity: $z_0 \le z_\infty$.
+	the desired semicontinuity: $z_0 \le z_\infty$.\medskip
 							
 	{(iii)} We extend $v$ from $A$ to $cl(Y)$ by taking its lower semicontinuous hull;
 			this does not change the values of $v$ on $A$, but satisfies $v(y_0) := \bar z$  on $y_0 \notin cl(A)$.
@@ -185,7 +185,7 @@ by the principal,  thus generalizing Carlier's approach \cite{Carlier01} to the 
 								
 \begin{proof}
 	For any fixed $x \in X$ let $u(x) = \sup\limits_{y\in cl(Y)} G(x,y,v(y))$. We will show that the maximum is attained. Since $cl(Y)$ is compact, suppose $\{y_{k}\}\subset cl(Y)$ converges to $y_0 \in cl(Y)$,
-	$z_\infty:= \limsup\limits_{k \to \infty} v(y_k)$ and $u(x) = \lim\limits_{k\to \infty} G(x, y_k,  v(y_k))$. By extracting subsequence of $\{y_k\}$ and relabelling, without loss of generality, assume $\lim\limits_{k\to \infty} v(y_k) = z_{\infty}$. 
+	$z_\infty:= \limsup\limits_{k \to \infty} v(y_k)$ and $u(x) = \lim\limits_{k\to \infty} G(x, y_k,  v(y_k))$. By extracting subsequence of $\{y_k\}$ and relabelling, without loss of generality, assume $\lim\limits_{k\to \infty} v(y_k) = z_{\infty}$. \medskip
 								
 	1.  If $z_{\infty}< \bar{z}$ then lower semicontinuity of $v$ yields $v(y_0)\le z_{\infty} < +\infty$. By \Gfour, one has
 		\begin{equation}
@@ -196,7 +196,7 @@ by the principal,  thus generalizing Carlier's approach \cite{Carlier01} to the 
 		\end{equation}
 	Therefore, the maximum is attained by $y_0$.\medskip
 									
-	2. If $z_{\infty} = \bar{z}$ then $\lim\limits_{k\to \infty} v(y_k) = \bar{z} = + \infty$.
+	2. If $z_{\infty} = \bar{z}$ then $\lim\limits_{k\to \infty} v(y_k) = \bar{z} = + \infty$.\medskip
 									
 		2.1. By assuming the limit \eqref{repulsed} converges uniformly with respect to  $y \in cl(Y)$, we have 
 			\begin{equation*}
@@ -205,7 +205,7 @@ by the principal,  thus generalizing Carlier's approach \cite{Carlier01} to the 
 				=&~ u(x) = \sup \limits_{y\in cl(Y)} G(x,y,v(y)).
 			\end{split}
 			\end{equation*}
-		In this case, the maximum is attained by $y_0$. 
+		In this case, the maximum is attained by $y_0$. \medskip
 									
 		2.2. By assuming \Gfive, for sufficient large $k$, we have $G(x, y_k, v(y_k)) < G(x, y_{\emptyset}, z_{\emptyset})$. Taking $k \to \infty$, by $v(y_{\emptyset}) \le z_{\emptyset}$  and \Gfour, one has
 			\begin{equation*}
@@ -228,20 +228,20 @@ by the principal,  thus generalizing Carlier's approach \cite{Carlier01} to the 
 	\bar{y}_G (x,u(x),Du(x)) := (y_G, z_G)(x,u(x),Du(x)),
 	\end{equation*} 
 	and drop the subscript
-	$G$ when it is clear from context. 
+	$G$ when it is clear from the context. 
 	Under our hypotheses, $\bar y_G$ is a continuous function 
-	{ on the relevant domain of 
-		definition.\footnote{Namely $(id_X, G, G_x)(\{(x,y,z) \in cl(X \times Y \times Z) \mid G(x,y,z) \ge G(x,y_\nul,z_\nul)\})$.}}
+	on the relevant domain of 
+		definition.\footnote{Namely $(id_X, G, G_x)(\{(x,y,z) \in cl(X \times Y \times Z) \mid G(x,y,z) \ge G(x,y_\nul,z_\nul)\})$.}
 	It will often prove convenient to augment the types $x$ and $y$ with an extra real variable;
 	here and later we use the notation $\bar x \in \R^{m+1}$ and $\bar y \in \R^{n+1}$ to signify this augmentation.
-	In addition, the set $X\setminus \dom Du$ has Lebesgue measure zero, which will be shown in the proof of Theorem \ref{Thm:Existence}.	\medskip
+	Besides, the set $X\setminus \dom Du$ has Lebesgue measure zero, which will be shown in the proof of Theorem \ref{Thm:Existence}.	\medskip
 									
 									
 									
 									
 									
-The following proposition not only reformulates the principal's problem, but manifests the existence of maximizer(s). 
-Besides chapter \ref{chapter:existence} 
+The following proposition not only reformulates the principal's problem but manifests the existence of maximizer(s). 
+Besides Chapter \ref{chapter:existence} 
 %of this thesis (Zhang~\cite{Zhang}) 
 which relaxes relative compactness of the domain, for other existence results guaranteeing this supremum is attained in the non-quasilinear setting, 
 see N\" oldeke-Samuelson \cite{NoldekeSamuelson15p} who require mere continuity of the direct utility $G$.\medskip
@@ -317,15 +317,15 @@ rationality, we have established equivalence of $(P_3)$ to $(P_0)$.  Let us now 
 	4. To show the supremum is attained,
 	let $\{u_k\}_{k\in \NN}$ be a sequence of %\linebreak
 	$G$-convex functions, $u_k(x) \ge u_{\emptyset}(x)$ and  $y_k(x) \in \partial^G u_k(x)$ for any $x\in X$ and $k \in \NN$,  such that $\lim_{k\rightarrow \infty} \tilde{\Pi}(u_k, y_k) = \sup \tilde{\Pi}(u,y)$, among all feasible $(u,y)$. Below we construct a feasible pair $(u_{\infty}, y_{\infty})$ 
-	attaining the maximum.
+	attaining the maximum.\medskip
 											
 	4.1. Claim: There exists $M>0$, such that $|u(x)|<M$, for any $G$-convex $u$ and any $x \in X$. Thus $\{u_k\}_{k \in \NN}$ is uniformly bounded.
 											
-		Proof: Since $u$ is $G$-convex, for any $x\in X$, there exists $(y, z)\in cl( Y \times Z) $, such that $u(x) = G(x,y,z)$. Notice that $G$ is bounded, since $G$ is continuous on a compact set. Thus, there exists $M>0$, such that $|u(x)| =| G(x,y,z)|<M$ is also bounded.
+		Proof: Since $u$ is $G$-convex, for any $x\in X$, there exists $(y, z)\in cl( Y \times Z) $, such that $u(x) = G(x,y,z)$. Notice that $G$ is bounded, since $G$ is continuous on a compact set. Thus, there exists $M>0$, such that $|u(x)| =| G(x,y,z)|<M$ is also bounded.\medskip
 											
-	4.2. From part 1, we know $\{u_k\}_{k\in \NN}$ are uniformly Lipschitz with Lipschitz constant $L$, thus $\{u_k\}_{k\in \NN}$ are uniformly equicontinuous.
+	4.2. From part 1, we know $\{u_k\}_{k\in \NN}$ are uniformly Lipschitz with Lipschitz constant $L$, thus $\{u_k\}_{k\in \NN}$ are uniformly equicontinuous.\medskip
 											
-	4.3. By Arzel\`a-Ascoli theorem, there exists a subsequence of $\{u_k\}_{k\in \NN}$, again denoted as $\{u_k\}_{k\in \NN}$, and $u_{\infty} : X \longrightarrow \R$ such that $\{u_k\}_{k\in \NN}$  converges uniformly to $u_{\infty}$ on $X$.
+	4.3. By Arzel\`a-Ascoli theorem, there exists a subsequence of $\{u_k\}_{k\in \NN}$, again denoted as $\{u_k\}_{k\in \NN}$, and $u_{\infty} : X \longrightarrow \R$ such that $\{u_k\}_{k\in \NN}$  converges uniformly to $u_{\infty}$ on $X$.\medskip
 											
 	4.4. Claim: $u_{\infty}$ is also Lipschitz.
 											
@@ -337,9 +337,9 @@ rationality, we have established equivalence of $(P_3)$ to $(P_0)$.  Let us now 
 			< & ~2\varepsilon + L ||x_1-x_2||.
 			\end{split}
 			\end{equation*}
-		Since the above inequality is true for all $\varepsilon >0$, thus $u_{\infty}$ is also Lipschitz.
+		Since the above inequality is true for all $\varepsilon >0$, thus $u_{\infty}$ is also Lipschitz.\medskip
 											
-	4.5. For any $x\in X$, since $u_k(x)\ge u_{\emptyset}(x)$ and $\lim\limits_{k\rightarrow \infty} u_{k}(x) = u_{\infty}(x)$, we have $u_{\infty}(x)\ge u_{\emptyset}(x)$. Therefore, $u_{\infty}$ satisfies the participation constraint.
+	4.5. For any $x\in X$, since $u_k(x)\ge u_{\emptyset}(x)$ and $\lim\limits_{k\rightarrow \infty} u_{k}(x) = u_{\infty}(x)$, we have $u_{\infty}(x)\ge u_{\emptyset}(x)$. Therefore, $u_{\infty}$ satisfies the participation constraint.\medskip
 											
 	4.6. For any fixed $x\in X$, since $\{y_k(x)\}_{k \in \NN} \subset cl(Y)$ which is compact, there exists a subsequence $\{y_{k_l}(x)\}_{l\in \NN}$ which converges. Define $y_{\infty}(x):= \lim\limits_{l\rightarrow \infty} y_{k_l}(x) \in cl(Y)$.
 	For each $l\in \NN$, because  $y_{k_l}(x)\in \partial^G u_{k_l} (x)$, by definition, we have $u_{k_l}(x_0)\ge G(x_0, y_{k_l}(x), H(x, y_{k_l}(x), u_{k_l}(x)))$, for any $x_0\in X$. This implies, for all $x_0\in X$, we have
@@ -353,7 +353,7 @@ rationality, we have established equivalence of $(P_3)$ to $(P_0)$.  Let us now 
 											
 	Therefore, $\partial^G u_{\infty}(x) \ne \emptyset$, for any $x\in X$. By Lemma \ref{convex-subdiff0}, this implies $u_{\infty}$ is $G$-convex.
 											
-	At this point, we have found a feasible pair $(u_{\infty}, y_{\infty})$, satisfying all the constraints in $(P_3)$.
+	At this point, we have found a feasible pair $(u_{\infty}, y_{\infty})$, satisfying all the constraints in $(P_3)$.\medskip
 											
 	4.7. Claim: For any $x\in \dom Du_{\infty}$, the sequence $\{y_k(x)\}_{k\in \NN} \subset cl(Y)$ converges to $y_{\infty}(x)$.
 											
@@ -365,7 +365,7 @@ rationality, we have established equivalence of $(P_3)$ to $(P_0)$.  Let us now 
 			\end{equation*}
 		according to equation $(\ref{EqnInverse2})$ and hypothesis \Gone. This implies $ \partial^G u_{\infty}(x)$ is a singleton for each $x\in \dom Du_{\infty}$, i.e. $\partial^G u_{\infty}(x) =\{y_{\infty}(x)\}$.
 											
-		For any $x\in \dom Du_{\infty}$, by similar argument to that above in part 4.6, we can show that any (other) accumulation points of $\{y_k(x)\}_{k\in \NN}$ are elements in the set $\partial^G u_{\infty}(x)=\{y_{\infty}(x)\}$, i.e. the sequence $\{y_k(x)\}_{k\in \NN}$ converges to $y_{\infty}(x)$.
+		For any $x\in \dom Du_{\infty}$, by similar argument to that above in part 4.6, we can show that any (other) accumulation points of $\{y_k(x)\}_{k\in \NN}$ are elements in the set $\partial^G u_{\infty}(x)=\{y_{\infty}(x)\}$, i.e. the sequence $\{y_k(x)\}_{k\in \NN}$ converges to $y_{\infty}(x)$.\medskip
 											
 	4.8. Finally, since $\mu \ll \mathcal{L}^m$, by Fatou's lemma, we have 
 		\begin{flalign*}
@@ -379,12 +379,12 @@ rationality, we have established equivalence of $(P_3)$ to $(P_0)$.  Let us now 
 			& = \lim\limits_{k\rightarrow \infty} \tilde{\Pi}(u_k, y_k)\\
 			&= \sup \tilde{\Pi}(u,y),
 		\end{flalign*}
-	among all feasible (u,y). Thus, the supremum is attained.
+	among all feasible $(u,y)$. Thus, the supremum is attained.
 \end{proof}
 											
-\begin{remark}[More Singular measures]
+\begin{remark}[More singular measures]
 	If $G \in C^2$ (uniformly in $z \in Z$) the same conclusions extend to $\mu$ which need not be absolutely
-	continuous with respect to Lebesgue,  provide $\mu$ vanishes on all hypersurfaces parameterized 
+	continuous with respect to the Lebesgue measure,  provide $\mu$ vanishes on all hypersurfaces parameterized 
 	locally as a difference of convex functions \cite{FigalliKimMcCann11} \cite{Gigli11},  essentially because $G$-convexity then implies semiconvexity of $u$.  On the other hand,  apart from its final sentence,  
 	the proposition extends to all probability measures $\mu$ if $G$ is merely continuous, according to 
 	N\"oldeke-Samuelson \cite{NoldekeSamuelson15p}.  Our argument is simpler than
@@ -396,7 +396,7 @@ rationality, we have established equivalence of $(P_3)$ to $(P_0)$.  Let us now 
 												
 \begin{remark}[Tie-breaking rules for singular measures] 
 	When an agent $x$ finds more than one product which maximize his utility, in order to reduce the ambiguity, it is convenient to assume the principal has satisfactory persuasion to  convince the agent to choose one of those products which maximize the principal's profit. 
-	According to equation (\ref{EqnInverse}) and condition $(G1)$, this scenario would occur only for $x\in X \setminus \dom Du $, which has Lebesgue measure zero. Thus this convention has no effect for absolutely continuous measures, 
+	According to equation (\ref{EqnInverse}) and condition $(G1)$, this scenario would occur only for $x\in X \setminus \dom Du $, which has Lebesgue measure zero. Thus, this convention has no effect for absolutely continuous measures, 
 	but can be used as in Figalli-Kim-McCann \cite{FigalliKimMcCann11} to extend our result to singular measures.
 \end{remark}
 													

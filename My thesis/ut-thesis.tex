@@ -91,6 +91,7 @@
 %%\usepackage[numbers]{natbib}
 %%\usepackage[fit]{truncate}
 \usepackage{soul}
+\usepackage{mathtools}
 
 \usepackage{tabularx}
 \usepackage{ragged2e}
@@ -191,10 +192,12 @@
 \newcommand{\Lip}{\operatornamewithlimits{Lip}}
 %\newcommand{\Lip}{\operatorname{Lip}}
 \newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
 \newcommand{\yG}{ y_G}
 \newcommand{\barG}{\bar{G}}
 \newcommand{\barx}{\bar{x}}
 \newcommand{\bary}{\bar{y}}
+\newcommand{\sign}{\textrm{sign}}
 \newcolumntype{C}[1]{>{\Centering}m{#1}}
 \renewcommand\tabularxcolumn[1]{C{#1}}
 \newcommand{\kel}[1]{\textbf{\textcolor{purple}{#1}}} 
@@ -209,7 +212,7 @@
 \numberwithin{equation}{section}
 
 %\allowbreak
-%\allowdisplaybreaks
+\allowdisplaybreaks
 %\numberwithin{equation}{section}
 
 %% *** Adjust the following settings as desired. ***
@@ -243,19 +246,19 @@
 \begin{abstract}
 %% *** Put your Abstract here. ***
 
-	A monopolist wishes to maximize her profits by finding an optimal price menu. After she announces a menu of products and prices, each agent will choose to buy that product which maximizes his own utility, if positive. 
+	A monopolist wishes to maximize her profits by finding an optimal price menu. After she announces a menu of products and prices, each agent will choose to buy that product which maximizes his utility, if positive. 
 	The principal's profits are the sum of the net earnings produced by each product sold.  
 	These are determined by the costs of production and the distribution of products sold, which in turn are based on the distribution of anonymous agents and
-	the choices they make in response to the principal's price menu.  
+	the choices they make in response to the principal's price menu. \medskip 
 	
-	In this thesis, two existence results will be provided, assuming each agent's disutility is a strictly increasing but not necessarily affine (i.e.\ quasilinear) function of the price paid. This has been an open problem for several decades before the first multi-dimensional result obtained here and independently by N\"oldeke and Samuelson in 2015.
+	In this thesis, two existence results will be provided, assuming each agent's disutility is a strictly increasing but not necessarily affine (i.e.,\ quasilinear) function of the price paid. This has been an open problem for several decades before the first multi-dimensional result obtained here and independently by N\"oldeke and Samuelson in 2015.\medskip
 	
-%	Together with my Ph.D. advisor Robert J. McCann, I provide 
+
 	Additionally, a necessary and sufficient condition for the convexity or concavity of this principal's (bilevel) optimization problem is investigated. 
 	Concavity when present, makes the problem more amenable to 
-	computational and theoretical analysis;  it is key to obtaining uniqueness and stability results for the principal's strategy in particular.  Even in the quasilinear case, our analysis goes beyond previous work by addressing convexity as well as concavity,  by establishing conditions which are not only sufficient but necessary,  and by requiring fewer hypotheses on the agents' preferences.	Moreover, the analytic and geometric interpretation of certain condition that equivalent to concavity of the problem has been explored.
+	computational and theoretical analysis;  it is key to obtaining uniqueness and stability results for the principal's strategy in particular.  Even in the quasilinear case, our analysis goes beyond previous work by addressing convexity as well as concavity,  by establishing conditions which are not only sufficient but necessary,  and by requiring fewer hypotheses on the agents' preferences.	Moreover, the analytic and geometric interpretations of a specific condition to the concavity of the problem has been explored.\medskip
 	
-	Finally, various examples has been given, to explain the interaction between preferences of agents' utility and monopolist's profit to concavity of the problem. In particular, an example with quasilinear preferences on $n$-dimensional hyperbolic spaces was given with explicit solutions to show uniqueness without concavity. Besides, similar results on spherical and Euclidean spaces are also provided. What is more, the solutions of hyperbolic and spherical converges to those of Euclidean space as curvature goes to 0.
+	Finally, various examples are given to explain the interaction between preferences of agents' utility and monopolist's profit to ensure the equivalent statement to the concavity of the principal-agent problem. In particular, an example with quasilinear preferences on $n$-dimensional hyperbolic spaces is given with explicit solutions to show uniqueness without concavity. Similar results on spherical and Euclidean spaces are also provided. Additionally, the solutions of hyperbolic and spherical cases converge to those of Euclidean spaces as curvature goes to 0.\medskip
 	%by showing (in exact form) the unique solutions of special examples with quasilinear preferences where domains are symmetric disks on $n$-dimensional hyperbolic,  spherical, or Euclidean spaces. What is more, the solutions of hyperbolic and spherical converges to that of Euclidean space as curvature goes to 0.
 	
 %	 Oriented by Loeper's work, %\cite{Loeper09}, 
@@ -273,9 +276,9 @@
 %% formatted flush right (uncomment to have it appear in the document).
 \begin{dedication}
 	To my parents 
-%\\	Shuying Yu and Muli Zhang\\
+\\	Shuying Yu and Muli Zhang\\
 	and my sister \\
-%	Qiuyu Zhang
+	Qiuyu Zhang
 %% *** Put your Dedication here. ***
 \end{dedication}
 
@@ -294,24 +297,24 @@
 \begin{acknowledgements}
 %% *** Put your Acknowledgements here. ***
 
-First and foremost, I would like to express my deepest gratitude to my advisor, Robert J. McCann, for his generous support of inspiration, encouragement, guidance,  time, and patience, as well as financial support during my graduate study. Robert led me to the principal-agent problem and kept encouraging me on the research and writing processes. Our meetings and discussions on this topic have been the main source of the ideas in this dissertation, most of which comes from the joint work with him.
+First and foremost, I would like to express my most profound gratitude to my advisor, Robert J. McCann, for his generous support of inspiration, encouragement, guidance, time, and patience, as well as financial support during my graduate study. Robert led me to the principal-agent problem and kept encouraging me on the research and writing processes. Our meetings and discussions on this topic have been the primary source of the ideas in this dissertation, most of which comes from the joint work with him.\medskip
 
-I would like to thank my committee members, Xianwen Shi, for his guidance and encouragement in writing Economics papers and fruitful discussions in Economics topics, as well as his financial support during the summer of 2016, and Almut Burchard, for her encouragement and massive support in my early stage of graduate career.
+I would like to thank my committee members, Xianwen Shi, for his guidance and encouragement in writing economics papers and fruitful discussions in economics topics, as well as his financial support during the summer of 2016, and Almut Burchard, for her encouragement and massive support in the early stage of my graduate career.\medskip
 
-One of the most enjoyable periods of my graduate study must be the summer and fall semester spend at MSRI, Berkeley, in 2013. I would like to thank Robert for making it happen. In MSRI, I met a lot of renowned researchers in Optimal Transport and PDEs, %including %Cedric Villani, Luigi Ambrosio, Yann Brenier, Wilfrid Gangbo, Felix Otto, Alessio Figalli, and 
-most notably Neil Trudinger, whose talk "On the local theory of prescribed Jacobian equations" inspired our work on the generalization of nonlinear pricing problem.    
+One of the most enjoyable periods of my graduate study must be the summer and fall semester spent at MSRI, Berkeley, in 2013. I would like to thank Robert for making it happen. In MSRI, I met a lot of renowned researchers in Optimal Transport and PDEs, %including %Cedric Villani, Luigi Ambrosio, Yann Brenier, Wilfrid Gangbo, Felix Otto, Alessio Figalli, and 
+most notably Neil Trudinger, whose talk ``On the local theory of prescribed Jacobian equations" inspired our work on the generalization of nonlinear pricing problems.    \medskip
 
-I also benefited much from the Fall 2014 program of the Fields Institute for the Mathematical Sciences. During this program, I met Guillaume Carlier, whose work influenced me. I would like to thank Guillaume for stimulating conversations. I would also like to thank Alfred Galichon and Robert McCann for inviting me to the NYU Workshop on Optimal Transportation, Equilibrium, and Applications to Economics, in April 2016. I would like to thank Alfred for his generous support, encouragement, and discussions.
+I also benefited much from the Fall 2014 program of the Fields Institute for the Mathematical Sciences. During this program, I met Guillaume Carlier, whose work influenced me. I would like to thank Guillaume for stimulating conversations. I would also like to thank Alfred Galichon and Robert McCann for inviting me to the NYU Workshop on Optimal Transportation, Equilibrium, and Applications to Economics, in April 2016. I would like to thank Alfred for his generous support, encouragement, and discussions.\medskip
 
 I am grateful to Ivar Ekeland for stimulating conversations, Georg N\" oldeke and Larry Samuelson for sharing vital remarks.
-I also got numerous help from the Optimal transport community, including but not limited to Yann Brenier, Nassif Ghoussoub, Young-Heon Kim, Brendan Pass,  Shibing Chen, Nestor Guillen, Jun Kitagawa, Rosemonde Lareau-Dussault, Justin Martel, Evan Miller, and Afiny Akdemir. I greatly appreciate help from professors and researchers at the University of Toronto and other institutions, including (but not limited to) Adrian Nachman, Luis Seco, James Colliander, Marco Gualtieri, John Bland, Israel Michael Sigal, Joe Repka, Mary Pugh, Catherine Sulem, Adam Stinchcombe, Guan Bo, Roger~Grosse, and Ulrich Horst.
-I would like to thank some graduated/(under)graduate students and postdocs at the University of Toronto, from whom I got numerous encouragement, including Xiao Liu, Bin Xu, the late Yuri Cher, Payman Eskandari, Xinliang An, Xin Shen, Jonathan Korman, Ming Xiao, Zhifei Zhu, Chia-Cheng Liu, Yuanyuan Zheng, Kevin Luk, Li Chen, Mary He, Amber Ma, Jia Ji, Cheng Yang, Tomas Kojar, Qingwan Yin, Kaixuan Wang, Andrew Colinet, James Lucas, Aidan Gomez, Francis Bischoff, Mykola Matviichuk and Adam Gardner.
+I also got many help from the Optimal transport community, including  Afiny Akdemir, Yann Brenier, Shibing Chen, Nassif Ghoussoub,  Nestor Guillen, Young-Heon Kim, Jun Kitagawa, Rosemonde Lareau-Dussault, Justin Martel, Evan Miller, and Brendan Pass. I much appreciate help from professors and researchers at the University of Toronto and other institutions, including John Bland, Guan Bo, James Colliander, Roger~Grosse, Marco Gualtieri, Robert Haslhofer, Ulrich Horst, Jonathan Korman, Adrian Nachman, Mary Pugh, Joe Repka, Luis Seco,  Israel Michael Sigal, Adam Stinchcombe, and Catherine Sulem.
+I would like to thank some graduate/undergraduate students and postdocs at the University of Toronto, from whom I got numerous encouragement, including Xinliang An,  Francis Bischoff, Li Chen, the late Yuri Cher,  Andrew Colinet, Payman Eskandari, Adam Gardner, Aidan Gomez, Mary He,  Jia Ji, Tomas Kojar, Chia-Cheng Liu, Xiao Liu,  James Lucas, Kevin Luk,  Amber Ma,  Mykola Matviichuk,  Xin Shen,  Kaixuan Wang,  Ming Xiao, Bin Xu,   Cheng Yang,  Qingwan Yin, Yuanyuan Zheng, and Zhifei Zhu.\medskip
  
 
 
-I would also like to thank the administrative staff at the math department, in particular, the late Ida Bulat, Jemima Merisca, Patrina Seepersaud, and Sonja Injac, for all their endless help on making the graduate study more smooth and less stressful.  
+I would also like to thank the administrative staff at the math department, in particular, the late Ida Bulat, Jemima Merisca, Patrina Seepersaud, and Sonja Injac, for all their endless help on making the graduate study more smooth and less stressful.  \medskip
 
-Last but not the least, I would like to thank my parents and sister for their unconditional love, endless encouragement, and financial support.
+Last but not the least, I would like to thank my parents and sister for their unconditional love, encouragement, and financial support.\medskip
 
 
 \end{acknowledgements}
