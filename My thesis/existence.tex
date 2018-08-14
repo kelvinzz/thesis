@@ -15,7 +15,7 @@
 \section{Introduction}\label{section:introduction}
 
 	
-Recently, N\"oldeke-Samuelson (2015, \cite{NoldekeSamuelson15p}) provide a general existence result assuming that the consumer and product space are compact, by implementing a duality argument based on Galois connections.  In this chapter, we explore existence using $G$-convex analysis, which was introduced in Section \ref{section:G-convexity}, but with less restriction on boundedness of the product domain and without assuming the generalized single-crossing condition. As a result of the lack of natural compactness, the proof of this result is quite different from that of N\"oldeke-Samuelson~\cite{NoldekeSamuelson15p}. It should be mentioned here that the existence results from this chapter,  Chapter \ref{chapter:existence_bounded}, and N\"oldeke-Samuelson require no restrictions on the monopolist profit to take on a special form, which is a generalization from much of the literature.\medskip
+Recently, N\"oldeke-Samuelson (2015, \cite{NoldekeSamuelson15p}) provided a general existence result assuming that the consumer and product space are compact, by implementing a duality argument based on Galois connections.  In this chapter, we explore existence using $G$-convex analysis, which was introduced in Section \ref{section:G-convexity}, but with less restriction on boundedness of the product domain and without assuming the generalized single-crossing condition. As a result of the lack of natural compactness, the proof of this result is quite different from that of N\"oldeke-Samuelson~\cite{NoldekeSamuelson15p}. It should be mentioned here that the existence results from this chapter,  Chapter \ref{chapter:existence_bounded}, and N\"oldeke-Samuelson require no restrictions on the monopolist profit to take on a special form, which is a generalization from much of the literature.\medskip
 
 In Section \ref{section:G-convexity}, we identified incentive compatibility with a $G$-convexity constraint. In this chapter, we will rewrite the maximization problem by converting the optimization variables from a product-price pair of mappings to a product-value pair. It can then be shown that the product-value pair converges under the $G$-convexity constraint. The existence result follows. \medskip
 
@@ -86,7 +86,8 @@ s.t.\ p \text{  is lower semicontinuous}.
 \end{cases}
 \end{equation}
 
-We assume that $p$ is lower semicontinuous, without which the maximum in \eqref{eqn_optimal_product} may not be attained. However, in the equivalence form of $(P_0)$, this restriction will be encoded in $G$-convexity of the value functions, which will be shown in Proposition \ref{equiv_form}.\medskip
+We assume that $p$ is lower semicontinuous, without which the maximum in \eqref{eqn_optimal_product} may not be attained. %However, in the equivalence form of $(P_1)$, this restriction will be encoded in $G$-convexity of the value functions, which will be shown in Proposition \ref{equiv_form}.
+\medskip
 
 
 The following assumptions are made. {We use $C^0(X)$ to denote the space of all continuous functions on $X$, and use $C^1(X)$ to denote the space of all differentiable functions on $X$ whose derivative is continuous.} Note that, even in the 1 dimensional case, we assume no single-crossing type condition.\medskip%, i.e. continuous differentiable functions.} \medskip
@@ -139,11 +140,11 @@ In Rochet-Chon$\acute{e}$'s model, $H(x,y,u) = x\cdot y -u$ and $\pi(x,y,z) = z-
 
 
 \begin{assumption}\label{assmp:Gtech0}
-	$\pi(x,y,H(x,y,u))$ is super-linearly decreasing in $y$. That is, there exist $\alpha \ge 1$, $a_1, a_2> 0$ and $b\in \R$, such that $\pi(x,y,H(x,y,u)) \le -a_1 ||y||_{\alpha}^{\alpha} - a_2 u +b$ for all $ (x, y, u)\in \{ (x,y, G(x,y,z))| x\in X, y\in Y, z\in \R \}$; or equivalently, $\pi(x,y,z) + a_2 G(x,y,z) \le -a_1 ||y||_{\alpha}^{\alpha}  +b$ for all $ (x, y, z)\in X\times cl(Y)\times \R$.
+	$\pi(x,y,H(x,y,u))$ is (super-)linearly decreasing in $y$. That is, there exist $\alpha \ge 1$, $a_1, a_2> 0$ and $b\in \R$, such that $\pi(x,y,H(x,y,u)) \le -a_1 ||y||_{\alpha}^{\alpha} - a_2 u +b$ for all $ (x, y, u)\in \{ (x,y, G(x,y,z))| x\in X, y\in Y, z\in \R \}$; or equivalently, $\pi(x,y,z) + a_2 G(x,y,z) \le -a_1 ||y||_{\alpha}^{\alpha}  +b$ for all $ (x, y, z)\in X\times cl(Y)\times \R$.
 \end{assumption}
 
 
-	As shown in the alternative formulation, Assumption \ref{assmp:Gtech0} requires the existence of some weighted surplus which is super-linearly decreasing with respect to the product. In the case where $Y$ is bounded, Assumption \ref{assmp:Gtech0} is equivalent to the existence of some weighted surplus bounded from above.   \medskip
+	As shown in the alternative formulation, Assumption \ref{assmp:Gtech0} requires the existence of some weighted surplus which is superlinearly decreasing with respect to the product. In the case where $Y$ is bounded, Assumption \ref{assmp:Gtech0} is equivalent to the existence of some weighted surplus bounded from above.   \medskip
 
 
 Assumptions \ref{assmp:Gtech1} - \ref{assmp:Gtech3} are some technical assumptions on $D_xG$, which are automatically satisfied for $X$, $Y$, $Z$ being compact.\medskip
@@ -185,7 +186,8 @@ Assumptions~\ref{assmp:Pi1} states constraints on the continuity of principal's 
 %In Assumption , we assume principal's profit would increase as the selling price increases, for any fixed agent and product type. We also assume that profit will be limited for any fixed selling price, uniformly on agent-product type. \medskip
 
 \begin{assumption}\label{assmp:Pi1}
-	The profit function $\pi$ is continuous on $cl(X\times Y\times Z)$. The participation constraint $u_{\emptyset}$ is integrable with respect to $d \mu$, where the measure $\mu$ is absolutely continuous with respect to the Lebesgue measure and has $X$ as its support.
+	The profit function $\pi$ is continuous on $cl(X\times Y\times Z)$. The participation constraint $u_{\emptyset}$ is integrable with respect to $d \mu$, where the measure $d \mu$ is equivalent to the Lebesgue measure restricted on $X$.
+	%$\mu$ is absolutely continuous with respect to the Lebesgue measure and has $X$ as its support.
 \end{assumption}
 
 
@@ -372,7 +374,7 @@ In this section, we state the existence theorem, the proof of which is provided 
 
 
 \begin{theorem}[Existence]
-	Under Assumptions \ref{assmp:Gregular} - \ref{assmp:Pi1}, assume $\mu$ is equivalent to the Lebesgue measure on $X$, then the monopolist's problem $(P_2)$ admits at least one solution.
+	Under Assumptions \ref{assmp:Gregular} - \ref{assmp:Pi1}, the monopolist's problem $(P_2)$ admits at least one solution.
 \end{theorem}
 
 Technically, in order to demonstrate existence, we start from a sequence of value-product pairs, whose total profits have a limit that is equal to the supremum of $(P_2)$.
