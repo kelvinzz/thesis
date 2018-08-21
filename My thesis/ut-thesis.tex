@@ -92,11 +92,13 @@
 %%\usepackage[fit]{truncate}
 \usepackage{soul}
 \usepackage{mathtools}
+\usepackage{hyperref}
 
 \usepackage{tabularx}
 \usepackage{ragged2e}
 \usepackage{booktabs}
 \usepackage{caption}
+\usepackage{tocbibind}
 %\usepackage{tabularx,ragged2e,booktabs,caption}
 
 
@@ -208,7 +210,6 @@
 
 
 
-
 \numberwithin{equation}{section}
 
 %\allowbreak
@@ -244,7 +245,9 @@
 %% This generates the abstract page, with the line spacing adjusted
 %% according to SGS guidelines.
 \begin{abstract}
+%	\addcontentsline{toc}{chapter}{Abstract}
 %% *** Put your Abstract here. ***
+
 
 	A monopolist wishes to maximize her profits by finding an optimal price menu. After she announces a menu of products and prices, each agent will choose to buy that product which maximizes his utility, if positive. 
 	The principal's profits are the sum of the net earnings produced by each product sold.  
@@ -295,6 +298,7 @@
 %% This generates an "acknowledgements" section, if needed
 %% (uncomment to have it appear in the document).
 \begin{acknowledgements}
+	\addcontentsline{toc}{chapter}{Acknowledgements}
 %% *** Put your Acknowledgements here. ***
 
 First and foremost, I would like to express my most profound gratitude to my advisor, Robert J. McCann, for his generous support of inspiration, encouragement, guidance, time, and patience, as well as financial support during my graduate study. Robert led me to the principal-agent problem and kept encouraging me on the research and writing processes. Our meetings and discussions on this topic have been the primary source of the ideas in this dissertation, most of which come from joint work with him.\medskip
